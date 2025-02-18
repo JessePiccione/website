@@ -1,0 +1,25 @@
+$primary-dark-blue: #2c3e50
+$primary-light-blue: #2980B9
+$secondary-orange: #f39C12
+$secondary-green: #27AE60
+$highlight-red: #e74c3c
+$highlight-offwhite: #ecf0f1
+$margin: 1rem
+*
+    margin:0
+    padding:0
+body
+    display: grid
+    grid-template-areas: "nav" "head" "main" "foot"
+    grid-template-rows: 100px 1fr 3fr 1fr 
+    grid-template-columns: 100vw
+    min-height:100vh
+    min-width:100vw
+nav.Nav
+    grid-area: nav
+header.Header
+    grid-area: head
+main.Main
+    grid-area: main
+footer.Footer
+    grid-area: foot

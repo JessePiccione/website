@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "sass":"sass src/styles/style.sass src/styles/style.css",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,6 +13,7 @@
   },
   "devDependencies": {
     "eslint": "9.19.0",
-    "eslint-config-next": "15.1.6"
+    "eslint-config-next": "15.1.6",
+    "sass": "^1.83.4"
   }
 }
