@@ -3,12 +3,20 @@ import Logo from '@/images/logo'
 import NavList from './navlist'
 import Chevron from '@/images/chevron.svg'
 import Image from 'next/image'
-import {useState} from 'react'
+import {useState, useRef} from 'react'
+
 export default function Nav(){
-    const [animation, setAnimation] = useState('close')
+    const [animation, setAnimation] = useState('')
+    const NavListRef = useRef(null)
     const toggleMenu = (e) => {
-        if(animation === 'close') setAnimation('open')
-        else if (animation ==='open') setAnimation('close')
+        e.target.classList.remove('opened')
+        if(animation === 'close' || animation === '') setAnimation('open')
+        else if (animation === 'open' ) setAnimation('close')
+    }
+    const handleEndOfAnimation = (e) => {
+        e.target.classList.remove(animation)
+        e.target.style.animation = null
+        if (animation === 'open') e.target.classList.add('opened')
     }
     return (
         <nav className='Nav'>
@@ -19,8 +27,9 @@ export default function Nav(){
                 alt='Chevron'
                 className={`menu-chevron ${animation}`}
                 onClick={toggleMenu}
+                onAnimationEnd={handleEndOfAnimation}
             />
-            <NavList />
+            <NavList className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
         </nav>
     )
 }

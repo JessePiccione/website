@@ -1,6 +1,6 @@
-export default function navlist({className}){
+export default function navlist(props){
     return (
-        <ul>
+        <ul {...props}>
             <li>
                 <a href='#home'>Home</a>
             </li>
