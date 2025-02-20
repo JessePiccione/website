@@ -1,4 +1,4 @@
-export default function navlist(){
+export default function navlist({className}){
     return (
         <ul>
             <li>

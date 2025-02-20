@@ -8,30 +8,75 @@ body {
   width: 100%;
   display: grid;
   grid-template-areas: "nav" "head" "main" "foot";
-  grid-template-rows: auto 1fr 3fr 1fr;
+  grid-template-rows: fit-content 1fr 3fr 1fr;
   grid-template-columns: auto;
 }
 
 nav.Nav {
   grid-area: nav;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-areas: "logo menu" "list list";
+  grid-template-row: auto min-content;
+  grid-template-columns: 1fr 1fr;
   background-color: #2c3e50;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
 }
 
 nav.Nav ul {
+  position: static;
+  grid-area: list;
+  width: 100%;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: flex-start;
+  background-color: #2980B9;
+  animation: navigation-menu 0.5s ease forwards;
 }
 
 nav.Nav li {
+  width: fit-content;
   list-style-type: none;
   margin: 1rem;
 }
 
+nav > img {
+  grid-area: logo;
+}
+
+img.menu-chevron {
+  grid-area: menu;
+  width: 20px;
+  height: 40px;
+  object-fit: fill;
+  margin: 1rem 2rem;
+  box-shadow: none;
+  justify-self: end;
+  align-self: end;
+  transform: rotateZ(90deg);
+}
+
+nav.Nav > img.open {
+  animation: menu-chevron-move 0.25s ease;
+  animation-fill-mode: forwards;
+}
+
+nav.Nav > img.close {
+  animation: menu-chevron-move 0.25s ease reverse;
+  animation-fill-mode: backwards;
+}
+
+@keyframes menu-chevron-move {
+  100% {
+    transform: rotateZ(270deg);
+  }
+}
+@keyframes navigation-menu {
+  100% {
+    transform: translateY(-100%) scale3d(0, 0, 0);
+    display: none;
+    position: absolute;
+  }
+}
 a, a:link {
   color: #ecf0f1;
   font-family: "Work Sans", Sans-serif;
