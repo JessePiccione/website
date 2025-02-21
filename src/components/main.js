@@ -5,11 +5,7 @@ export default function Main(){
         <main className='Main'>
             <EResume/>
             <Blog/>
-            <section id='about' className='about'>
-                <article>
-                    This is going to be the about section is
-                </article>
-            </section>
+            <About/>
             <section id='contact' className='contact'>
                 <article>
                     this is going to be where the contact me for is going to be

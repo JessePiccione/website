@@ -4,7 +4,7 @@ export default async function SkillCard(){
         <section className='card'>
             <h3>Relevant Skills</h3>
             <ul>
-                {skills.map(({category_name})=><li>{category_name}</li>)}
+                {skills.map(({category_name})=><li key={category_name}>{category_name}</li>)}
             </ul>
         </section>
     )

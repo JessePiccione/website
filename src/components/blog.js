@@ -1,4 +1,6 @@
-export default function Blog(){
+import Post from '@/components/postsmall'
+export default async function Blog(){
+    let posts =  await fetch('https://jessepiccione-info-backend.ue.r.appspot.com/api/home/').then(res=>res.json())
     return (
         <section className='blog'>
             <article>
@@ -6,7 +8,9 @@ export default function Blog(){
                 <h2>Featured Posts</h2>
                 <hr/>
                 <button>Browse Posts</button>
-                
+                <ul>
+                    {posts.map(post=><Post {...post}/>)}
+                </ul>
             </article>
         </section>
     )
