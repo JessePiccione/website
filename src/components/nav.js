@@ -7,7 +7,6 @@ import {useState, useRef} from 'react'
 
 export default function Nav(){
     const [animation, setAnimation] = useState('')
-    const NavListRef = useRef(null)
     const toggleMenu = (e) => {
         e.target.classList.remove('opened')
         if(animation === 'close' || animation === '') setAnimation('open')
