@@ -20,14 +20,16 @@ export default function Nav(){
     return (
         <nav className='Nav'>
             <Logo/>
-            <Image
-                loading='eager'
-                src={Chevron}
-                alt='Chevron'
-                className={`menu-chevron ${animation}`}
-                onClick={toggleMenu}
-                onAnimationEnd={handleEndOfAnimation}
-            />
+            <section className='menu-chevron-container'>
+                <Image
+                    loading='eager'
+                    src={Chevron}
+                    alt='Chevron'
+                    className={`menu-chevron ${animation}`}
+                    onClick={toggleMenu}
+                    onAnimationEnd={handleEndOfAnimation}
+                />
+            </section>
             <NavList className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
         </nav>
     )
