@@ -9,7 +9,7 @@ export default async function Blog(){
                 <hr/>
                 <button>Browse Posts</button>
                 <ul>
-                    {posts.map(post=><Post {...post}/>)}
+                    {posts.map(post=><Post key={post.title} {...post}/>)}
                 </ul>
             </article>
         </section>
