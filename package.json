@@ -1,12 +1,18 @@
 {
   "scripts": {
-    "sass":"sass src/styles/style.sass src/styles/style.css",
+    "sass": "sass src/styles/style.sass src/styles/style.css",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "fontawesome-free": "^1.0.4",
     "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
