@@ -3,7 +3,7 @@ import Logo from '@/images/logo'
 import NavList from './navlist'
 import Chevron from '@/images/chevron.svg'
 import Image from 'next/image'
-import {useState, useRef} from 'react'
+import {useState} from 'react'
 
 export default function Nav(){
     const [animation, setAnimation] = useState('')
@@ -19,7 +19,9 @@ export default function Nav(){
     }
     return (
         <nav className='Nav'>
-            <Logo/>
+            <section className='menu-logo-container'>
+                <Logo/>
+            </section>
             <section className='menu-chevron-container'>
                 <Image
                     loading='eager'

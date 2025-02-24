@@ -49,13 +49,7 @@ nav.Nav li
     width: fit-content
     list-style-type: none
     margin: $margin
-nav > svg
-    grid-area: logo
-    background-color: $primary-dark-blue
-    z-index:10
-    align-self: baseline
-    justify-self: baseline
-section.menu-chevron-container
+section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
     background-color: $primary-dark-blue
     width:100%
@@ -64,6 +58,10 @@ section.menu-chevron-container
     justify-content: flex-end
     align-content: flex-end
     z-index:10
+section.menu-logo-container
+    grid-area: logo
+    justify-content: flex-start
+    align-content: center
 img.menu-chevron
     width: 20px
     height: 40px
@@ -100,7 +98,7 @@ a, a:link
     font-size: 18px
     text-decoration: none
     text-shadow: $shadow
-header.Header
+header.Header, section.blog
     grid-area: head
     display: flex
     position: static
@@ -136,15 +134,19 @@ h2
     font-weight: 400
     margin: 0 0 calc($margin / 2.5) 0
 hr
-    border-bottom: 1px solid $primary-dark-blue
+    border: 1px solid $primary-dark-blue
     box-shadow: $shadow
-p
+p, h3
     font-family: $secondary-font
     font-size: 18px
     letter-spacing: 0
     font-weight: 500
     max-width: 35ch
     margin: $margin 0
+h3
+    font-size: 20px
+    font-weight: 700
+    margin: 0
 button
     background-color: $primary-light-blue
     padding: $margin
@@ -159,6 +161,67 @@ main.Main
     grid-area: main
 footer.Footer
     grid-area: foot
+section.eresume 
+    background-color: $primary-dark-blue
+    box-shadow: $shadow
+section.eresume > article
+    padding: $margin
+    color: $highlight-offwhite
+    text-shadow: $shadow
+section.eresume hr
+    border: 1px solid $secondary-orange
+section.card
+    background-color: $primary-light-blue
+    padding: $margin
+    border-radius: 16px
+    margin-top: $margin
+    box-shadow: $shadow
+section.card ul 
+    background-color: $primary-dark-blue
+    border: 1px solid $secondary-orange
+    border-radius: 16px
+    margin: calc($margin / 2) 0 0 0
+    padding: $margin
+    box-shadow: inset $shadow
+li
+    list-style-type: none
+    font-family: $secondary-font
+    font-size: 18px
+    font-weight: 400
+section.blog > article
+    margin: $margin
+    display: grid
+    grid-template-areas: ''
+section.blog-post
+    background-color: $primary-dark-blue
+    color: $highlight-offwhite
+    border: none
+    border-radius: $radius
+    margin-top: $margin
+section.blog-post iframe
+    width:100%
+    border-radius: 16px 16px 0 0
+    border:0 none
+section.blog-post p
+    display: -webkit-box
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+    overflow: hidden
+    background-color: $highlight-offwhite
+    padding: 0 calc($margin / 2)
+    margin: 0 $margin $margin $margin
+    font-size: 18px
+    font-weight: 400
+    color: $primary-dark-blue
+    border-left: 2px solid $primary-light-blue
+    border-right: 2px solid $primary-light-blue
+section.blog-post h3
+    border-left: 2px solid $primary-light-blue
+    border-right: 2px solid $primary-light-blue
+    color: $primary-dark-blue
+    padding: calc($margin / 2) calc($margin / 2) 0 calc($margin / 2)
+    margin: -3px $margin 0 $margin
+    background-color: $highlight-offwhite
 @media screen and (min-width: 768px)
     nav.Nav
         grid-template-areas: 'logo list'
