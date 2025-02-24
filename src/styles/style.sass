@@ -145,7 +145,7 @@ p, h3
     margin: $margin 0
 h3
     font-size: 20px
-    font-weight: 700
+    font-weight: 600
     margin: 0
 button
     background-color: $primary-light-blue
@@ -192,16 +192,20 @@ section.blog > article
     margin: $margin
     display: grid
     grid-template-areas: ''
+section.blog button
+    margin-top: $margin
 section.blog-post
     background-color: $primary-dark-blue
     color: $highlight-offwhite
     border: none
     border-radius: $radius
     margin-top: $margin
+    padding-bottom: $margin
 section.blog-post iframe
     width:100%
     border-radius: 16px 16px 0 0
     border:0 none
+    box-shadow: $shadow
 section.blog-post p
     display: -webkit-box
     -webkit-line-clamp: 3
@@ -209,12 +213,17 @@ section.blog-post p
     overflow: hidden
     background-color: $highlight-offwhite
     padding: 0 calc($margin / 2)
-    margin: 0 $margin $margin $margin
+    margin: 0 $margin 0 $margin
     font-size: 18px
     font-weight: 400
     color: $primary-dark-blue
     border-left: 2px solid $primary-light-blue
     border-right: 2px solid $primary-light-blue
+section.blog-post p:last-child
+    border-bottom: 2px solid $primary-light-blue
+    padding-bottom: calc($margin / 2)
+    border-bottom-left-radius: $radius
+    border-bottom-right-radius: $radius
 section.blog-post h3
     border-left: 2px solid $primary-light-blue
     border-right: 2px solid $primary-light-blue
@@ -222,6 +231,15 @@ section.blog-post h3
     padding: calc($margin / 2) calc($margin / 2) 0 calc($margin / 2)
     margin: -3px $margin 0 $margin
     background-color: $highlight-offwhite
+section.blog-post button
+    box-shadow: none
+    text-shadow: $shadow
+    background-color: #00000000
+    font-weight: 500
+    margin: 0
+    padding: 0
+    color: $primary-dark-blue
+
 @media screen and (min-width: 768px)
     nav.Nav
         grid-template-areas: 'logo list'
