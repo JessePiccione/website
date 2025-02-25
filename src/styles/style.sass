@@ -49,6 +49,14 @@ nav.Nav li
     width: fit-content
     list-style-type: none
     margin: $margin
+nav.Nav img.opened
+    transform: rotateZ(270deg)
+nav.Nav img.open
+    animation: menu-chevron-move 0.25s ease
+    animation-fill-mode: forwards
+nav.Nav img.close
+    animation: menu-chevron-move 0.25s ease reverse
+    animation-fill-mode: backwards
 section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
     background-color: $primary-dark-blue
@@ -72,23 +80,6 @@ img.menu-chevron
     justify-self: end
     align-self: end
     transform: rotateZ(90deg)
-nav.Nav img.opened
-    transform: rotateZ(270deg)
-nav.Nav img.open
-    animation: menu-chevron-move 0.25s ease
-    animation-fill-mode: forwards
-nav.Nav img.close
-    animation: menu-chevron-move 0.25s ease reverse
-    animation-fill-mode: backwards
-section.about
-    background-color: $primary-dark-blue
-    color: $highlight-offwhite
-    text-shadow: $shadow
-    height: 500px
-    overflow-y: scroll
-    box-shadow: $shadow
-section.about > article
-    padding: $margin
 @keyframes menu-chevron-move
     100%
         transform: rotateZ(270deg)
@@ -98,7 +89,7 @@ section.about > article
         display: flex
         position: absolute
     100%
-        transform: translateY(calc(161px - 2.5rem)) scale3d(1,1,1)
+        transform: translateY(calc(161px - (2.5*$margin) ) ) scale3d(1,1,1)
         display: flex
         position: absolute
 a, a:link
@@ -171,7 +162,7 @@ main.Main
     grid-area: main
 footer.Footer
     grid-area: foot
-section.eresume 
+section.eresume
     background-color: $primary-dark-blue
     box-shadow: $shadow
     position: relative
@@ -250,6 +241,13 @@ section.blog-post button
     margin: 0
     padding: 0
     color: $primary-dark-blue
+section.about
+    background-color: $primary-dark-blue
+    color: $highlight-offwhite
+    text-shadow: $shadow
+    height: 500px
+    overflow-y: scroll
+    box-shadow: $shadow
 section.contact
     background-color: $secondary-orange
     color: $primary-dark-blue
