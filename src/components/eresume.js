@@ -2,7 +2,7 @@ import ProjectCard from "@/components/projectcard";
 import SkillCard from "@/components/skillcard"
 export default function eresume(){
     return (
-        <section className='eresume'>
+        <section id='eresume' className='eresume'>
             <article>
                 <section>
                     <h1>Jesse's eResume</h1>

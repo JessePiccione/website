@@ -2,7 +2,7 @@ import Image from 'next/image'
 import picture from '@/images/profile_linkedin.png'
 export default function Header(){
     return (
-        <header className='Header'>
+        <header id='home' className='Header'>
             <section>
                 <h1>Jesse Piccione</h1>
                 <h2>Software Engineer</h2>

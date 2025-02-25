@@ -272,8 +272,8 @@ section.contact form fieldset textarea, section.contact form fieldset input
     flex: 1.7
     font-family: $secondary-font
     padding: $margin
-    min-width: calc( (320px - 2rem) / 2 )
-    max-width: calc( (320px - 2rem) / 2 )
+    min-width: calc( 320px - 4rem )
+    max-width: calc( 320px - 4rem )
     border-radius: $radius
     border: none
     box-shadow: $shadow
@@ -281,7 +281,11 @@ section.contact form label
     font-family: $secondary-font
     font-size: 18px
     font-weight: 600
+    margin: calc($margin/2) 0
 section.contact form fieldset section p
+    display: none
+section.contact form fieldset section input:click + p
+    display: block
     flex: 1
     color: $highlight-red
     font-size: 16px

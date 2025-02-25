@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 export default function Footer(){
     return (
-        <footer className='Footer'>
+        <footer id='Footer' className='Footer'>
             <nav>
                 <Logo/>
                 <section>
