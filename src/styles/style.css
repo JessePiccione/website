@@ -54,6 +54,20 @@ nav.Nav li {
   margin: 1rem;
 }
 
+nav.Nav img.opened {
+  transform: rotateZ(270deg);
+}
+
+nav.Nav img.open {
+  animation: menu-chevron-move 0.25s ease;
+  animation-fill-mode: forwards;
+}
+
+nav.Nav img.close {
+  animation: menu-chevron-move 0.25s ease reverse;
+  animation-fill-mode: backwards;
+}
+
 section.menu-chevron-container, section.menu-logo-container {
   grid-area: menu;
   background-color: #2c3e50;
@@ -81,33 +95,6 @@ img.menu-chevron {
   justify-self: end;
   align-self: end;
   transform: rotateZ(90deg);
-}
-
-nav.Nav img.opened {
-  transform: rotateZ(270deg);
-}
-
-nav.Nav img.open {
-  animation: menu-chevron-move 0.25s ease;
-  animation-fill-mode: forwards;
-}
-
-nav.Nav img.close {
-  animation: menu-chevron-move 0.25s ease reverse;
-  animation-fill-mode: backwards;
-}
-
-section.about {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-  height: 500px;
-  overflow-y: scroll;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-}
-
-section.about > article {
-  padding: 1rem;
 }
 
 @keyframes menu-chevron-move {
@@ -329,6 +316,15 @@ section.blog-post button {
   color: #2c3e50;
 }
 
+section.about {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  height: 500px;
+  overflow-y: scroll;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+}
+
 section.contact {
   background-color: #f39C12;
   color: #2c3e50;
@@ -378,11 +374,6 @@ section.contact form label {
 }
 
 section.contact form fieldset section p {
-  display: none;
-}
-
-section.contact form fieldset section input:click + p {
-  display: block;
   flex: 1;
   color: #e74c3c;
   font-size: 16px;
@@ -391,6 +382,14 @@ section.contact form fieldset section input:click + p {
   text-align: start;
 }
 
+@keyframes input-validation-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 section.contact form button[type=submit] {
   margin-top: 0.5rem;
 }

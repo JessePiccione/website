@@ -22,7 +22,7 @@ export default function About(){
                     code, and ultimately achieved a perfect score. But, the most important moment came when my
                     teacher asked me a life-changing question:
                     <br/>
-                    "What do you want to do for the rest of your life?"
+                    &qout;What do you want to do for the rest of your life?&qout;
                     <br/>
                     Unsure of my future plans, I mentioned  becoming an actuary. It seemed like the logical
                     choice given my strong math background, but my teacher, Mr. Gattuso, saw a different
@@ -40,7 +40,7 @@ export default function About(){
                     learning new programming languages, and exploring every single new opportunity to grow as
                     developer.
                     <br/>
-                    I owe a debt of gratitude to my teacher, who saw something in me that I hadn't yet recognized
+                    I owe a debt of gratitude to my teacher, who saw something in me that I hadn&apos;t yet recognized
                     in myself. Their guidance and support not only shaped my educational path but also helped me
                     discover a lifelong passion I have for coding. Thank you, Gat, for sparking the drive the
                     drive that led me to become a software engineer, and for steering me towards a world where

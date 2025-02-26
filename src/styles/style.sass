@@ -281,9 +281,6 @@ section.contact form label
     font-weight: 600
     margin: calc($margin/2) 0
 section.contact form fieldset section p
-    display: none
-section.contact form fieldset section input:click + p
-    display: block
     flex: 1
     color: $highlight-red
     font-size: 16px
@@ -292,6 +289,10 @@ section.contact form fieldset section input:click + p
     text-align: start
 section.contact form button[type='submit']
     margin-top: calc( $margin / 2 )
+footer.Footer
+    background-color: $primary-dark-blue
+    color: $highlight-offwhite
+    font-family: $secondary-font
 @media screen and (min-width: 768px)
     nav.Nav
         grid-template-areas: 'logo list'

@@ -5,7 +5,7 @@ export default function eresume(){
         <section id='eresume' className='eresume'>
             <article>
                 <section>
-                    <h1>Jesse's eResume</h1>
+                    <h1>Jesse&apos;s eResume</h1>
                     <h2>Online CV Application</h2>
                     <hr/>
                     <p>
