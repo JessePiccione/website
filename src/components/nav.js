@@ -19,20 +19,22 @@ export default function Nav(){
     }
     return (
         <nav className='Nav'>
-            <section className='menu-logo-container'>
-                <Logo/>
+            <section>
+                <section className='menu-logo-container'>
+                    <Logo/>
+                </section>
+                <section className='menu-chevron-container'>
+                    <Image
+                        loading='eager'
+                        src={Chevron}
+                        alt='Chevron'
+                        className={`menu-chevron ${animation}`}
+                        onClick={toggleMenu}
+                        onAnimationEnd={handleEndOfAnimation}
+                    />
+                </section>
+                <NavList className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
             </section>
-            <section className='menu-chevron-container'>
-                <Image
-                    loading='eager'
-                    src={Chevron}
-                    alt='Chevron'
-                    className={`menu-chevron ${animation}`}
-                    onClick={toggleMenu}
-                    onAnimationEnd={handleEndOfAnimation}
-                />
-            </section>
-            <NavList className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
         </nav>
     )
 }

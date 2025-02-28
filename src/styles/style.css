@@ -3,27 +3,34 @@
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   overflow-x: hidden;
   width: 100%;
   display: grid;
   grid-template-areas: "nav" "head" "main" "foot";
-  grid-template-rows: fit-content 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto 1fr;
   grid-template-columns: auto;
 }
 
 nav.Nav {
-  z-index: 10;
   grid-area: nav;
+  background-color: #2c3e50;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  z-index: 10;
+}
+
+nav.Nav > section {
   display: grid;
   grid-template-areas: "logo menu" "list list";
   grid-template-rows: auto min-content;
   grid-template-columns: 1fr 1fr;
-  background-color: #2c3e50;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
 }
 
-nav.Nav > ul {
+nav.Nav ul {
   grid-area: list;
   width: 100%;
   position: absolute;
@@ -33,18 +40,18 @@ nav.Nav > ul {
   transform: translateY(-100%) scale3d(0, 0, 0);
 }
 
-nav.Nav > ul.close {
+nav.Nav ul.close {
   animation: navigation-menu 0.5s ease reverse;
   animation-fill-mode: forwards;
 }
 
-nav.Nav > ul.opened {
+nav.Nav ul.opened {
   display: flex;
   position: static;
   transform: translateY(0) scale3d(1, 1, 1);
 }
 
-nav.Nav > ul.open {
+nav.Nav ul.open {
   animation: navigation-menu 0.5s ease;
 }
 
@@ -122,17 +129,23 @@ a, a:link {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
 }
 
-header.Header, section.blog {
+header.Header {
   grid-area: head;
   display: flex;
   position: static;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   background-color: #ecf0f1;
   color: #2c3e50;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-  border-color: #2c3e50;
   z-index: 9;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  justify-content: center;
   box-shadow: inset 0 -4px 4px rgba(0, 0, 0, 0.2509803922);
+}
+
+header.Header > section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 img {
@@ -144,7 +157,7 @@ img {
   padding: 0;
 }
 
-header.Header > section, header.Header > aside {
+header.Header > section > section, header.Header > section > aside {
   display: flex;
   flex-flow: column wrap;
   margin: 1rem;
@@ -203,34 +216,42 @@ button {
 
 main.Main {
   grid-area: main;
-}
-
-footer.Footer {
-  grid-area: foot;
+  display: grid;
+  grid-template-areas: "eresume" "blog" "about" "contact";
+  grind-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 section.eresume {
   background-color: #2c3e50;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-  position: relative;
   z-index: 10;
 }
 
 section.eresume > article {
-  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   color: #ecf0f1;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  padding: 0;
+}
+
+section.eresume > article > section, section.eresume > article > aside {
+  margin: 1rem;
 }
 
 section.eresume hr {
   border: 1px solid #f39C12;
 }
 
+section.card:first-child {
+  margin-bottom: 1rem;
+}
+
 section.card {
   background-color: #2980B9;
   padding: 1rem;
   border-radius: 16px;
-  margin: 1rem 0 0 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
   width: calc(320px - 4rem);
 }
@@ -251,21 +272,43 @@ li {
   font-weight: 400;
 }
 
+section.blog {
+  width: 100vw;
+  display: flex;
+  position: static;
+  flex-flow: row wrap;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  border-color: #2c3e50;
+  z-index: 9;
+  box-shadow: inset 0 -4px 4px rgba(0, 0, 0, 0.2509803922);
+}
+
 section.blog button {
   margin-top: 1rem;
 }
 
-section.blog-post {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  border: none;
-  border-radius: 16px;
-  margin-top: 1rem;
-  padding-bottom: 1rem;
+section.blog ul {
+  width: calc(100vw - 2rem);
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: visible;
+  flex-flow: row nowrap;
 }
 
 section.blog-post > article {
-  padding: 0;
+  width: calc(320px - 2rem);
+  margin: 1rem 1rem 1rem 0;
+  padding: 0 0 1rem 0;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 16px;
+}
+
+section.blog-post:last-child > article {
+  margin: 1rem 0;
 }
 
 section.blog-post iframe {
@@ -382,36 +425,80 @@ section.contact form fieldset section p {
   text-align: start;
 }
 
-@keyframes input-validation-appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 section.contact form button[type=submit] {
   margin-top: 0.5rem;
 }
 
+footer.Footer {
+  grid-area: foot;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  font-family: "Work Sans", Sans-serif;
+}
+
+footer.Footer nav {
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+
+footer.Footer iframe#locationIframe {
+  margin-top: 0.5rem;
+  padding: 0;
+  width: calc(320px - 3rem);
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+}
+
+footer.Footer h3 + ul {
+  padding: 0.5rem;
+}
+
+footer.Footer section {
+  padding: 0 0 0 1rem;
+}
+
 @media screen and (min-width: 768px) {
-  nav.Nav {
+  nav.Nav > section {
+    justify-self: center;
+    width: 768px;
     grid-template-areas: "logo list";
     grid-template-rows: auto;
     grid-template-columns: min-content max-content;
   }
-  nav.Nav > ul, nav.Nav > ul.open, nav.Nav > ul.close, nav.Nav > ul.opened {
+  nav.Nav ul, nav.Nav ul.open, nav.Nav ul.close, nav.Nav ul.opened {
     display: flex;
     transform: none;
     position: static;
     flex-flow: row nowrap;
-    animation: none;
+    animation: no;
     align-self: center;
     justify-self: center;
     background-color: rgba(0, 0, 0, 0);
   }
+  header.Header > section {
+    width: 768px;
+  }
+  section.eresume, section.blog, section.about, section.contact, footer.Footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    min-width: 768px;
+  }
+  section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav {
+    width: 768px;
+  }
   img.menu-chevron, section.menu-chevron-container {
     display: none;
+  }
+  footer.Footer nav {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  footer.Footer > nav section {
+    padding: 1rem 1rem 1rem 0;
   }
 }
 
