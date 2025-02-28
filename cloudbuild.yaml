@@ -8,4 +8,4 @@ steps:
   args: [ 'builds', 'submit', '--tag', 'gcr.io/piccione-dev/website']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
-  args: ['run', 'deploy', '--image', 'gcr.io/piccione-dev/website']
+  args: ['run', 'deploy', 'piccione-dev', '--image', 'gcr.io/piccione-dev/website']
