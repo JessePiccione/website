@@ -1,4 +1,5 @@
 "use client"
+import formMessage from '@/components/api/formMessage'
 import {useState} from 'react'
 export default function ContactForm(){
     const [isTouched, setIsTouched] = useState(false)
@@ -56,6 +57,8 @@ export default function ContactForm(){
             isValid(checkDescription)
         ) {
             console.log('ready to submit')
+            //disabled due to testing 
+            //formMessage({name, email, description, subject, phone})
         }
     }
     return (
