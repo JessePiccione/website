@@ -19,10 +19,13 @@ export default function ContactForm(){
     const checkPhone = () => {
         if (!isTouched) return null
         if(!phone.length) return '*Required'
-        if(!phone.match(/[0-9]{3}-[0-9]{3}-[0-9]{4}/)){
+        if(!phone.match(/[0-9]{3}[0-9]{3}[0-9]{4}/)){
             return "*Required Format 123-456-7890"
         }
         return ''
+    }
+    const formatPhone = (number) => {
+        return number.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')
     }
     //email state
     const [email, setEmail] = useState('')
@@ -55,11 +58,7 @@ export default function ContactForm(){
             isValid(checkEmail) &&
             isValid(checkSubject) &&
             isValid(checkDescription)
-        ) {
-            console.log('ready to submit')
-            //disabled due to testing 
-            formMessage({name, email, description, subject, phone})
-        }
+        ) {formMessage({name, email, description, subject, phone})}
     }
     return (
         <form onSubmit={handleOnSubmit}>
@@ -72,7 +71,7 @@ export default function ContactForm(){
                 </section>
                 <section>
                     <label htmlFor='phone'>Phone</label>
-                    <input onClick={touch} id='phone' type='tel' placeholder='123-456-7890' value={phone} onChange={onPhoneChange}/>
+                    <input onClick={touch} id='phone' type='tel' placeholder='123-456-7890' maxLength='12' value={formatPhone(phone)} onChange={onPhoneChange}/>
                     <p>{checkPhone()}</p>
                 </section>
                 <section>
