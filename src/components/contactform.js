@@ -58,7 +58,7 @@ export default function ContactForm(){
         ) {
             console.log('ready to submit')
             //disabled due to testing 
-            //formMessage({name, email, description, subject, phone})
+            formMessage({name, email, description, subject, phone})
         }
     }
     return (

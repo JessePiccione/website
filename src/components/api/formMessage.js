@@ -4,6 +4,9 @@ export default async function formMessage({name, phone, description, email, subj
         'https://jessepiccione-info-backend.ue.r.appspot.com/api/message/',
         {
             method:'POST',
+            headers:{
+                'Authorization': 'Bearer '
+            },
             body:{
                 "name":name,
                 "phone":phone,
