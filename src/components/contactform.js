@@ -42,12 +42,12 @@ export default function ContactForm(){
     const checkSubject = () =>{
         if (!isTouched) return null
         return (subject.length <= 0) ? '*Required' : ''
-    } 
-    //description state
-    const [description, setDescription] = useState('')
-    const onDescriptionChange = (e) => setDescription(e.target.value) 
-    const checkDescription = () =>{
-        return (!isTouched)?null:(description.length <= 0) ? '*Required' : ''
+    }
+    //Message state
+    const [Message, setMessage] = useState('')
+    const onMessageChange = (e) => setMessage(e.target.value) 
+    const checkMessage = () =>{
+        return (!isTouched)?null:(Message.length <= 0) ? '*Required' : ''
     }
     const isValid = (callable) => (callable) ? callable() === '' : false
     const handleOnSubmit = (e) => {
@@ -57,8 +57,20 @@ export default function ContactForm(){
             isValid(checkPhone) &&
             isValid(checkEmail) &&
             isValid(checkSubject) &&
-            isValid(checkDescription)
-        ) {formMessage({name, email, description, subject, phone})}
+            isValid(checkMessage)
+        ) {
+            formMessage({name, email, Message, subject, phone})
+            setIsTouched(false)
+            setName('')
+            setPhone('')
+            setEmail('')
+            setSubject('')
+            setMessage('')
+            alert('Thank you for your message. I will get back to you as soon as possible.')
+        }
+        else {
+            alert("Please fill out the form correctly. Thank you.")
+        }
     }
     return (
         <form onSubmit={handleOnSubmit}>
@@ -85,9 +97,9 @@ export default function ContactForm(){
                     <p>{checkSubject()}</p>
                 </section>
                 <section>
-                    <label htmlFor='description'>Description</label>
-                    <textarea onClick={touch} id='description' placeholder='Description' value={description} onChange={onDescriptionChange}></textarea>
-                    <p>{checkDescription()}</p>
+                    <label htmlFor='message'>Message</label>
+                    <textarea onClick={touch} id='message' placeholder='Message' value={Message} onChange={onMessageChange}></textarea>
+                    <p>{checkMessage()}</p>
                 </section>
                 <section>
                     <button onClick={touch} type='submit'>Contact Me</button>
