@@ -45,7 +45,7 @@ export default function ContactForm(){
     }
     //Message state
     const [Message, setMessage] = useState('')
-    const onMessageChange = (e) => setMessage(e.target.value) 
+    const onMessageChange = (e) => setMessage(e.target.value)
     const checkMessage = () =>{
         return (!isTouched)?null:(Message.length <= 0) ? '*Required' : ''
     }
