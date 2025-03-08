@@ -7,4 +7,17 @@ steps:
   args: [ 'push', 'gcr.io/piccione-dev/website:$BUILD_ID']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
-  args: ['run', 'deploy', 'piccione-dev','--region', 'us-east1','--image', 'gcr.io/piccione-dev/website:$BUILD_ID']
+  args:
+    - run
+    - deploy
+    - piccione-dev
+    - --image
+    - gcr.io/piccione-dev/website:$BUILD_ID
+    - --region
+    - us-east1
+  secretEnv: 
+    - BACKEND_API_KEY
+availableSecrets:
+  secretManager:
+  - versionName: projects/piccione-dev/secrets/backend-api-key/versions/latest
+    env: BACKEND_API_KEY
