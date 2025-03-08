@@ -15,9 +15,9 @@ steps:
     - gcr.io/piccione-dev/website:$BUILD_ID
     - --region
     - us-east1
-  secretEnv: 
-    - BACKEND_API_KEY
+  secretEnv:
+    - BACKEND_API_TOKEN
 availableSecrets:
   secretManager:
-  - versionName: projects/piccione-dev/secrets/backend-api-key/versions/latest
-    env: BACKEND_API_KEY
+  - versionName: projects/piccione-dev/secrets/backend-api-token/versions/latest
+    env: BACKEND_API_TOKEN
