@@ -1,12 +1,7 @@
 'use server'
-import {SecretManagerServiceClient} from "@google-cloud/secret-manager"
-const client = new SecretManagerServiceClient()
 export default async function formMessage({name, phone, Message, email, subject}){
     try{
-        const [secretToken] = await client.accessSecretVersion({
-            name: 'projects/643140685725/secrets/backend-api-token/versions/1'
-        })
-        const requestToken = secretToken.payload.data.toString()
+        const requestToken = process.env.BACKEND_API_TOKEN
         const context ={
             "email": email,
             "name": name,

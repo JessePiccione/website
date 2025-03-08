@@ -17,7 +17,7 @@ export default function navlist(props){
                 <a href='#contact'>Contact</a>
             </li>
             <li>
-                <a href='https://backend.piccione.dev/admin'>Portal</a>
+                <a href='https://portal.piccione.dev/'>Portal</a>
             </li>
         </ul>
     )
