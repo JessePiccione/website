@@ -1,6 +1,6 @@
 import Post from '@/components/postsmall'
 export default async function Blog(){
-    let posts =  await fetch('https://jessepiccione-info-backend.ue.r.appspot.com/api/home/').then(res=>res.json())
+    let posts =  await fetch('https://portal.piccione.dev/api/home/').then(res=>res.json())
     return (
         <section id='blog' className='blog'>
             <article>

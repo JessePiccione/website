@@ -1,7 +1,7 @@
 export default async function ProjectCard(){
     let projects;
     try{
-        projects = await fetch('https://jessepiccione-info-backend.ue.r.appspot.com/api/projects/').then(res=>res.json())
+        projects = await fetch('https://portal.piccione.dev/api/projects/').then(res=>res.json())
     }
     catch(error){
         projects = error

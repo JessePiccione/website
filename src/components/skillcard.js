@@ -1,5 +1,5 @@
 export default async function SkillCard(){
-    const skills = await fetch('https://jessepiccione-info-backend.ue.r.appspot.com/api/skill/category/').then(res=>res.json()) 
+    const skills = await fetch('https://portal.piccione.dev/api/skill/category/').then(res=>res.json())
     return (
         <section className='card'>
             <h3>Relevant Skills</h3>
