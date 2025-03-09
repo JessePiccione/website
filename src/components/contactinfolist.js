@@ -10,9 +10,9 @@ export default function ContactInfoList(){
                 </a>
             </li>
             <li key='emailContact'>
-                <a href='mailto:jessepiccione@gmail.com'>
+                <a href='mailto:jesse@piccione.dev'>
                     <FontAwesomeIcon icon={faEnvelope}/>
-                    &nbsp;JessePiccione@gmail.com
+                    &nbsp;jesse@piccione.dev
                 </a>
             </li>
             <li key='location'>
