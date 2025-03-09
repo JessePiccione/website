@@ -1,5 +1,5 @@
 'use server'
-export default async function formMessage({name, phone, Message, email, subject}){
+export default async function formMessage({name, phone, message, email, subject}){
     try{
         const requestToken = process.env.BACKEND_API_TOKEN
         const context ={
@@ -7,7 +7,7 @@ export default async function formMessage({name, phone, Message, email, subject}
             "name": name,
             "phone": phone,
             "subject": subject,
-            "message": Message
+            "message": message
         }
         await fetch(
             'https://portal.piccione.dev/api/message/',
@@ -19,7 +19,7 @@ export default async function formMessage({name, phone, Message, email, subject}
                 },
                 body: JSON.stringify(context)
             }
-        ).then(res=>res.json()).then(res=>console.log(res))
+        ).then(res=>res.text()).then(res=>console.log(res))
     }
     catch(error){
         console.log(error.message)

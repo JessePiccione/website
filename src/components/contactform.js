@@ -44,10 +44,10 @@ export default function ContactForm(){
         return (subject.length <= 0) ? '*Required' : ''
     }
     //Message state
-    const [Message, setMessage] = useState('')
+    const [message, setMessage] = useState('')
     const onMessageChange = (e) => setMessage(e.target.value)
     const checkMessage = () =>{
-        return (!isTouched)?null:(Message.length <= 0) ? '*Required' : ''
+        return (!isTouched)?null:(message.length <= 0) ? '*Required' : ''
     }
     const isValid = (callable) => (callable) ? callable() === '' : false
     const handleOnSubmit = (e) => {
@@ -59,7 +59,7 @@ export default function ContactForm(){
             isValid(checkSubject) &&
             isValid(checkMessage)
         ) {
-            formMessage({name, email, Message, subject, phone})
+            formMessage({name, email, message, subject, phone})
             setIsTouched(false)
             setName('')
             setPhone('')
@@ -98,7 +98,7 @@ export default function ContactForm(){
                 </section>
                 <section>
                     <label htmlFor='message'>Message</label>
-                    <textarea onClick={touch} id='message' placeholder='Message' value={Message} onChange={onMessageChange}></textarea>
+                    <textarea onClick={touch} id='message' placeholder='Message' value={message} onChange={onMessageChange}></textarea>
                     <p>{checkMessage()}</p>
                 </section>
                 <section>
