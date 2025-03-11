@@ -460,6 +460,35 @@ footer.Footer section {
   padding: 0 0 0 1rem;
 }
 
+section#fullResume {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  z-index: 15;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+}
+
+section#fullResume article {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  overflow-y: scroll;
+  background-color: #ecf0f1;
+}
+
+section#fullResume p {
+  margin: 0;
+  max-width: 100%;
+}
+
+section#fullResume li {
+  font-family: "Work Sans", Sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 768px) {
   nav.Nav > section {
     justify-self: center;
@@ -487,7 +516,7 @@ footer.Footer section {
     justify-content: center;
     min-width: 768px;
   }
-  section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav {
+  section#fullResume > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume {
     width: 768px;
   }
   img.menu-chevron, section.menu-chevron-container {

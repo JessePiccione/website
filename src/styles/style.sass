@@ -340,6 +340,27 @@ footer.Footer h3 + ul
     padding: calc($margin / 2)
 footer.Footer section
     padding: 0 0 0 $margin
+section#fullResume
+    display: flex
+    position: fixed
+    justify-content: center
+    z-index: 15
+    width: 100vw
+    height: 100vh
+    top: 0
+section#fullResume article
+        position: relative
+        display: flex
+        flex-flow: row wrap
+        overflow-y: scroll
+        background-color: $highlight-offwhite
+section#fullResume p
+        margin: 0
+        max-width: 100%
+section#fullResume li
+        font-family: $secondary-font
+        font-size: 18px
+        font-weight: 500
 $width: 768px
 @media screen and (min-width: $width)
     nav.Nav > section
@@ -364,7 +385,7 @@ $width: 768px
         flex-flow: row nowrap
         justify-content: center
         min-width: $width
-    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav
+    section#fullResume > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
     img.menu-chevron, section.menu-chevron-container
         display: none
