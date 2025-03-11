@@ -1,12 +1,13 @@
 "use client"
-import getData from '@/components/api/getData.js'
+import getData from '@/components/api/getData'
+import Certification from '@/components/fullresume/certification'
 import {useEffect, useState} from 'react'
 export default function FullResume(){
-    const [award, setAward] = useState(null)
-    const [education, setEducation] = useState(null)
-    const [skill, setSkill] = useState(null)
-    const [project, setProject] = useState(null)
-    const [experience, setExperience] = useState(null)
+    const [award, setAward] = useState([])
+    const [education, setEducation] = useState([])
+    const [skill, setSkill] = useState([])
+    const [project, setProject] = useState([])
+    const [experience, setExperience] = useState([])
     async function getResumeData(){
         setAward(await getData('api/award/category/'))
         setEducation(await getData('api/education/'))
@@ -20,23 +21,19 @@ export default function FullResume(){
             <article>
                 <section>
                     <h3>Certifications</h3>
-                    
+                    <Certification certification={award}/>
                 </section>
                 <section>
                     <h3>Education</h3>
-
                 </section>
                 <section>
                     <h3>Skills</h3>
-                    
                 </section>
                 <section>
                     <h3>Project Experience</h3>
-                    
                 </section>
                 <section>
                     <h3>Work Experience</h3>
-                    
                 </section>
             </article>
         </section>
