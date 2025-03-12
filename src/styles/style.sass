@@ -7,7 +7,7 @@ $highlight-offwhite: #ecf0f1
 $margin: 1rem
 $primary-font:'Roboto Serif', Serif
 $secondary-font:'Work Sans', Sans-serif
-$shadow: 0px 4px 4px #00000040
+$shadow: 0px 4px 4px #00000044
 $radius: 16px
 *
     margin: 0
@@ -19,7 +19,7 @@ body
     width: 100%
     display: grid
     grid-template-areas: "nav" "head" "main" "foot"
-    grid-template-rows: auto 1fr auto 1fr
+    grid-template-rows: auto auto auto 1fr
     grid-template-columns: auto
 nav.Nav
     grid-area: nav
@@ -102,9 +102,9 @@ a, a:link
     text-decoration: none
     text-shadow: $shadow
 header.Header
+    width: 100vw
     grid-area: head
     display: flex
-    position: static
     flex-flow: row nowrap
     background-color: $highlight-offwhite
     color: $primary-dark-blue
@@ -116,22 +116,22 @@ header.Header > section
     display: flex
     flex-flow: row wrap
     justify-content: space-between
+    padding: $margin
 img
+    border-radius: $radius
     width: calc((320px - $margin) - $margin)
     height: 400px
     object-fit: cover
     box-shadow: $shadow
-    margin:0
-    padding:0
-header.Header > section > section , header.Header > section > aside
+header.Header aside
+    margin-top: $margin
+header.Header > section > section, header.Header aside
     display: flex
     flex-flow: column wrap
-    margin: $margin
 h1, h2
     text-decoration: none
     font-family: $primary-font
 h1
-    margin: 0
     font-size: 48px
     line-height: 48px
     font-weight: 500
@@ -148,7 +148,6 @@ p, h3
     font-size: 18px
     letter-spacing: 0
     font-weight: 500
-    max-width: 35ch
     margin: $margin 0
 h3
     font-size: 20px
@@ -174,14 +173,16 @@ section.eresume
     box-shadow: $shadow
     z-index: 10
 section.eresume > article
+    width: calc(100% - (2*$margin))
     display: flex
     flex-flow: row wrap
     justify-content: space-between
     color: $highlight-offwhite
     text-shadow: $shadow
+    margin: $margin
     padding: 0
-section.eresume > article > section, section.eresume > article > aside
-    margin: $margin 
+section.eresume aside
+    margin-top: $margin
 section.eresume hr
     border: 1px solid $secondary-orange
 section.card:first-child
@@ -191,7 +192,7 @@ section.card
     padding: $margin
     border-radius: $radius
     box-shadow: $shadow
-    width: calc( 320px - 4rem )
+    width: calc( 100vw - 4rem)
 section.card ul 
     background-color: $primary-dark-blue
     border: 1px solid $secondary-orange
@@ -215,16 +216,19 @@ section.blog
     border-color: $primary-dark-blue
     z-index: 9
     box-shadow: inset 0 -4px 4px #00000040
+section.blog > article
+    display: flex
+    flex-flow: column nowrap
 section.blog button
     margin-top: $margin
 section.blog ul
-    width: calc( 100vw - (2 * $margin))
+    max-width: calc( 100vw - (2 * $margin))
     display: flex
     overflow-x: scroll
     overflow-y: visible
     flex-flow: row nowrap
 section.blog-post > article
-    width: calc(320px - 2 * $margin)
+    width: calc(320px - ( 2*$margin))
     margin: $margin $margin $margin 0
     padding: 0 0 $margin 0
     background-color: $primary-dark-blue
@@ -294,14 +298,13 @@ section.contact fieldset
 section.contact form fieldset section
     display: flex
     flex-flow: row wrap
-    width: calc( 320px - 2rem)
     justify-content: space-between
 section.contact form fieldset textarea, section.contact form fieldset input
     flex: 1.7
     font-family: $secondary-font
     padding: $margin
-    min-width: calc( 320px - 4rem )
-    max-width: calc( 320px - 4rem )
+    min-width: calc( 100% - 2rem )
+    max-width: calc( 100% - 2rem )
     border-radius: $radius
     border: none
     box-shadow: $shadow
@@ -341,26 +344,80 @@ footer.Footer h3 + ul
 footer.Footer section
     padding: 0 0 0 $margin
 section#fullResume
-    display: flex
+    display: none
     position: fixed
-    justify-content: center
+    flex-flow: column
+    align-items: center
     z-index: 15
     width: 100vw
     height: 100vh
     top: 0
-section#fullResume article
-        position: relative
+    background-color: #00000044
+@keyframes slide-in-up
+    0%
+        transform: translateY(100vh)
+    100%
+        transform: translateY(0)
+section#fullResume > article
+    position: relative
+    display: flex
+    flex-flow: row wrap
+    overflow-y: scroll
+    background-color: $highlight-offwhite
+    box-shadow: $shadow
+.slide-in-animation
+    display: flex
+    animation: slide-in-up 0.25s ease
+    animation-fill-mode: backwards
+    animation-delay: 0.45s
+.slide-out-animation
+    display: flex
+    animation: slide-in-up 0.25s ease reverse
+    animation-fill-mode: forwards
+section#fullResume p
+    margin: 0
+    max-width: 100%
+section#fullResume li
+    font-family: $secondary-font
+    font-size: 18px
+    font-weight: 500
+    margin: calc($margin / 2)
+button.fullResumeCloseButton
+    position: absolute
+    height: min-content
+    line-height: 0
+    background-color: none
+    right: $margin
+    top: $margin
+$width: 375px
+@media screen and (min-width: $width)
+    section.eresume aside
+        width: 100%
         display: flex
         flex-flow: row wrap
-        overflow-y: scroll
-        background-color: $highlight-offwhite
-section#fullResume p
-        margin: 0
-        max-width: 100%
-section#fullResume li
-        font-family: $secondary-font
-        font-size: 18px
-        font-weight: 500
+$width: 425px
+@media screen and (min-width: $width)
+    img
+        width: calc(100vw - (2*$margin))
+        max-width: 500px
+    header.Header aside
+        margin: $margin 0 0 0
+    section.card
+        max-width: 375px
+
+$width: 672px
+@media screen and (min-width: $width)
+    section.eresume aside 
+        justify-content: space-between
+    section.card
+        width: calc(320px - (3*$margin))
+    section.card:first-child
+        margin-bottom: 0
+        margin-right: calc($margin / 2)
+    section.card:last-child
+        margin-left: calc($margin / 2)
+    section.blog-post > article
+        width: calc(375px - ( 2*$margin))
 $width: 768px
 @media screen and (min-width: $width)
     nav.Nav > section
@@ -380,12 +437,15 @@ $width: 768px
         background-color: #00000000
     header.Header > section
         width: $width
-    section.eresume, section.blog, section.about, section.contact, footer.Footer
+    section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header
         display: flex
         flex-flow: row nowrap
         justify-content: center
         min-width: $width
-    section#fullResume > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
+    section#fullResume > article
+        width: calc($width - 2rem)
+        padding: $margin
+    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
     img.menu-chevron, section.menu-chevron-container
         display: none
@@ -394,3 +454,69 @@ $width: 768px
         justify-content: flex-start
     footer.Footer > nav section
         padding: $margin $margin $margin 0
+    img
+        width: calc(320px - ($margin*2))
+        max-width: none
+    section.card
+        width: calc(320px - ($margin*4))
+    section.card:first-child
+        margin-bottom: $margin
+        margin-right: 0
+    section.card:last-child
+        margin-left: 0
+    header.Header p, section.eresume p
+        max-width: 35ch
+    section.eresume aside
+        flex-flow: column nowrap
+        width: fit-content
+$width: 1024px
+@media screen and (min-width: $width)
+    nav.Nav > section
+        justify-self: center
+        width: $width
+        grid-template-areas: 'logo list'
+        grid-template-rows: auto
+        grid-template-columns: min-content max-content
+    nav.Nav ul, nav.Nav ul.open, nav.Nav ul.close, nav.Nav ul.opened
+        display: flex
+        transform: none
+        position: static
+        flex-flow: row nowrap
+        animation: no
+        align-self: center
+        justify-self: center
+        background-color: #00000000
+    header.Header > section
+        width: $width
+    section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        min-width: $width
+    section#fullResume > article
+        width: calc($width - 2rem)
+        padding: $margin
+    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
+        width: $width
+    img.menu-chevron, section.menu-chevron-container
+        display: none
+    footer.Footer nav
+        flex-flow: row nowrap
+        justify-content: flex-start
+    footer.Footer > nav section
+        padding: $margin $margin $margin 0
+    img
+        width: calc(425px - ($margin*2))
+        max-width: none
+    section.card
+        width: calc(425px - ($margin*4))
+    section.card:first-child
+        margin-bottom: $margin
+        margin-right: 0
+    section.card:last-child
+        margin-left: 0
+    header.Header p, section.eresume p
+        max-width: 45ch
+    section.eresume aside
+        flex-flow: column nowrap
+        width: fit-content

@@ -5,6 +5,8 @@ import Education from '@/components/fullresume/education'
 import Skill from '@/components/fullresume/skill'
 import Project from '@/components/fullresume/project'
 import Experience from '@/components/fullresume/experience'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faXmark} from '@fortawesome/free-solid-svg-icons'
 import {useEffect, useState} from 'react'
 export default function FullResume(){
     const [award, setAward] = useState([])
@@ -23,6 +25,9 @@ export default function FullResume(){
     return (
         <section id='fullResume' className='fullResume'>
             <article>
+                <button className='fullResumeCloseButton'>
+                    <FontAwesomeIcon icon={faXmark}/>
+                </button>
                 <section>
                     <h3>Certifications</h3>
                     <Certification certification={award}/>

@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/projectcard";
 import SkillCard from "@/components/skillcard"
-import FullResume from "@/components/fullresume/fullresume"
+
 export default function eresume(){
     return (
         <>
