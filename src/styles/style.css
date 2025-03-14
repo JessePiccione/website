@@ -12,14 +12,14 @@ body {
   width: 100%;
   display: grid;
   grid-template-areas: "nav" "head" "main" "foot";
-  grid-template-rows: auto 1fr auto 1fr;
+  grid-template-rows: auto auto auto 1fr;
   grid-template-columns: auto;
 }
 
 nav.Nav {
   grid-area: nav;
   background-color: #2c3e50;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   z-index: 10;
 }
 
@@ -98,7 +98,7 @@ img.menu-chevron {
   object-fit: fill;
   margin: 2rem;
   box-shadow: none;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2509803922));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2666666667));
   justify-self: end;
   align-self: end;
   transform: rotateZ(90deg);
@@ -126,18 +126,18 @@ a, a:link {
   font-family: "Work Sans", Sans-serif;
   font-size: 18px;
   text-decoration: none;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 header.Header {
+  width: 100vw;
   grid-area: head;
   display: flex;
-  position: static;
   flex-flow: row nowrap;
   background-color: #ecf0f1;
   color: #2c3e50;
   z-index: 9;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   justify-content: center;
   box-shadow: inset 0 -4px 4px rgba(0, 0, 0, 0.2509803922);
 }
@@ -146,21 +146,24 @@ header.Header > section {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 img {
+  border-radius: 16px;
   width: calc(320px - 1rem - 1rem);
   height: 400px;
   object-fit: cover;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-  margin: 0;
-  padding: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
-header.Header > section > section, header.Header > section > aside {
+header.Header aside {
+  margin-top: 1rem;
+}
+
+header.Header > section > section, header.Header aside {
   display: flex;
   flex-flow: column wrap;
-  margin: 1rem;
 }
 
 h1, h2 {
@@ -169,7 +172,6 @@ h1, h2 {
 }
 
 h1 {
-  margin: 0;
   font-size: 48px;
   line-height: 48px;
   font-weight: 500;
@@ -184,7 +186,7 @@ h2 {
 
 hr {
   border: 1px solid #f39C12;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 p, h3 {
@@ -192,7 +194,6 @@ p, h3 {
   font-size: 18px;
   letter-spacing: 0;
   font-weight: 500;
-  max-width: 35ch;
   margin: 1rem 0;
 }
 
@@ -210,7 +211,7 @@ button {
   width: fit-content;
   border-radius: 16px;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   color: #ecf0f1;
 }
 
@@ -223,21 +224,23 @@ main.Main {
 
 section.eresume {
   background-color: #2c3e50;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   z-index: 10;
 }
 
 section.eresume > article {
+  width: calc(100% - 2rem);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   color: #ecf0f1;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
+  margin: 1rem;
   padding: 0;
 }
 
-section.eresume > article > section, section.eresume > article > aside {
-  margin: 1rem;
+section.eresume aside {
+  margin-top: 1rem;
 }
 
 section.eresume hr {
@@ -252,8 +255,8 @@ section.card {
   background-color: #2980B9;
   padding: 1rem;
   border-radius: 16px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-  width: calc(320px - 4rem);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
+  width: calc(100vw - 4rem);
 }
 
 section.card ul {
@@ -262,7 +265,7 @@ section.card ul {
   border-radius: 16px;
   margin: 0.5rem 0 0 0;
   padding: 1rem;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 li {
@@ -279,10 +282,15 @@ section.blog {
   flex-flow: row wrap;
   background-color: #ecf0f1;
   color: #2c3e50;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   border-color: #2c3e50;
   z-index: 9;
   box-shadow: inset 0 -4px 4px rgba(0, 0, 0, 0.2509803922);
+}
+
+section.blog > article {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 section.blog button {
@@ -290,7 +298,7 @@ section.blog button {
 }
 
 section.blog ul {
-  width: calc(100vw - 2rem);
+  max-width: calc(100vw - 2rem);
   display: flex;
   overflow-x: scroll;
   overflow-y: visible;
@@ -303,7 +311,7 @@ section.blog-post > article {
   padding: 0 0 1rem 0;
   background-color: #2c3e50;
   color: #ecf0f1;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   border-radius: 16px;
 }
 
@@ -315,7 +323,7 @@ section.blog-post iframe {
   width: 100%;
   border-radius: 16px 16px 0 0;
   border: 0 none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 section.blog-post p {
@@ -351,7 +359,7 @@ section.blog-post h3 {
 
 section.blog-post button {
   box-shadow: none;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   background-color: rgba(0, 0, 0, 0);
   font-weight: 500;
   margin: 0;
@@ -362,17 +370,17 @@ section.blog-post button {
 section.about {
   background-color: #2c3e50;
   color: #ecf0f1;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
   height: 500px;
   overflow-y: scroll;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 section.contact {
   background-color: #f39C12;
   color: #2c3e50;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 section > article {
@@ -394,7 +402,6 @@ section.contact fieldset {
 section.contact form fieldset section {
   display: flex;
   flex-flow: row wrap;
-  width: calc(320px - 2rem);
   justify-content: space-between;
 }
 
@@ -402,11 +409,11 @@ section.contact form fieldset textarea, section.contact form fieldset input {
   flex: 1.7;
   font-family: "Work Sans", Sans-serif;
   padding: 1rem;
-  min-width: calc(320px - 4rem);
-  max-width: calc(320px - 4rem);
+  min-width: calc(100% - 2rem);
+  max-width: calc(100% - 2rem);
   border-radius: 16px;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
 section.contact form label {
@@ -461,21 +468,55 @@ footer.Footer section {
 }
 
 section#fullResume {
-  display: flex;
+  display: none;
   position: fixed;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
   z-index: 15;
   width: 100vw;
   height: 100vh;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.2666666667);
 }
 
-section#fullResume article {
+@keyframes slide-in-up {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+section#fullResume > article {
   position: relative;
   display: flex;
   flex-flow: row wrap;
   overflow-y: scroll;
   background-color: #ecf0f1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
+}
+
+section#fullResume.open {
+  display: flex;
+  animation: slide-in-up 0.25s ease;
+  animation-fill-mode: backwards;
+  animation-delay: 0.45s;
+}
+
+section#fullResume.opened {
+  display: flex;
+  animation: none;
+}
+
+section#fullResume.close {
+  display: flex;
+  animation: slide-in-up 0.25s ease reverse;
+  animation-fill-mode: forwards;
+}
+
+section#fullResume.closed {
+  display: none;
+  animation: none;
 }
 
 section#fullResume p {
@@ -487,8 +528,55 @@ section#fullResume li {
   font-family: "Work Sans", Sans-serif;
   font-size: 18px;
   font-weight: 500;
+  margin: 0.5rem;
 }
 
+button.fullResumeCloseButton {
+  position: absolute;
+  height: min-content;
+  line-height: 0;
+  background-color: none;
+  right: 1rem;
+  top: 1rem;
+}
+
+@media screen and (min-width: 375px) {
+  section.eresume aside {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+@media screen and (min-width: 425px) {
+  img {
+    width: calc(100vw - 2rem);
+    max-width: 500px;
+  }
+  header.Header aside {
+    margin: 1rem 0 0 0;
+  }
+  section.card {
+    max-width: 375px;
+  }
+}
+@media screen and (min-width: 672px) {
+  section.eresume aside {
+    justify-content: space-between;
+  }
+  section.card {
+    width: calc(320px - 3rem);
+  }
+  section.card:first-child {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
+  section.card:last-child {
+    margin-left: 0.5rem;
+  }
+  section.blog-post > article {
+    width: calc(375px - 2rem);
+  }
+}
 @media screen and (min-width: 768px) {
   nav.Nav > section {
     justify-self: center;
@@ -510,13 +598,17 @@ section#fullResume li {
   header.Header > section {
     width: 768px;
   }
-  section.eresume, section.blog, section.about, section.contact, footer.Footer {
+  section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     min-width: 768px;
   }
-  section#fullResume > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume {
+  section#fullResume > article {
+    width: calc(768px - 2rem);
+    padding: 1rem;
+  }
+  section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume {
     width: 768px;
   }
   img.menu-chevron, section.menu-chevron-container {
@@ -528,6 +620,93 @@ section#fullResume li {
   }
   footer.Footer > nav section {
     padding: 1rem 1rem 1rem 0;
+  }
+  img {
+    width: calc(320px - 2rem);
+    max-width: none;
+  }
+  section.card {
+    width: calc(320px - 4rem);
+  }
+  section.card:first-child {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  section.card:last-child {
+    margin-left: 0;
+  }
+  header.Header p, section.eresume p {
+    max-width: 35ch;
+  }
+  section.eresume aside {
+    flex-flow: column nowrap;
+    width: fit-content;
+  }
+}
+@media screen and (min-width: 1024px) {
+  nav.Nav > section {
+    justify-self: center;
+    width: 1024px;
+    grid-template-areas: "logo list";
+    grid-template-rows: auto;
+    grid-template-columns: min-content max-content;
+  }
+  nav.Nav ul, nav.Nav ul.open, nav.Nav ul.close, nav.Nav ul.opened {
+    display: flex;
+    transform: none;
+    position: static;
+    flex-flow: row nowrap;
+    animation: no;
+    align-self: center;
+    justify-self: center;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  header.Header > section {
+    width: 1024px;
+  }
+  section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    min-width: 1024px;
+  }
+  section#fullResume > article {
+    width: calc(1024px - 2rem);
+    padding: 1rem;
+  }
+  section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume {
+    width: 1024px;
+  }
+  img.menu-chevron, section.menu-chevron-container {
+    display: none;
+  }
+  footer.Footer nav {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  footer.Footer > nav section {
+    padding: 1rem 1rem 1rem 0;
+  }
+  img {
+    width: calc(425px - 2rem);
+    max-width: none;
+  }
+  section.card {
+    width: calc(425px - 4rem);
+  }
+  section.card:first-child {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  section.card:last-child {
+    margin-left: 0;
+  }
+  header.Header p, section.eresume p {
+    max-width: 45ch;
+  }
+  section.eresume aside {
+    flex-flow: column nowrap;
+    width: fit-content;
   }
 }
 

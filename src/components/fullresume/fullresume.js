@@ -1,12 +1,16 @@
 "use client"
 import getData from '@/components/api/getData'
+import {resumeState} from '@/components/providers/fullresumestate'
 import Certification from '@/components/fullresume/certification'
 import Education from '@/components/fullresume/education'
 import Skill from '@/components/fullresume/skill'
 import Project from '@/components/fullresume/project'
 import Experience from '@/components/fullresume/experience'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faXmark} from '@fortawesome/free-solid-svg-icons'
 import {useEffect, useState} from 'react'
 export default function FullResume(){
+    const {display, toggleDisplay} = resumeState()
     const [award, setAward] = useState([])
     const [education, setEducation] = useState([])
     const [skill, setSkill] = useState([])
@@ -21,8 +25,15 @@ export default function FullResume(){
     }
     useEffect(()=>{getResumeData()},[])
     return (
-        <section id='fullResume' className='fullResume'>
+        <section id='fullResume' className={display}
+        onAnimationEnd={toggleDisplay}>
             <article>
+                <button 
+                    className='fullResumeCloseButton'
+                    onClick={toggleDisplay}
+                 >
+                    <FontAwesomeIcon icon={faXmark}/>
+                </button>
                 <section>
                     <h3>Certifications</h3>
                     <Certification certification={award}/>

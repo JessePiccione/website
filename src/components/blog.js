@@ -4,7 +4,7 @@ export default async function Blog(){
     return (
         <section id='blog' className='blog'>
             <article>
-                <h1>Blog Postings</h1>
+                <h1>Blog Posts</h1>
                 <h2>Featured Posts</h2>
                 <hr/>
                 <ul>

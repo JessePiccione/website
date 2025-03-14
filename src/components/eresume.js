@@ -1,6 +1,8 @@
+
+
 import ProjectCard from "@/components/projectcard";
 import SkillCard from "@/components/skillcard"
-import FullResume from "@/components/fullresume/fullresume"
+import OpenResumeButton from '@/components/fullresume/openresumebutton'
 export default function eresume(){
     return (
         <>
@@ -17,7 +19,7 @@ export default function eresume(){
                             Thanks to the Django Back-End server and MySQL database; employers,
                             clients and peers can view live and current resume data 24 / 7.
                         </p>
-                        <button>See Full Resume</button>
+                        <OpenResumeButton/>
                     </section>
                     <aside>
                         <SkillCard/>
