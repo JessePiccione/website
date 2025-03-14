@@ -496,17 +496,27 @@ section#fullResume > article {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
 }
 
-.slide-in-animation {
+section#fullResume.open {
   display: flex;
   animation: slide-in-up 0.25s ease;
   animation-fill-mode: backwards;
   animation-delay: 0.45s;
 }
 
-.slide-out-animation {
+section#fullResume.opened {
+  display: flex;
+  animation: none;
+}
+
+section#fullResume.close {
   display: flex;
   animation: slide-in-up 0.25s ease reverse;
   animation-fill-mode: forwards;
+}
+
+section#fullResume.closed {
+  display: none;
+  animation: none;
 }
 
 section#fullResume p {

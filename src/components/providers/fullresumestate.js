@@ -1,3 +1,4 @@
+"use client"
 import {useContext, createContext, useReducer} from 'react'
 const FullResumeStateContext = createContext()
 export default function FullResumeState({children}){
@@ -9,12 +10,14 @@ export default function FullResumeState({children}){
     )
 }
 function toggleDrawer(previousState, {command}){
-    switch (command) {
+    switch (previousState) {
         case 'open':
+            return 'opened'
+        case 'opened':
             return 'close'
         case 'close':
             return 'closed'
-        default:
+        case 'closed':
             return 'open'
     }
 }

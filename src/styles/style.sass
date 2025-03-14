@@ -365,15 +365,21 @@ section#fullResume > article
     overflow-y: scroll
     background-color: $highlight-offwhite
     box-shadow: $shadow
-.slide-in-animation
+section#fullResume.open
     display: flex
     animation: slide-in-up 0.25s ease
     animation-fill-mode: backwards
     animation-delay: 0.45s
-.slide-out-animation
+section#fullResume.opened
+    display: flex
+    animation: none 
+section#fullResume.close
     display: flex
     animation: slide-in-up 0.25s ease reverse
     animation-fill-mode: forwards
+section#fullResume.closed
+    display: none 
+    animation: none 
 section#fullResume p
     margin: 0
     max-width: 100%
