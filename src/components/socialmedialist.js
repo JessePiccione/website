@@ -4,25 +4,25 @@ export default function SocialMediaList(){
     return (
         <ul>
             <li key='linkedin'>
-                <a src='https://www.linkedin.com/in/jesse-piccione'>
+                <a href='https://www.linkedin.com/in/jesse-piccione'>
                     <FontAwesomeIcon icon={faLinkedin}/>
                     &nbsp;LinkedIn
                 </a>
             </li>
             <li key='github'>
-                <a src='https://www.github.com/jessepiccione'>
+                <a href='https://www.github.com/jessepiccione'>
                     <FontAwesomeIcon icon={faGithub}/>
                     &nbsp;Github
                 </a>
             </li>
             <li key='facebook'>
-                <a src='https://www.facebook.com/jesse.piccione'>
+                <a href='https://www.facebook.com/jesse.piccione'>
                     <FontAwesomeIcon icon={faFacebook}/>
                     &nbsp;Facebook
                 </a>
             </li>
             <li key='instagram'>
-                <a src='https://wwww.instagram.com/jessepiccione'>
+                <a href='https://wwww.instagram.com/jessepiccione'>
                     <FontAwesomeIcon icon={faInstagram}/>
                     &nbsp;Instagram
                 </a>
