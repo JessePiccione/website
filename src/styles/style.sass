@@ -25,7 +25,7 @@ nav.Nav
     grid-area: nav
     background-color: $primary-dark-blue
     box-shadow: $shadow
-    z-index:10
+    z-index: 2
 nav.Nav > section
     display: grid
     grid-template-areas: "logo menu" "list list"
@@ -63,12 +63,12 @@ nav.Nav img.close
 section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
     background-color: $primary-dark-blue
-    width:100%
-    height:100%
+    width: 100%
+    height: 100%
     display: flex
     justify-content: flex-end
     align-content: flex-end
-    z-index:10
+    z-index: 1
 section.menu-logo-container
     grid-area: logo
     justify-content: flex-start
@@ -108,7 +108,7 @@ header.Header
     flex-flow: row nowrap
     background-color: $highlight-offwhite
     color: $primary-dark-blue
-    z-index: 9
+    z-index: 1
     text-shadow: $shadow
     justify-content: center
     box-shadow: inset 0 -4px 4px #00000040
@@ -143,12 +143,14 @@ h2
 hr
     border: 1px solid $secondary-orange
     box-shadow: $shadow
-p, h3
+p, h3, strong
     font-family: $secondary-font
     font-size: 18px
     letter-spacing: 0
     font-weight: 500
     margin: $margin 0
+strong
+    font-weight: 600
 h3
     font-size: 20px
     font-weight: 600
@@ -171,7 +173,7 @@ main.Main
 section.eresume
     background-color: $primary-dark-blue
     box-shadow: $shadow
-    z-index: 10
+    z-index: 1
 section.eresume > article
     width: calc(100% - (2*$margin))
     display: flex
@@ -193,7 +195,7 @@ section.card
     border-radius: $radius
     box-shadow: $shadow
     width: calc( 100vw - 4rem)
-section.card ul 
+section.card ul
     background-color: $primary-dark-blue
     border: 1px solid $secondary-orange
     border-radius: 16px
@@ -214,7 +216,7 @@ section.blog
     color: $primary-dark-blue
     text-shadow: $shadow
     border-color: $primary-dark-blue
-    z-index: 9
+    z-index: 2
     box-shadow: inset 0 -4px 4px #00000040
 section.blog > article
     display: flex
@@ -227,6 +229,7 @@ section.blog ul
     overflow-x: scroll
     overflow-y: visible
     flex-flow: row nowrap
+    position: relative
 section.blog-post > article
     width: calc(320px - ( 2*$margin))
     margin: $margin $margin $margin 0
@@ -275,6 +278,18 @@ section.blog-post button
     margin: 0
     padding: 0
     color: $primary-dark-blue
+section.blog-post.big > article
+    position: fixed
+    z-index: 2
+    top: 0
+    height: calc(100vh - 4rem)
+    width: calc(100vw - 2rem)
+    overflow: scroll
+section.blog-post.big section
+    display: flex
+    flex-flow: column nowrap
+section.blog-post.big  p 
+    -webkit-line-clamp: revert
 section.about
     background-color: $primary-dark-blue
     color: $highlight-offwhite
@@ -327,7 +342,7 @@ footer.Footer
     background-color: $primary-dark-blue
     color: $highlight-offwhite
     font-family: $secondary-font
-footer.Footer nav 
+footer.Footer nav
     margin: 0
     display: flex
     flex-flow: column wrap
@@ -348,7 +363,7 @@ section#fullResume
     position: fixed
     flex-flow: column
     align-items: center
-    z-index: 15
+    z-index: 2
     width: 100vw
     height: 100vh
     top: 0
@@ -372,14 +387,14 @@ section#fullResume.open
     animation-delay: 0.45s
 section#fullResume.opened
     display: flex
-    animation: none 
+    animation: none
 section#fullResume.close
     display: flex
     animation: slide-in-up 0.25s ease reverse
     animation-fill-mode: forwards
 section#fullResume.closed
-    display: none 
-    animation: none 
+    display: none
+    animation: none
 section#fullResume p
     margin: 0
     max-width: 100%
