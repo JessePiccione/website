@@ -1,7 +1,7 @@
 "use client"
-import {resumeState} from '@/components/providers/fullresumestate'
+import {ResumeState} from '@/components/providers/fullresumestate'
 export default function FullResumeButton(){
-    const {toggleDisplay} = resumeState()
+    const {toggleDisplay} = ResumeState()
     return (
         <button onClick={toggleDisplay}>
             See Full Resume

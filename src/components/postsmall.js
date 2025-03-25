@@ -1,7 +1,7 @@
 "use client"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
-import {useReducer} from 'react'
+import {useReducer, useEffect} from 'react'
 
 export function toggleSizeState(previousState, args){
     switch (previousState){
@@ -18,6 +18,7 @@ export default function Post({technologies, title, description, URL}){
     const handleClick = (e) => {
         e.preventDefault()
         togglePostSize()
+        document.body.style.overflowY = (!postSize==='big')?'auto':'hidden'
     }
     return (
         <section className={`blog-post ${postSize}`}>
