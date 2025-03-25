@@ -28,7 +28,7 @@ export default function FullResume(){
         <section id='fullResume' className={display}
         onAnimationEnd={toggleDisplay}>
             <article>
-                <button 
+                <button
                     className='fullResumeCloseButton'
                     onClick={toggleDisplay}
                  >
