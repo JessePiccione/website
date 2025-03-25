@@ -21,4 +21,4 @@ function toggleDrawer(previousState, {command}){
             return 'open'
     }
 }
-export const resumeState = () => useContext(FullResumeStateContext)
+export const ResumeState = () => useContext(FullResumeStateContext)

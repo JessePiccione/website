@@ -26,11 +26,9 @@ export default function Post({technologies, title, description, URL}){
                 <section>
                     <h3>{title}</h3>
                     <p>{description}</p>
-                    <p>
-                        <button onClick={handleClick}>
+                    <p onClick={handleClick}>
                             {(postSize==='big')?'See More':'See Less'}
-                            <FontAwesomeIcon className='fontAwesomeIcon' icon={(postSize==='small')?faAngleDown:faAngleUp} />
-                        </button>
+                            <FontAwesomeIcon icon={(postSize==='small')?faAngleDown:faAngleUp} />
                     </p>
                 </section>
             </article>
