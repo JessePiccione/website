@@ -42,3 +42,4 @@ next-env.d.ts
 adc.json
 src/styles/style.css
 src/styles/style.css.map
+.devcontainer/devcontainer.json

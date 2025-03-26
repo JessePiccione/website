@@ -23,12 +23,12 @@ export default function Post({technologies, title, description, URL}){
     return (
         <section className={`blog-post ${postSize}`}>
             <article>
-                <iframe title={title} src={URL}></iframe>
+                <iframe title={title} src={URL} sandbox="allow-scripts allow-same-origin"></iframe>
                 <section>
                     <h3>{title}</h3>
                     <p>{description}</p>
                     <p onClick={handleClick}>
-                            {(postSize!=='big')?'See More':'See Less'} <FontAwesomeIcon icon={(postSize==='small')?faAngleDown:faAngleUp} />
+                            {(postSize!=='big')?'See More':'See Less'} <FontAwesomeIcon icon={(postSize!=='big')?faAngleDown:faAngleUp} />
                     </p>
                 </section>
             </article>

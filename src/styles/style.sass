@@ -202,13 +202,19 @@ section.card
     box-shadow: $shadow
     width: calc( 100vw - 4rem)
 section.card ul
+    display: flex
+    flex-flow: column nowrap
+    overflow: scroll
+    height: 100px
     background-color: $primary-dark-blue
     border: 1px solid $secondary-orange
     border-radius: $radius
-    margin: calc($margin / 2) 0 0 0
-    padding: $margin
+    margin: $margin-half 0 0 0
+    padding: $margin-half $margin
     box-shadow: inset $shadow
 li
+    overflow: clip
+    text-overflow: none
     list-style-type: none
     font-family: $secondary-font
     font-size: 18px
@@ -383,7 +389,7 @@ section#fullResume
 section#fullResume > article
     position: relative
     display: flex
-    flex-flow: row wrap
+    flex-flow: column nowrap
     overflow-y: scroll
     background-color: $highlight-offwhite
     box-shadow: $shadow
