@@ -83,7 +83,7 @@ img.menu-chevron
     width: 20px
     height: 40px
     object-fit: fill
-    margin: 2rem
+    margin: $margin-double
     box-shadow: none
     filter: drop-shadow($shadow)
     justify-self: end
@@ -125,7 +125,7 @@ header.Header > section
     padding: $margin
 img
     border-radius: $radius
-    width: calc((320px - $margin) - $margin)
+    width: calc(320px - $margin-double)
     height: 400px
     object-fit: cover
     box-shadow: $shadow
@@ -227,10 +227,8 @@ section.blog
 section.blog > article
     display: flex
     flex-flow: column nowrap
-section.blog button
-    margin-top: $margin
 section.blog ul
-    max-width: calc( 100vw - $margin-double)
+    max-width: calc(100vw - $margin-double)
     display: flex
     overflow-x: scroll
     overflow-y: visible
@@ -243,6 +241,7 @@ section.blog-post
 section.blog-post > article
     width: calc(320px - ($margin-double))
     margin: $margin $margin $margin 0
+    padding-bottom: $margin
     background-color: $primary-dark-blue
     color: $highlight-offwhite
     box-shadow: $shadow
@@ -262,12 +261,27 @@ section.blog-post p
     font-size: 18px
     font-weight: 400
     color: $primary-dark-blue
-section.blog-post.big > article
+section.blog-post p:last-child
+    font-weight: 500
+section.blog-post svg
+    color: $primary-light-blue
+section.blog-post.big
+    width: 100%
+    height: 100%
+    display: flex
     position: fixed
+    align-items: center
+    justify-content: center
+    background-color: #00000044
     z-index: 2
     top: 0
-    max-height: calc(100vh - 3rem)
-    width: calc(100vw - 2rem)
+    left: 0
+section.blog-post.big > article
+    position: relative
+    z-index: 2
+    margin: 0
+    max-height: calc(100vh - $margin-triple)
+    width: calc(100vw - $margin-double)
     overflow: scroll
 section.blog-post section
     display: flex
@@ -275,7 +289,7 @@ section.blog-post section
     border-right: $light-blue-border
     border-left: $light-blue-border
     border-bottom: $light-blue-border
-    margin: -3px $margin $margin $margin
+    margin: -3px $margin 0 $margin
     padding: $margin-half
     background-color: $highlight-offwhite
     color: $primary-dark-blue
@@ -356,7 +370,7 @@ section#fullResume
     position: fixed
     flex-flow: column
     align-items: center
-    z-index: 2
+    z-index: 3
     width: 100vw
     height: 100vh
     top: 0
@@ -421,7 +435,7 @@ $width: 425px
 
 $width: 672px
 @media screen and (min-width: $width)
-    section.eresume aside 
+    section.eresume aside
         justify-content: space-between
     section.card
         width: calc(320px - $margin-triple)
@@ -445,7 +459,7 @@ $width: 768px
         transform: none
         position: static
         flex-flow: row nowrap
-        animation: no
+        animation: none
         align-self: center
         justify-self: center
         background-color: #00000000
@@ -459,7 +473,9 @@ $width: 768px
     section#fullResume > article
         width: calc($width - $margin-double)
         padding: $margin
-    section.blog-post.big > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
+    section.blog-post.big > article
+        width: calc($width - $margin-double)
+    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
     img.menu-chevron, section.menu-chevron-container
         display: none

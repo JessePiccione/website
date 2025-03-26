@@ -35,6 +35,9 @@ export default function FullResume(){
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>
                 <section>
+                    <h1>eResume</h1>
+                </section>
+                <section>
                     <h3>Certifications</h3>
                     <Certification certification={award}/>
                 </section>

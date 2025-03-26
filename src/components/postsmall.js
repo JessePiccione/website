@@ -17,8 +17,8 @@ export default function Post({technologies, title, description, URL}){
     const [postSize, togglePostSize] = useReducer(toggleSizeState, toggleSizeState())
     const handleClick = (e) => {
         e.preventDefault()
+        document.body.style.overflowY = (postSize!=="small")?'scroll':'hidden'
         togglePostSize()
-        document.body.style.overflowY = (!postSize==='big')?'auto':'hidden'
     }
     return (
         <section className={`blog-post ${postSize}`}>
@@ -28,8 +28,7 @@ export default function Post({technologies, title, description, URL}){
                     <h3>{title}</h3>
                     <p>{description}</p>
                     <p onClick={handleClick}>
-                            {(postSize==='big')?'See More':'See Less'}
-                            <FontAwesomeIcon icon={(postSize==='small')?faAngleDown:faAngleUp} />
+                            {(postSize!=='big')?'See More':'See Less'} <FontAwesomeIcon icon={(postSize==='small')?faAngleDown:faAngleUp} />
                     </p>
                 </section>
             </article>

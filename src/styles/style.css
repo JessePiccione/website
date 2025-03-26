@@ -151,7 +151,7 @@ header.Header > section {
 
 img {
   border-radius: 16px;
-  width: calc(320px - 1rem - 1rem);
+  width: calc(320px - 2rem);
   height: 400px;
   object-fit: cover;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
@@ -297,10 +297,6 @@ section.blog > article {
   flex-flow: column nowrap;
 }
 
-section.blog button {
-  margin-top: 1rem;
-}
-
 section.blog ul {
   max-width: calc(100vw - 2rem);
   display: flex;
@@ -318,6 +314,7 @@ section.blog-post * {
 section.blog-post > article {
   width: calc(320px - 2rem);
   margin: 1rem 1rem 1rem 0;
+  padding-bottom: 1rem;
   background-color: #2c3e50;
   color: #ecf0f1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2666666667);
@@ -345,10 +342,31 @@ section.blog-post p {
   color: #2c3e50;
 }
 
-section.blog-post.big > article {
+section.blog-post p:last-child {
+  font-weight: 500;
+}
+
+section.blog-post svg {
+  color: #2980B9;
+}
+
+section.blog-post.big {
+  width: 100%;
+  height: 100%;
+  display: flex;
   position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2666666667);
   z-index: 2;
   top: 0;
+  left: 0;
+}
+
+section.blog-post.big > article {
+  position: relative;
+  z-index: 2;
+  margin: 0;
   max-height: calc(100vh - 3rem);
   width: calc(100vw - 2rem);
   overflow: scroll;
@@ -360,7 +378,7 @@ section.blog-post section {
   border-right: 2px solid #2980B9;
   border-left: 2px solid #2980B9;
   border-bottom: 2px solid #2980B9;
-  margin: -3px 1rem 1rem 1rem;
+  margin: -3px 1rem 0 1rem;
   padding: 0.5rem;
   background-color: #ecf0f1;
   color: #2c3e50;
@@ -477,7 +495,7 @@ section#fullResume {
   position: fixed;
   flex-flow: column;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -595,7 +613,7 @@ button.fullResumeCloseButton {
     transform: none;
     position: static;
     flex-flow: row nowrap;
-    animation: no;
+    animation: none;
     align-self: center;
     justify-self: center;
     background-color: rgba(0, 0, 0, 0);
@@ -613,7 +631,10 @@ button.fullResumeCloseButton {
     width: calc(768px - 2rem);
     padding: 1rem;
   }
-  section.blog-post.big > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume {
+  section.blog-post.big > article {
+    width: calc(768px - 2rem);
+  }
+  section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume {
     width: 768px;
   }
   img.menu-chevron, section.menu-chevron-container {
