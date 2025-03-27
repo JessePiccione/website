@@ -268,19 +268,41 @@ section.blog-post p
     font-weight: 400
     color: $primary-dark-blue
 section.blog-post p:last-child
-    border-bottom: 2px solid $primary-light-blue
-    padding-bottom: calc($margin / 2)
-    border-bottom-left-radius: $radius
-    border-bottom-right-radius: $radius
-section.blog-post h3
-    border-left: 2px solid $primary-light-blue
-    border-right: 2px solid $primary-light-blue
-    color: $primary-dark-blue
-    padding: calc($margin / 2) calc($margin / 2) 0 calc($margin / 2)
+    font-weight: 500
+section.blog-post svg
+    color: $primary-light-blue
+section.blog-post.big
+    width: 100%
+    height: 100%
+    display: flex
+    position: fixed
+    align-items: center
+    justify-content: center
+    background-color: $shadow-color
+    z-index: 2
+    top: 0
+    left: 0
+section.blog-post.big > article
+    position: relative
+    z-index: 2
+    margin: 0
+    max-height: calc(100vh - $margin-triple)
+    width: calc(100vw - $margin-double)
+    overflow: scroll
+section.blog-post section
+    display: flex
+    flex-flow: column nowrap
+    border-right: $light-blue-border
+    border-left: $light-blue-border
+    border-bottom: $light-blue-border
     margin: -3px $margin 0 $margin
     padding: $margin-half
     background-color: $highlight-offwhite
     color: $primary-dark-blue
+    border-bottom-right-radius: $radius
+    border-bottom-left-radius: $radius
+section.blog-post.big p
+    -webkit-line-clamp: revert
 section.about
     background-color: $primary-dark-blue
     color: $highlight-offwhite
