@@ -361,14 +361,14 @@ footer.Footer nav
     flex-flow: column wrap
     justify-content: space-around
 footer.Footer iframe#locationIframe
-    margin-top: calc($margin / 2)
+    margin-top: $margin-half
     padding: 0
-    width: calc(320px - (3*$margin))
+    width: calc(320px - $margin-triple)
     margin-left: 0
     margin-right: 0
     display: block
 footer.Footer h3 + ul
-    padding: calc($margin / 2)
+    padding: $margin-half
 footer.Footer section
     padding: 0 0 0 $margin
 section#fullResume
@@ -417,8 +417,8 @@ section#fullResume li
     font-family: $secondary-font
     font-size: 18px
     font-weight: 500
-    margin: calc($margin / 2)
-button.fullResumeCloseButton
+    margin: $margin-double
+button.CloseButton
     position: absolute
     height: min-content
     line-height: 0
@@ -435,6 +435,7 @@ button.fullResumeCloseButton
     align-items: center
     z-index: 2
     > article
+        position: relative
         display: flex
         max-height: calc(100vh - $margin-double)
         overflow-y: scroll
@@ -447,13 +448,8 @@ button.fullResumeCloseButton
     ul
         display: flex
         flex-flow: row wrap
-        justify-content: center 
+        justify-content: center
         align-items: center
-    button
-        position: absolute
-        left: $margin
-        line-height: 0
-        z-index: 1000
 $width: 375px
 @media screen and (min-width: $width)
     section.eresume aside

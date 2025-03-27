@@ -29,7 +29,7 @@ export default function FullResume(){
         onAnimationEnd={toggleDisplay}>
             <article>
                 <button
-                className='fullResumeCloseButton'
+                className='CloseButton'
                 onClick={toggleDisplay}>
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>

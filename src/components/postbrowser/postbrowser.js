@@ -13,7 +13,7 @@ export default function PostBrowser(){
     return (
         <section id='BlogPostBrowser'>
             <article>
-                <button>
+                <button className='CloseButton'>
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>
                 <h1>Jesse's Blog</h1>
