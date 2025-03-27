@@ -4,6 +4,7 @@ import Main from '@/components/main'
 import Footer from '@/components/footer'
 import FullResume from '@/components/fullresume/fullresume'
 import FullResumeState from '@/components/providers/fullresumestate'
+import PostBrowserProvider from '@/components/providers/postbrowserstate'
 import PostBrowser from '@/components/postbrowser/postbrowser'
 import '@/styles/style.sass'
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -14,11 +15,13 @@ export default function Page(){
         <>
             <Nav/>
             <Header/>
-            <FullResumeState>
-                <FullResume/>
-                <Main/>
-                <PostBrowser/>
-            </FullResumeState>
+            <PostBrowserProvider>
+                <FullResumeState>
+                    <FullResume/>
+                    <Main/>
+                    <PostBrowser/>
+                </FullResumeState>
+            </PostBrowserProvider>
             <Footer/>
         </>
     )

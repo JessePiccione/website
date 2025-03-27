@@ -5,6 +5,7 @@ $secondary-orange: #f39C12
 $secondary-green: #27AE60
 $highlight-red: #e74c3c
 $highlight-offwhite: #ecf0f1
+$shadow-color: #00000044
 $margin-half: 0.5rem
 $margin: 1rem
 $margin-double: 2rem
@@ -12,7 +13,7 @@ $margin-triple: 3rem
 $margin-quadruple: 4rem
 $primary-font:'Roboto Serif', Serif
 $secondary-font:'Work Sans', Sans-serif
-$shadow: 0px 4px 4px #00000044
+$shadow: 0px 4px 4px $shadow-color
 $radius: 16px
 $width: 320px
 *
@@ -245,7 +246,7 @@ section.blog-post
         margin: 0
         padding: 0
 section.blog-post > article
-    width: calc(320px - ($margin-double))
+    width: calc(100vw - $margin-double)
     margin: $margin $margin $margin 0
     padding-bottom: $margin
     background-color: $primary-dark-blue
@@ -256,6 +257,7 @@ section.blog-post:last-child > article
     margin: $margin 0
 section.blog-post iframe
     width: 100%
+    height: calc(((width - $margin-double) / 16 ) * 9 )
     border-radius: $radius $radius 0 0
     border:0 none
     box-shadow: $shadow
@@ -278,7 +280,7 @@ section.blog-post.big
     position: fixed
     align-items: center
     justify-content: center
-    background-color: #00000044
+    background-color: $shadow-color
     z-index: 2
     top: 0
     left: 0
@@ -325,14 +327,13 @@ section.contact fieldset
     border: none
 section.contact form fieldset section
     display: flex
-    flex-flow: row wrap
+    flex-flow: column nowrap
     justify-content: space-between
 section.contact form fieldset textarea, section.contact form fieldset input
     flex: 1.7
     font-family: $secondary-font
     padding: $margin
-    min-width: calc( 100% - $margin-double )
-    max-width: calc( 100% - $margin-double )
+    width: calc( 100% - $margin-double )
     border-radius: $radius
     border: none
     box-shadow: $shadow
@@ -381,6 +382,8 @@ section#fullResume
     height: 100vh
     top: 0
     background-color: #00000044
+    color: $primary-dark-blue
+    text-shadow: $shadow
 @keyframes slide-in-up
     0%
         transform: translateY(100vh)
@@ -417,7 +420,7 @@ section#fullResume li
     font-family: $secondary-font
     font-size: 18px
     font-weight: 500
-    margin: $margin-double
+    margin: $margin-half
 button.CloseButton
     position: absolute
     height: min-content
@@ -428,28 +431,58 @@ button.CloseButton
 #BlogPostBrowser
     position: fixed
     width: 100vw
+    height: 100vh
     background-color: #00000040
-    display: flex
+    color: $primary-dark-blue
+    text-shadow: $shadow
+    display: none
     flex-flow: column nowrap
     justify-content: center
     align-items: center
     z-index: 2
+    animation: none
     > article
         position: relative
         display: flex
-        max-height: calc(100vh - $margin-double)
-        overflow-y: scroll
+        height: 100vh
+        overflow-y: hidden
         flex-flow: column nowrap
         background-color: $highlight-offwhite
         width: calc(100% - $margin-double)
         padding: $margin
+        animation: none
     h1
         margin-bottom: $margin-half
     ul
         display: flex
+        overflow: scroll
         flex-flow: row wrap
-        justify-content: center
+        justify-content: start
         align-items: center
+    section.blog-post > article
+        margin: $margin 0 0 0
+#BlogPostBrowser.open
+    display: flex
+    > article
+        animation: slide-in-up 0.25s ease
+        animation-fill-mode: forwards
+#BlogPostBrowser.opened
+    display: flex
+    animation: none
+    > article
+        animation: none
+#BlogPostBrowser.close
+    display: flex
+    animation: slide-in-up 0s 0.25s reverse
+    animation-fill-mode: forwards
+    > article
+        animation: slide-in-up 0.25s 0s ease reverse
+        animation-fill-mode: forwards
+#BlogPostBrowser.closed
+    display: none
+    animation: none
+    > article
+        animation: none
 $width: 375px
 @media screen and (min-width: $width)
     section.eresume aside
@@ -529,6 +562,11 @@ $width: 768px
     section.eresume aside
         flex-flow: column nowrap
         width: fit-content
+    section.blog-post iframe
+        height: calc( ( ($width - $margin-double) / 48) * 9)
+    section#BlogPostBrowser
+        .blog-post
+            margin: $margin $margin 0 0
 $width: 1024px
 @media screen and (min-width: $width)
     nav.Nav > section
@@ -579,3 +617,8 @@ $width: 1024px
     section.eresume aside
         flex-flow: column nowrap
         width: fit-content
+    section.blog-post iframe
+        height: calc( ( ($width - $margin-double) / 48) * 9)
+    section#BlogPostBrowser
+        .blog-post
+            margin: $margin $margin 0 0
