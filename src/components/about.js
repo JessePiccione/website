@@ -22,7 +22,7 @@ export default function About(){
                     code, and ultimately achieved a perfect score. But, the most important moment came when my
                     teacher asked me a life-changing question:
                     <br/>
-                    &qout;What do you want to do for the rest of your life?&qout;
+                    "What do you want to do for the rest of your life?"
                     <br/>
                     Unsure of my future plans, I mentioned  becoming an actuary. It seemed like the logical
                     choice given my strong math background, but my teacher, Mr. Gattuso, saw a different
@@ -31,7 +31,7 @@ export default function About(){
                     In their words, I genuinely lit up when discussing projects or working through logical
                     puzzles. It was more than a simple hobby or school assignment-- I was truly passionate
                     about every aspect of programming and software development. That moment of encouragement
-                    proved to be the turning point that would decide my career path. My teacher healped me
+                    proved to be the turning point that would decide my career path. My teacher helped me
                     see that excitement, creativity, and problem-solving integral to software engineering was
                     exactly what I needed in a future career.
                     <br/>

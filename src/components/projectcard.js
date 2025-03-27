@@ -10,7 +10,7 @@ export default async function ProjectCard(){
         <section className='card'>
             <h3>Project Contributions</h3>
             <ul>
-                {projects.map(({name})=><li key={name}>{name}</li>)}
+                {projects.reverse().map(({name})=><li key={name}>{name}</li>)}
             </ul>
         </section>
     )
