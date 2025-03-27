@@ -35,6 +35,7 @@ export default function FullResume(){
                 </button>
                 <section>
                     <h1>Jesse Piccione</h1>
+                    <hr/>
                 </section>
                 <section>
                     <h3>Certifications</h3>

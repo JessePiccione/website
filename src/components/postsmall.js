@@ -13,7 +13,7 @@ export function toggleSizeState(previousState, args){
             return 'small'
     }
 }
-export default function Post({technologies, title, description, URL}){
+export default function Post({technologies, title, description, URL, ...props}){
     const [postSize, togglePostSize] = useReducer(toggleSizeState, toggleSizeState())
     const handleClick = (e) => {
         e.preventDefault()
@@ -21,7 +21,7 @@ export default function Post({technologies, title, description, URL}){
         togglePostSize()
     }
     return (
-        <section className={`blog-post ${postSize}`}>
+        <section className={`blog-post ${postSize}`} {...props}>
             <article>
                 <iframe title={title} src={URL} sandbox="allow-scripts allow-same-origin"></iframe>
                 <section>

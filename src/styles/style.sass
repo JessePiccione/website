@@ -393,6 +393,8 @@ section#fullResume > article
     overflow-y: scroll
     background-color: $highlight-offwhite
     box-shadow: $shadow
+    h1, hr
+        margin-bottom: $margin-half
 section#fullResume.open
     display: flex
     animation: slide-in-up 0.25s ease
@@ -423,6 +425,35 @@ button.fullResumeCloseButton
     background-color: none
     right: $margin
     top: $margin
+#BlogPostBrowser
+    position: fixed
+    width: 100vw
+    background-color: #00000040
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+    z-index: 2
+    > article
+        display: flex
+        max-height: calc(100vh - $margin-double)
+        overflow-y: scroll
+        flex-flow: column nowrap
+        background-color: $highlight-offwhite
+        width: calc(100% - $margin-double)
+        padding: $margin
+    h1
+        margin-bottom: $margin-half
+    ul
+        display: flex
+        flex-flow: row wrap
+        justify-content: center 
+        align-items: center
+    button
+        position: absolute
+        left: $margin
+        line-height: 0
+        z-index: 1000
 $width: 375px
 @media screen and (min-width: $width)
     section.eresume aside
@@ -451,7 +482,7 @@ $width: 672px
     section.card:last-child
         margin-left: $margin-half
     section.blog-post > article
-        width: calc(375px - ($margin-double))
+        width: calc(((1024px)/3) - ($margin-double))
 $width: 768px
 @media screen and (min-width: $width)
     nav.Nav > section
@@ -476,10 +507,7 @@ $width: 768px
         flex-flow: row nowrap
         justify-content: center
         min-width: $width
-    section#fullResume > article
-        width: calc($width - $margin-double)
-        padding: $margin
-    section.blog-post.big > article
+    section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
         width: calc($width - $margin-double)
     section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
@@ -529,10 +557,9 @@ $width: 1024px
         flex-flow: row nowrap
         justify-content: center
         min-width: $width
-    section#fullResume > article
+    section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
         width: calc($width - $margin-double)
-        padding: $margin
-    section.blog-post.big > article, section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
+    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
     img.menu-chevron, section.menu-chevron-container
         display: none
