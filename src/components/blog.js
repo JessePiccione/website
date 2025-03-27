@@ -1,4 +1,5 @@
 import Post from '@/components/postsmall'
+import OpenPostBrowserButton from '@/components/postbrowser/openpostbrowserbutton'
 export default async function Blog(){
     let posts =  await fetch('https://portal.piccione.dev/api/home/').then(res=>res.json())
     return (
@@ -8,9 +9,9 @@ export default async function Blog(){
                 <h2>Featured Posts</h2>
                 <hr/>
                 <ul>
-                    {posts.map(post=><Post key={post.title} {...post}/>)}
+                    {posts.map(post=><Post key={post.title+post.id} {...post}/>)}
                 </ul>
-                <button>Browse Posts</button>
+                <OpenPostBrowserButton/>
             </article>
         </section>
     )

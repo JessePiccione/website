@@ -28,12 +28,15 @@ export default function FullResume(){
         <section id='fullResume' className={display}
         onAnimationEnd={toggleDisplay}>
             <article>
-                <button 
-                    className='fullResumeCloseButton'
-                    onClick={toggleDisplay}
-                 >
+                <button
+                className='CloseButton'
+                onClick={toggleDisplay}>
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>
+                <section>
+                    <h1>Jesse Piccione</h1>
+                    <hr/>
+                </section>
                 <section>
                     <h3>Certifications</h3>
                     <Certification certification={award}/>

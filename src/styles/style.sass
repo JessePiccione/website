@@ -1,14 +1,21 @@
 $primary-dark-blue: #2c3e50
 $primary-light-blue: #2980B9
+$light-blue-border: 2px solid $primary-light-blue
 $secondary-orange: #f39C12
 $secondary-green: #27AE60
 $highlight-red: #e74c3c
 $highlight-offwhite: #ecf0f1
+$shadow-color: #00000044
+$margin-half: 0.5rem
 $margin: 1rem
+$margin-double: 2rem
+$margin-triple: 3rem
+$margin-quadruple: 4rem
 $primary-font:'Roboto Serif', Serif
 $secondary-font:'Work Sans', Sans-serif
-$shadow: 0px 4px 4px #00000044
+$shadow: 0px 4px 4px $shadow-color
 $radius: 16px
+$width: 320px
 *
     margin: 0
     padding: 0
@@ -25,7 +32,7 @@ nav.Nav
     grid-area: nav
     background-color: $primary-dark-blue
     box-shadow: $shadow
-    z-index:10
+    z-index: 2
 nav.Nav > section
     display: grid
     grid-template-areas: "logo menu" "list list"
@@ -63,12 +70,12 @@ nav.Nav img.close
 section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
     background-color: $primary-dark-blue
-    width:100%
-    height:100%
+    width: 100%
+    height: 100%
     display: flex
     justify-content: flex-end
     align-content: flex-end
-    z-index:10
+    z-index: 1
 section.menu-logo-container
     grid-area: logo
     justify-content: flex-start
@@ -77,7 +84,7 @@ img.menu-chevron
     width: 20px
     height: 40px
     object-fit: fill
-    margin: 2rem
+    margin: $margin-double
     box-shadow: none
     filter: drop-shadow($shadow)
     justify-self: end
@@ -108,7 +115,7 @@ header.Header
     flex-flow: row nowrap
     background-color: $highlight-offwhite
     color: $primary-dark-blue
-    z-index: 9
+    z-index: 1
     text-shadow: $shadow
     justify-content: center
     box-shadow: inset 0 -4px 4px #00000040
@@ -119,7 +126,7 @@ header.Header > section
     padding: $margin
 img
     border-radius: $radius
-    width: calc((320px - $margin) - $margin)
+    width: calc(320px - $margin-double)
     height: 400px
     object-fit: cover
     box-shadow: $shadow
@@ -143,12 +150,14 @@ h2
 hr
     border: 1px solid $secondary-orange
     box-shadow: $shadow
-p, h3
+p, h3, strong
     font-family: $secondary-font
     font-size: 18px
     letter-spacing: 0
     font-weight: 500
     margin: $margin 0
+strong
+    font-weight: 600
 h3
     font-size: 20px
     font-weight: 600
@@ -171,9 +180,9 @@ main.Main
 section.eresume
     background-color: $primary-dark-blue
     box-shadow: $shadow
-    z-index: 10
+    z-index: 1
 section.eresume > article
-    width: calc(100% - (2*$margin))
+    width: calc(100% - ($margin-double))
     display: flex
     flex-flow: row wrap
     justify-content: space-between
@@ -193,12 +202,16 @@ section.card
     border-radius: $radius
     box-shadow: $shadow
     width: calc( 100vw - 4rem)
-section.card ul 
+section.card ul
+    display: flex
+    flex-flow: column nowrap
+    overflow: scroll
+    height: 100px
     background-color: $primary-dark-blue
     border: 1px solid $secondary-orange
-    border-radius: 16px
-    margin: calc($margin / 2) 0 0 0
-    padding: $margin
+    border-radius: $radius
+    margin: $margin-half 0 0 0
+    padding: $margin-half $margin
     box-shadow: inset $shadow
 li
 <<<<<<< Updated upstream
@@ -218,23 +231,26 @@ section.blog
     color: $primary-dark-blue
     text-shadow: $shadow
     border-color: $primary-dark-blue
-    z-index: 9
+    z-index: 2
     box-shadow: inset 0 -4px 4px #00000040
 section.blog > article
     display: flex
     flex-flow: column nowrap
-section.blog button
-    margin-top: $margin
 section.blog ul
-    max-width: calc( 100vw - (2 * $margin))
+    max-width: calc(100vw - $margin-double)
     display: flex
     overflow-x: scroll
     overflow-y: visible
     flex-flow: row nowrap
+    position: relative
+section.blog-post
+    *
+        margin: 0
+        padding: 0
 section.blog-post > article
-    width: calc(320px - ( 2*$margin))
+    width: calc(100vw - $margin-double)
     margin: $margin $margin $margin 0
-    padding: 0 0 $margin 0
+    padding-bottom: $margin
     background-color: $primary-dark-blue
     color: $highlight-offwhite
     box-shadow: $shadow
@@ -243,7 +259,8 @@ section.blog-post:last-child > article
     margin: $margin 0
 section.blog-post iframe
     width: 100%
-    border-radius: 16px 16px 0 0
+    height: calc(((width - $margin-double) / 16 ) * 9 )
+    border-radius: $radius $radius 0 0
     border:0 none
     box-shadow: $shadow
 section.blog-post p
@@ -251,19 +268,13 @@ section.blog-post p
     -webkit-line-clamp: 3
     -webkit-box-orient: vertical
     overflow: hidden
-    background-color: $highlight-offwhite
-    padding: 0 calc($margin / 2)
-    margin: 0 $margin 0 $margin
     font-size: 18px
     font-weight: 400
     color: $primary-dark-blue
-    border-left: 2px solid $primary-light-blue
-    border-right: 2px solid $primary-light-blue
 section.blog-post p:last-child
     border-bottom: 2px solid $primary-light-blue
     padding-bottom: calc($margin / 2)
     border-bottom-left-radius: $radius
-<<<<<<< Updated upstream
     border-bottom-right-radius: $radius
 section.blog-post h3
     border-left: 2px solid $primary-light-blue
@@ -271,17 +282,9 @@ section.blog-post h3
     color: $primary-dark-blue
     padding: calc($margin / 2) calc($margin / 2) 0 calc($margin / 2)
     margin: -3px $margin 0 $margin
+    padding: $margin-half
     background-color: $highlight-offwhite
-section.blog-post button
-    box-shadow: none
-    text-shadow: $shadow
-    background-color: #00000000
-    font-weight: 500
-    margin: 0
-    padding: 0
     color: $primary-dark-blue
-=======
->>>>>>> Stashed changes
 section.about
     background-color: $primary-dark-blue
     color: $highlight-offwhite
@@ -304,14 +307,13 @@ section.contact fieldset
     border: none
 section.contact form fieldset section
     display: flex
-    flex-flow: row wrap
+    flex-flow: column nowrap
     justify-content: space-between
 section.contact form fieldset textarea, section.contact form fieldset input
     flex: 1.7
     font-family: $secondary-font
     padding: $margin
-    min-width: calc( 100% - 2rem )
-    max-width: calc( 100% - 2rem )
+    width: calc( 100% - $margin-double )
     border-radius: $radius
     border: none
     box-shadow: $shadow
@@ -319,13 +321,13 @@ section.contact form label
     font-family: $secondary-font
     font-size: 18px
     font-weight: 600
-    margin: calc($margin/2) 0
+    margin: $margin-half 0
 section.contact form fieldset section p
     flex: 1
     color: $highlight-red
     font-size: 16px
     height: 16px
-    margin: 0 0 0 calc( $margin / 2 )
+    margin: 0 0 0 $margin-half
     text-align: start
 section.contact form button[type='submit']
     margin-top: calc( $margin / 2 )
@@ -334,20 +336,20 @@ footer.Footer
     background-color: $primary-dark-blue
     color: $highlight-offwhite
     font-family: $secondary-font
-footer.Footer nav 
+footer.Footer nav
     margin: 0
     display: flex
     flex-flow: column wrap
     justify-content: space-around
 footer.Footer iframe#locationIframe
-    margin-top: calc($margin / 2)
+    margin-top: $margin-half
     padding: 0
-    width: calc(320px - (3*$margin))
+    width: calc(320px - $margin-triple)
     margin-left: 0
     margin-right: 0
     display: block
 footer.Footer h3 + ul
-    padding: calc($margin / 2)
+    padding: $margin-half
 footer.Footer section
     padding: 0 0 0 $margin
 section#fullResume
@@ -355,11 +357,13 @@ section#fullResume
     position: fixed
     flex-flow: column
     align-items: center
-    z-index: 15
+    z-index: 3
     width: 100vw
     height: 100vh
     top: 0
     background-color: #00000044
+    color: $primary-dark-blue
+    text-shadow: $shadow
 @keyframes slide-in-up
     0%
         transform: translateY(100vh)
@@ -368,10 +372,12 @@ section#fullResume
 section#fullResume > article
     position: relative
     display: flex
-    flex-flow: row wrap
+    flex-flow: column nowrap
     overflow-y: scroll
     background-color: $highlight-offwhite
     box-shadow: $shadow
+    h1, hr
+        margin-bottom: $margin-half
 section#fullResume.open
     display: flex
     animation: slide-in-up 0.25s ease
@@ -379,14 +385,14 @@ section#fullResume.open
     animation-delay: 0.45s
 section#fullResume.opened
     display: flex
-    animation: none 
+    animation: none
 section#fullResume.close
     display: flex
     animation: slide-in-up 0.25s ease reverse
     animation-fill-mode: forwards
 section#fullResume.closed
-    display: none 
-    animation: none 
+    display: none
+    animation: none
 section#fullResume p
     margin: 0
     max-width: 100%
@@ -394,14 +400,69 @@ section#fullResume li
     font-family: $secondary-font
     font-size: 18px
     font-weight: 500
-    margin: calc($margin / 2)
-button.fullResumeCloseButton
+    margin: $margin-half
+button.CloseButton
     position: absolute
     height: min-content
     line-height: 0
     background-color: none
     right: $margin
     top: $margin
+#BlogPostBrowser
+    position: fixed
+    width: 100vw
+    height: 100vh
+    background-color: #00000040
+    color: $primary-dark-blue
+    text-shadow: $shadow
+    display: none
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+    z-index: 2
+    animation: none
+    > article
+        position: relative
+        display: flex
+        height: 100vh
+        overflow-y: hidden
+        flex-flow: column nowrap
+        background-color: $highlight-offwhite
+        width: calc(100% - $margin-double)
+        padding: $margin
+        animation: none
+    h1
+        margin-bottom: $margin-half
+    ul
+        display: flex
+        overflow: scroll
+        flex-flow: row wrap
+        justify-content: start
+        align-items: center
+    section.blog-post > article
+        margin: $margin 0 0 0
+#BlogPostBrowser.open
+    display: flex
+    > article
+        animation: slide-in-up 0.25s ease
+        animation-fill-mode: forwards
+#BlogPostBrowser.opened
+    display: flex
+    animation: none
+    > article
+        animation: none
+#BlogPostBrowser.close
+    display: flex
+    animation: slide-in-up 0s 0.25s reverse
+    animation-fill-mode: forwards
+    > article
+        animation: slide-in-up 0.25s 0s ease reverse
+        animation-fill-mode: forwards
+#BlogPostBrowser.closed
+    display: none
+    animation: none
+    > article
+        animation: none
 $width: 375px
 @media screen and (min-width: $width)
     section.eresume aside
@@ -420,17 +481,17 @@ $width: 425px
 
 $width: 672px
 @media screen and (min-width: $width)
-    section.eresume aside 
+    section.eresume aside
         justify-content: space-between
     section.card
-        width: calc(320px - (3*$margin))
+        width: calc(320px - $margin-triple)
     section.card:first-child
         margin-bottom: 0
-        margin-right: calc($margin / 2)
+        margin-right: $margin-half
     section.card:last-child
-        margin-left: calc($margin / 2)
+        margin-left: $margin-half
     section.blog-post > article
-        width: calc(375px - ( 2*$margin))
+        width: calc(((1024px)/3) - ($margin-double))
 $width: 768px
 @media screen and (min-width: $width)
     nav.Nav > section
@@ -444,7 +505,7 @@ $width: 768px
         transform: none
         position: static
         flex-flow: row nowrap
-        animation: no
+        animation: none
         align-self: center
         justify-self: center
         background-color: #00000000
@@ -455,9 +516,8 @@ $width: 768px
         flex-flow: row nowrap
         justify-content: center
         min-width: $width
-    section#fullResume > article
-        width: calc($width - 2rem)
-        padding: $margin
+    section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
+        width: calc($width - $margin-double)
     section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
     img.menu-chevron, section.menu-chevron-container
@@ -468,10 +528,10 @@ $width: 768px
     footer.Footer > nav section
         padding: $margin $margin $margin 0
     img
-        width: calc(320px - ($margin*2))
+        width: calc(320px - $margin-double)
         max-width: none
     section.card
-        width: calc(320px - ($margin*4))
+        width: calc(320px - $margin-quadruple)
     section.card:first-child
         margin-bottom: $margin
         margin-right: 0
@@ -482,6 +542,11 @@ $width: 768px
     section.eresume aside
         flex-flow: column nowrap
         width: fit-content
+    section.blog-post iframe
+        height: calc( ( ($width - $margin-double) / 48) * 9)
+    section#BlogPostBrowser
+        .blog-post
+            margin: $margin $margin 0 0
 $width: 1024px
 @media screen and (min-width: $width)
     nav.Nav > section
@@ -506,9 +571,8 @@ $width: 1024px
         flex-flow: row nowrap
         justify-content: center
         min-width: $width
-    section#fullResume > article
-        width: calc($width - 2rem)
-        padding: $margin
+    section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
+        width: calc($width - $margin-double)
     section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: $width
     img.menu-chevron, section.menu-chevron-container
@@ -519,10 +583,10 @@ $width: 1024px
     footer.Footer > nav section
         padding: $margin $margin $margin 0
     img
-        width: calc(425px - ($margin*2))
+        width: calc(425px - $margin-double)
         max-width: none
     section.card
-        width: calc(425px - ($margin*4))
+        width: calc(425px - $margin-quadruple)
     section.card:first-child
         margin-bottom: $margin
         margin-right: 0
@@ -533,3 +597,8 @@ $width: 1024px
     section.eresume aside
         flex-flow: column nowrap
         width: fit-content
+    section.blog-post iframe
+        height: calc( ( ($width - $margin-double) / 48) * 9)
+    section#BlogPostBrowser
+        .blog-post
+            margin: $margin $margin 0 0
