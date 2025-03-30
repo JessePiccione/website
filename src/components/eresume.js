@@ -1,5 +1,3 @@
-
-
 import ProjectCard from "@/components/projectcard";
 import SkillCard from "@/components/skillcard"
 import OpenResumeButton from '@/components/fullresume/openresumebutton'
