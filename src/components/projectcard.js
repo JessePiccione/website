@@ -1,3 +1,4 @@
+'use server'
 export default async function ProjectCard(){
     let projects;
     try{
