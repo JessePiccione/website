@@ -1,8 +1,8 @@
 // AI Assistant component styles
 .ai-assistant
   position: fixed
-  bottom: $margin-double
-  right: $margin-double
+  bottom: $margin
+  right: $margin
   background-color: $primary-light-blue
   color: $highlight-offwhite
   border-radius: $radius
@@ -16,7 +16,7 @@
   overflow: hidden
   
   &.expanded
-    width: 320px
+    width: calc($width - $margin-double)
     height: 400px
     
   &-toggle

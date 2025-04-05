@@ -24,7 +24,6 @@ export default function Page(){
                 </FullResumeState>
             </PostBrowserProvider>
             <Footer/>
-            <AIAssistant/>
         </>
     )
 }
