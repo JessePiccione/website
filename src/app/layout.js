@@ -1,7 +1,5 @@
-import '@fontsource/roboto-serif/variable.css';
-import '@fontsource/roboto-serif/variable-italic.css';
-import '@fontsource/work-sans/variable.css';
-import '@fontsource/work-sans/variable-italic.css';
+import '@fontsource-variable/roboto-serif';
+import '@fontsource-variable/work-sans';
 
 export default function RootLayout(props){
     return (
