@@ -1,0 +1,91 @@
+// Navigation styles
+nav.Nav
+    grid-area: nav
+    background-color: $primary-dark-blue
+    box-shadow: $shadow
+    z-index: 2
+
+    > section
+        display: grid
+        grid-template-areas: "logo menu" "list list"
+        grid-template-rows: auto min-content
+        grid-template-columns: 1fr 1fr
+
+    ul
+        grid-area: list
+        width: 100%
+        position: absolute
+        flex-flow: column nowrap
+        justify-content: flex-start
+        background-color: $primary-light-blue
+        transform: translateY(-100%) scale3d(0,0,0)
+
+        &.close
+            animation: navigation-menu 0.5s ease reverse
+            animation-fill-mode: forwards
+
+        &.opened
+            display: flex
+            position: static
+            transform: translateY(0) scale3d(1,1,1)
+
+        &.open
+            animation: navigation-menu 0.5s ease
+
+    li
+        width: fit-content
+        list-style-type: none
+        margin: $margin
+
+    img
+        &.opened
+            transform: rotateZ(270deg)
+
+        &.open
+            animation: menu-chevron-move 0.25s ease
+            animation-fill-mode: forwards
+
+        &.close
+            animation: menu-chevron-move 0.25s ease reverse
+            animation-fill-mode: backwards
+
+section.menu-chevron-container, section.menu-logo-container
+    grid-area: menu
+    background-color: $primary-dark-blue
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: flex-end
+    align-content: flex-end
+    z-index: 1
+
+section.menu-logo-container
+    grid-area: logo
+    justify-content: flex-start
+    align-content: center
+
+img.menu-chevron
+    width: 20px
+    height: 40px
+    object-fit: fill
+    margin: $margin-double
+    box-shadow: none
+    filter: drop-shadow($shadow)
+    justify-self: end
+    align-self: end
+    transform: rotateZ(90deg)
+
+// Navigation animations
+@keyframes menu-chevron-move
+    100%
+        transform: rotateZ(270deg)
+
+@keyframes navigation-menu
+    0%
+        transform: translateY(-100%) scale3d(0,0,0)
+        display: flex
+        position: absolute
+    100%
+        transform: translateY(calc(161px - (2.5*$margin) ) ) scale3d(1,1,1)
+        display: flex
+        position: absolute

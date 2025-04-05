@@ -1,0 +1,81 @@
+// Reset and base styles
+*
+    margin: 0
+    padding: 0
+
+::-webkit-scrollbar
+    display: none
+
+body
+    overflow-x: hidden
+    width: 100%
+    display: grid
+    grid-template-areas: "nav" "head" "main" "foot"
+    grid-template-rows: auto auto auto 1fr
+    grid-template-columns: auto
+
+// Base typography
+h1, h2
+    text-decoration: none
+    font-family: $primary-font
+
+h1
+    font-size: 48px
+    line-height: 48px
+    font-weight: 500
+
+h2
+    line-height: 36px
+    font-size: 36px
+    font-weight: 400
+    margin: 0 0 calc($margin / 2.5) 0
+
+hr
+    border: 1px solid $secondary-orange
+    box-shadow: $shadow
+
+p, h3, strong
+    font-family: $secondary-font
+    font-size: 18px
+    letter-spacing: 0
+    font-weight: 500
+    margin: $margin 0
+
+strong
+    font-weight: 600
+
+h3
+    font-size: 20px
+    font-weight: 600
+    margin: 0
+
+a, a:link
+    color: $highlight-offwhite
+    font-family: $secondary-font
+    font-size: 18px
+    text-decoration: none
+    text-shadow: $shadow
+
+button
+    background-color: $primary-light-blue
+    padding: $margin
+    font-family: $secondary-font
+    font-size: 18px
+    width: fit-content
+    border-radius: $radius
+    border: none
+    box-shadow: $shadow
+    color: $highlight-offwhite
+
+img
+    border-radius: $radius
+    width: calc(320px - $margin-double)
+    height: 400px
+    object-fit: cover
+    box-shadow: $shadow
+
+li
+    list-style-type: none
+    font-family: $secondary-font
+    font-size: 18px
+    font-weight: 400

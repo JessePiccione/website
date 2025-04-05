@@ -1,0 +1,46 @@
+// Contact section styles
+section.contact
+    background-color: $secondary-orange
+    color: $primary-dark-blue
+    text-shadow: $shadow
+    box-shadow: inset $shadow
+    
+    hr
+        border: 1px solid $primary-dark-blue
+    
+    form
+        margin-top: $margin
+        
+        fieldset
+            border: none
+            
+            section
+                display: flex
+                flex-flow: column nowrap
+                justify-content: space-between
+            
+            textarea, input
+                flex: 1.7
+                font-family: $secondary-font
+                padding: $margin
+                width: calc( 100% - $margin-double )
+                border-radius: $radius
+                border: none
+                box-shadow: $shadow
+        
+        label
+            font-family: $secondary-font
+            font-size: 18px
+            font-weight: 600
+            margin: $margin-half 0
+        
+        fieldset section p
+            flex: 1
+            color: $highlight-red
+            font-size: 16px
+            height: 16px
+            margin: 0 0 0 $margin-half
+            text-align: start
+        
+        button[type='submit']
+            margin-top: calc( $margin / 2 )

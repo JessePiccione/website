@@ -1,0 +1,183 @@
+// Responsive styles
+// Mobile (375px)
+@media screen and (min-width: $mobile-width)
+    section.eresume aside
+        width: 100%
+        display: flex
+        flex-flow: row wrap
+
+// Small screens (425px)
+@media screen and (min-width: $small-width)
+    img
+        width: calc(100vw - (2*$margin))
+        max-width: 500px
+    
+    header.Header aside
+        margin: $margin 0 0 0
+    
+    section.card
+        max-width: 375px
+
+// Medium screens (672px)
+@media screen and (min-width: $medium-width)
+    section.eresume aside
+        justify-content: space-between
+    
+    section.card
+        width: calc(320px - $margin-triple)
+        
+        &:first-child
+            margin-bottom: 0
+            margin-right: $margin-half
+        
+        &:last-child
+            margin-left: $margin-half
+    
+    section.blog-post > article
+        width: calc(((1024px)/3) - ($margin-double))
+
+// Large screens (768px)
+@media screen and (min-width: $large-width)
+    nav.Nav
+        > section
+            justify-self: center
+            width: $large-width
+            grid-template-areas: 'logo list'
+            grid-template-rows: auto
+            grid-template-columns: min-content max-content
+        
+        ul, ul.open, ul.close, ul.opened
+            display: flex
+            transform: none
+            position: static
+            flex-flow: row nowrap
+            animation: none
+            align-self: center
+            justify-self: center
+            background-color: #00000000
+    
+    header.Header > section
+        width: $large-width
+    
+    section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        min-width: $large-width
+    
+    section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
+        width: calc($large-width - $margin-double)
+    
+    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
+        width: $large-width
+    
+    img.menu-chevron, section.menu-chevron-container
+        display: none
+    
+    footer.Footer
+        nav
+            flex-flow: row nowrap
+            justify-content: flex-start
+        
+        > nav section
+            padding: $margin $margin $margin 0
+    
+    img
+        width: calc(320px - $margin-double)
+        max-width: none
+    
+    section.card
+        width: calc(320px - $margin-quadruple)
+        
+        &:first-child
+            margin-bottom: $margin
+            margin-right: 0
+        
+        &:last-child
+            margin-left: 0
+    
+    header.Header p, section.eresume p
+        max-width: 35ch
+    
+    section.eresume aside
+        flex-flow: column nowrap
+        width: fit-content
+    
+    section.blog-post iframe
+        height: calc( ( ($large-width - $margin-double) / 48) * 9)
+    
+    section#BlogPostBrowser .blog-post
+        margin: $margin $margin 0 0
+
+// Extra large screens (1024px)
+@media screen and (min-width: $xl-width)
+    nav.Nav
+        > section
+            justify-self: center
+            width: $xl-width
+            grid-template-areas: 'logo list'
+            grid-template-rows: auto
+            grid-template-columns: min-content max-content
+        
+        ul, ul.open, ul.close, ul.opened
+            display: flex
+            transform: none
+            position: static
+            flex-flow: row nowrap
+            animation: none
+            align-self: center
+            justify-self: center
+            background-color: #00000000
+    
+    header.Header > section
+        width: $xl-width
+    
+    section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        min-width: $xl-width
+    
+    section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
+        width: calc($xl-width - $margin-double)
+    
+    section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
+        width: $xl-width
+    
+    img.menu-chevron, section.menu-chevron-container
+        display: none
+    
+    footer.Footer
+        nav
+            flex-flow: row nowrap
+            justify-content: flex-start
+        
+        > nav section
+            padding: $margin $margin $margin 0
+    
+    img
+        width: calc(425px - $margin-double)
+        max-width: none
+    
+    section.card
+        width: calc(425px - $margin-quadruple)
+        
+        &:first-child
+            margin-bottom: $margin
+            margin-right: 0
+        
+        &:last-child
+            margin-left: 0
+    
+    header.Header p, section.eresume p
+        max-width: 45ch
+    
+    section.eresume aside
+        flex-flow: column nowrap
+        width: fit-content
+    
+    section.blog-post iframe
+        height: calc( ( ($xl-width - $margin-double) / 48) * 9)
+    
+    section#BlogPostBrowser .blog-post
+        margin: $margin $margin 0 0

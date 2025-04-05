@@ -1,0 +1,100 @@
+// AI Assistant component styles
+.ai-assistant
+  position: fixed
+  bottom: $margin-double
+  right: $margin-double
+  background-color: $primary-light-blue
+  color: $highlight-offwhite
+  border-radius: $radius
+  box-shadow: $shadow
+  z-index: 10
+  display: flex
+  flex-direction: column
+  width: 60px
+  height: 60px
+  transition: all 0.3s ease
+  overflow: hidden
+  
+  &.expanded
+    width: 320px
+    height: 400px
+    
+  &-toggle
+    width: 60px
+    height: 60px
+    border-radius: $radius
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    background-color: $primary-light-blue
+    border: none
+    color: $highlight-offwhite
+    font-size: 24px
+    
+  &-content
+    display: none
+    flex-direction: column
+    height: calc(100% - 60px)
+    padding: $margin
+    
+    .expanded &
+      display: flex
+      
+  &-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: $margin
+    
+    h3
+      margin: 0
+      
+  &-messages
+    flex: 1
+    overflow-y: auto
+    margin-bottom: $margin
+    background-color: rgba($highlight-offwhite, 0.1)
+    border-radius: $radius
+    padding: $margin-half
+    
+    .message
+      margin-bottom: $margin-half
+      padding: $margin-half
+      border-radius: $radius
+      max-width: 80%
+      
+      &.user
+        background-color: $secondary-orange
+        color: $primary-dark-blue
+        align-self: flex-end
+        margin-left: auto
+        
+      &.assistant
+        background-color: $primary-dark-blue
+        color: $highlight-offwhite
+        align-self: flex-start
+        margin-right: auto
+        
+  &-input
+    display: flex
+    
+    input
+      flex: 1
+      padding: $margin-half
+      border-radius: $radius 0 0 $radius
+      border: none
+      background-color: rgba($highlight-offwhite, 0.2)
+      color: $highlight-offwhite
+      font-family: $secondary-font
+      
+      &::placeholder
+        color: rgba($highlight-offwhite, 0.7)
+        
+    button
+      padding: $margin-half
+      border-radius: 0 $radius $radius 0
+      border: none
+      background-color: $secondary-orange
+      color: $primary-dark-blue
+      cursor: pointer
