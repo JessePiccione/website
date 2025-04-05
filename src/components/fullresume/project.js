@@ -1,7 +1,7 @@
 export default function Project({project}){
     return (
         <ul>
-            {project.map((obj=><ListItem key={obj.name+"_"+obj.id} {...obj}/>))}
+            {project.map((obj=><ListItem key={obj.name+"_"+obj.id} {...obj}/>)).reverse()}
         </ul>
     )
 }
