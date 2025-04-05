@@ -1,0 +1,84 @@
+section.contact form
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+  margin: $margin 0 0 0
+
+section.contact form label
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 700
+  margin: $margin 0 $margin-half 0
+  color: $primary-dark-blue
+
+section.contact form input, section.contact form textarea
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 500
+  padding: $margin-half
+  border: 1px solid $primary-dark-blue
+  border-radius: $radius
+  width: calc(100% - $margin)
+  margin: 0 0 $margin 0
+
+section.contact form textarea
+  height: 150px
+  resize: vertical
+
+section.contact form button
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 700
+  padding: $margin-half $margin
+  border: none
+  border-radius: $radius
+  background-color: $primary-dark-blue
+  color: $highlight-offwhite
+  cursor: pointer
+  margin: 0 0 $margin 0
+  align-self: flex-end
+
+section.contact form button:hover
+  background-color: $primary-light-blue
+
+section.contact-info
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+  margin: $margin 0 0 0
+
+section.contact-info h3
+  font-family: $primary-font
+  font-size: 24px
+  font-weight: 700
+  margin: 0 0 $margin 0
+  color: $primary-dark-blue
+
+section.contact-info ul
+  list-style-type: none
+  width: 100%
+
+section.contact-info li
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  margin: 0 0 $margin-half 0
+
+section.contact-info li svg
+  margin: 0 $margin-half 0 0
+  color: $primary-dark-blue
+
+section.contact-info li a
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 500
+  color: $primary-dark-blue
+  text-decoration: none
+
+section.contact-info li a:hover
+  text-decoration: underline

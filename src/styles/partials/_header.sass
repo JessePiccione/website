@@ -1,0 +1,46 @@
+header.Header
+  grid-area: head
+  background-color: $primary-light-blue
+  color: $highlight-offwhite
+  text-shadow: $shadow
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  padding: $margin 0 $margin 0
+
+header.Header > section
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  width: calc(100vw - $margin-double)
+
+header.Header h1
+  font-family: $primary-font
+  font-size: 48px
+  font-weight: 900
+  margin: $margin 0 0 0
+
+header.Header h2
+  font-family: $primary-font
+  font-size: 24px
+  font-weight: 500
+  margin: $margin-half 0 0 0
+
+header.Header p
+  font-family: $secondary-font
+  font-size: 18px
+  font-weight: 500
+  margin: $margin 0 0 0
+  max-width: 30ch
+
+header.Header aside
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  margin: $margin-double 0 0 0
+
+header.Header aside a
+  margin: 0 $margin-half 0 $margin-half

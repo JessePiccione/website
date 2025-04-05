@@ -1,0 +1,94 @@
+main
+  grid-area: main
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center
+
+section.eresume, section.blog, section.about, section.contact
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center
+  width: 100%
+  padding: $margin 0 $margin 0
+
+section.eresume > article, section.blog > article, section.about > article, section.contact > article
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center
+  width: calc(100vw - $margin-double)
+
+section.eresume h2, section.blog h2, section.about h2, section.contact h2
+  font-family: $primary-font
+  font-size: 36px
+  font-weight: 700
+  margin: $margin 0 0 0
+  color: $primary-dark-blue
+  text-shadow: $shadow
+
+section.eresume p, section.blog p, section.about p, section.contact p
+  font-family: $secondary-font
+  font-size: 18px
+  font-weight: 500
+  margin: $margin 0 0 0
+  max-width: 30ch
+
+section.eresume aside
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center
+  width: 100%
+  margin: $margin 0 0 0
+
+section.card
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  background-color: $highlight-offwhite
+  border-radius: $radius
+  box-shadow: $shadow
+  padding: $margin
+  margin: $margin 0 $margin 0
+  width: calc(100vw - $margin-quadruple)
+
+section.card h3
+  font-family: $primary-font
+  font-size: 24px
+  font-weight: 700
+  margin: 0 0 $margin-half 0
+  color: $primary-dark-blue
+
+section.card p
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 500
+  margin: 0 0 $margin-half 0
+  max-width: 100%
+
+section.card a
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 700
+  margin: $margin-half 0 0 0
+  color: $primary-light-blue
+  text-decoration: none
+
+section.card a:hover
+  text-decoration: underline
+
+img
+  width: calc(100vw - $margin-double)
+  max-width: 320px
+  border-radius: $radius
+  box-shadow: $shadow
+  margin: $margin 0 0 0
+
+@keyframes slide-in-up
+  0%
+    transform: translateY(100%)
+  100%
+    transform: translateY(0)

@@ -1,0 +1,101 @@
+section.blog-post
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center
+  width: 100%
+  margin: $margin 0 0 0
+
+section.blog-post > article
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  background-color: $highlight-offwhite
+  border-radius: $radius
+  box-shadow: $shadow
+  padding: $margin
+  margin: $margin 0 0 0
+  width: calc(100vw - $margin-quadruple)
+
+section.blog-post h3
+  font-family: $primary-font
+  font-size: 24px
+  font-weight: 700
+  margin: 0 0 $margin-half 0
+  color: $primary-dark-blue
+
+section.blog-post p
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 500
+  margin: 0 0 $margin-half 0
+  max-width: 100%
+
+section.blog-post a
+  font-family: $secondary-font
+  font-size: 16px
+  font-weight: 700
+  margin: $margin-half 0 0 0
+  color: $primary-light-blue
+  text-decoration: none
+
+section.blog-post a:hover
+  text-decoration: underline
+
+section.blog-post iframe
+  width: 100%
+  height: calc( ( (100vw - $margin-quadruple) / 16) * 9)
+  border-radius: $radius
+  margin: $margin 0 0 0
+
+section.blog-post.big
+  position: fixed
+  width: 100vw
+  height: 100vh
+  background-color: #00000040
+  color: $primary-dark-blue
+  text-shadow: $shadow
+  display: none
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  z-index: 2
+  animation: none
+
+section.blog-post.big > article
+  position: relative
+  display: flex
+  height: 80vh
+  overflow-y: scroll
+  flex-flow: column nowrap
+  background-color: $highlight-offwhite
+  width: calc(100% - $margin-double)
+  padding: $margin
+  animation: none
+
+section.blog-post.big.open
+  display: flex
+  > article
+    animation: slide-in-up 0.25s ease
+    animation-fill-mode: forwards
+
+section.blog-post.big.opened
+  display: flex
+  animation: none
+  > article
+    animation: none
+
+section.blog-post.big.close
+  display: flex
+  animation: slide-in-up 0s 0.25s reverse
+  animation-fill-mode: forwards
+  > article
+    animation: slide-in-up 0.25s 0s ease reverse
+    animation-fill-mode: forwards
+
+section.blog-post.big.closed
+  display: none
+  animation: none
+  > article
+    animation: none

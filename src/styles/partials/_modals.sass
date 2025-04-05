@@ -1,0 +1,121 @@
+// Modal styles for fullResume and BlogPostBrowser
+section#fullResume
+  position: fixed
+  width: 100vw
+  height: 100vh
+  background-color: #00000040
+  color: $primary-dark-blue
+  text-shadow: $shadow
+  display: none
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  z-index: 2
+  animation: none
+  > article
+    position: relative
+    display: flex
+    height: 80vh
+    overflow-y: scroll
+    flex-flow: column nowrap
+    background-color: $highlight-offwhite
+    width: calc(100% - $margin-double)
+    padding: $margin
+    animation: none
+
+section#fullResume.open
+  display: flex
+  animation: slide-in-up 0.25s ease
+  animation-fill-mode: backwards
+  animation-delay: 0.45s
+
+section#fullResume.opened
+  display: flex
+  animation: none
+
+section#fullResume.close
+  display: flex
+  animation: slide-in-up 0.25s ease reverse
+  animation-fill-mode: forwards
+
+section#fullResume.closed
+  display: none
+  animation: none
+
+section#fullResume p
+  margin: 0
+  max-width: 100%
+
+section#fullResume li
+  font-family: $secondary-font
+  font-size: 18px
+  font-weight: 500
+  margin: $margin-half
+
+button.CloseButton
+  position: absolute
+  height: min-content
+  line-height: 0
+  background-color: none
+  right: $margin
+  top: $margin
+
+#BlogPostBrowser
+  position: fixed
+  width: 100vw
+  height: 100vh
+  background-color: #00000040
+  color: $primary-dark-blue
+  text-shadow: $shadow
+  display: none
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  z-index: 2
+  animation: none
+  > article
+    position: relative
+    display: flex
+    height: 100vh
+    overflow-y: hidden
+    flex-flow: column nowrap
+    background-color: $highlight-offwhite
+    width: calc(100% - $margin-double)
+    padding: $margin
+    animation: none
+  h1
+    margin-bottom: $margin-half
+  ul
+    display: flex
+    overflow: scroll
+    flex-flow: row wrap
+    justify-content: flex-start
+    align-items: center
+  section.blog-post > article
+    margin: $margin 0 0 0
+
+#BlogPostBrowser.open
+  display: flex
+  > article
+    animation: slide-in-up 0.25s ease
+    animation-fill-mode: forwards
+
+#BlogPostBrowser.opened
+  display: flex
+  animation: none
+  > article
+    animation: none
+
+#BlogPostBrowser.close
+  display: flex
+  animation: slide-in-up 0s 0.25s reverse
+  animation-fill-mode: forwards
+  > article
+    animation: slide-in-up 0.25s 0s ease reverse
+    animation-fill-mode: forwards
+
+#BlogPostBrowser.closed
+  display: none
+  animation: none
+  > article
+    animation: none
