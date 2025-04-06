@@ -1,12 +1,14 @@
+@use "variables"
+
 // AI Assistant component styles
 .ai-assistant
   position: fixed
-  bottom: $margin
-  right: $margin
-  background-color: $primary-light-blue
-  color: $highlight-offwhite
-  border-radius: $radius
-  box-shadow: $shadow
+  bottom: variables.$margin
+  right: variables.$margin
+  background-color: variables.$primary-light-blue
+  color: variables.$highlight-offwhite
+  border-radius: variables.$radius
+  box-shadow: variables.$shadow
   z-index: 10
   display: flex
   flex-direction: column
@@ -14,29 +16,26 @@
   height: 60px
   transition: all 0.3s ease
   overflow: hidden
-  
   &.expanded
-    width: calc($width - $margin-double)
+    width: calc(variables.$width - variables.$margin-double)
     height: 400px
-    
   &-toggle
     width: 60px
     height: 60px
-    border-radius: $radius
+    border-radius: variables.$radius
     display: flex
     justify-content: center
     align-items: center
     cursor: pointer
-    background-color: $primary-light-blue
+    background-color: variables.$primary-light-blue
     border: none
-    color: $highlight-offwhite
+    color: variables.$highlight-offwhite
     font-size: 24px
-    
   &-content
     display: none
     flex-direction: column
     height: calc(100% - 60px)
-    padding: $margin
+    padding: variables.$margin
     
     .expanded &
       display: flex
@@ -45,7 +44,7 @@
     display: flex
     justify-content: space-between
     align-items: center
-    margin-bottom: $margin
+    margin-bottom: variables.$margin
     
     h3
       margin: 0
@@ -53,26 +52,26 @@
   &-messages
     flex: 1
     overflow-y: auto
-    margin-bottom: $margin
-    background-color: rgba($highlight-offwhite, 0.1)
-    border-radius: $radius
-    padding: $margin-half
+    margin-bottom: variables.$margin
+    background-color: rgba(variables.$highlight-offwhite, 0.1)
+    border-radius: variables.$radius
+    padding: variables.$margin-half
     
     .message
-      margin-bottom: $margin-half
-      padding: $margin-half
-      border-radius: $radius
+      margin-bottom: variables.$margin-half
+      padding: variables.$margin-half
+      border-radius: variables.$radius
       max-width: 80%
       
       &.user
-        background-color: $secondary-orange
-        color: $primary-dark-blue
+        background-color: variables.$secondary-orange
+        color: variables.$primary-dark-blue
         align-self: flex-end
         margin-left: auto
         
       &.assistant
-        background-color: $primary-dark-blue
-        color: $highlight-offwhite
+        background-color: variables.$primary-dark-blue
+        color: variables.$highlight-offwhite
         align-self: flex-start
         margin-right: auto
         
@@ -81,20 +80,20 @@
     
     input
       flex: 1
-      padding: $margin-half
-      border-radius: $radius 0 0 $radius
+      padding: variables.$margin-half
+      border-radius: variables.$radius 0 0 variables.$radius
       border: none
-      background-color: rgba($highlight-offwhite, 0.2)
-      color: $highlight-offwhite
-      font-family: $secondary-font
+      background-color: rgba(variables.$highlight-offwhite, 0.2)
+      color: variables.$highlight-offwhite
+      font-family: variables.$secondary-font
       
       &::placeholder
-        color: rgba($highlight-offwhite, 0.7)
+        color: rgba(variables.$highlight-offwhite, 0.7)
         
     button
-      padding: $margin-half
-      border-radius: 0 $radius $radius 0
+      padding: variables.$margin-half
+      border-radius: 0 variables.$radius variables.$radius 0
       border: none
-      background-color: $secondary-orange
-      color: $primary-dark-blue
+      background-color: variables.$secondary-orange
+      color: variables.$primary-dark-blue
       cursor: pointer

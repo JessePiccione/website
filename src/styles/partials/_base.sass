@@ -1,3 +1,5 @@
+@use "variables"
+
 // Reset and base styles
 *
     margin: 0
@@ -17,7 +19,7 @@ body
 // Base typography
 h1, h2
     text-decoration: none
-    font-family: $primary-font
+    font-family: variables.$primary-font
 
 h1
     font-size: 48px
@@ -28,18 +30,18 @@ h2
     line-height: 36px
     font-size: 36px
     font-weight: 400
-    margin: 0 0 calc($margin / 2.5) 0
+    margin: 0 0 calc(variables.$margin / 2.5) 0
 
 hr
-    border: 1px solid $secondary-orange
-    box-shadow: $shadow
+    border: 1px solid variables.$secondary-orange
+    box-shadow: variables.$shadow
 
 p, h3, strong
-    font-family: $secondary-font
+    font-family: variables.$secondary-font
     font-size: 18px
     letter-spacing: 0
     font-weight: 500
-    margin: $margin 0
+    margin: variables.$margin 0
 
 strong
     font-weight: 600
@@ -50,32 +52,32 @@ h3
     margin: 0
 
 a, a:link
-    color: $highlight-offwhite
-    font-family: $secondary-font
+    color: variables.$highlight-offwhite
+    font-family: variables.$secondary-font
     font-size: 18px
     text-decoration: none
-    text-shadow: $shadow
+    text-shadow: variables.$shadow
 
 button
-    background-color: $primary-light-blue
-    padding: $margin
-    font-family: $secondary-font
+    background-color: variables.$primary-light-blue
+    padding: variables.$margin
+    font-family: variables.$secondary-font
     font-size: 18px
     width: fit-content
-    border-radius: $radius
+    border-radius: variables.$radius
     border: none
-    box-shadow: $shadow
-    color: $highlight-offwhite
+    box-shadow: variables.$shadow
+    color: variables.$highlight-offwhite
 
 img
-    border-radius: $radius
-    width: calc(320px - $margin-double)
+    border-radius: variables.$radius
+    width: calc(320px - variables.$margin-double)
     height: 400px
     object-fit: cover
-    box-shadow: $shadow
+    box-shadow: variables.$shadow
 
 li
     list-style-type: none
-    font-family: $secondary-font
+    font-family: variables.$secondary-font
     font-size: 18px
     font-weight: 400

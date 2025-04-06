@@ -1,20 +1,20 @@
 // Main style file that imports all partials
 
 // Import variables first so they're available to all other partials
-@import 'partials/variables'
+@use 'partials/variables'
 
 // Base styles
-@import 'partials/base'
+@use 'partials/base'
 
 // Component styles
-@import 'partials/navigation'
-@import 'partials/header'
-@import 'partials/main'
-@import 'partials/blog'
-@import 'partials/contact'
-@import 'partials/footer'
-@import 'partials/modals'
-@import 'partials/ai-assistant'
+@use 'partials/navigation'
+@use 'partials/header'
+@use 'partials/main'
+@use 'partials/blog'
+@use 'partials/contact'
+@use 'partials/footer'
+@use 'partials/modals'
+@use 'partials/ai-assistant'
 
 // Responsive styles should be imported last to override component styles
-@import 'partials/responsive'
+@use 'partials/responsive'

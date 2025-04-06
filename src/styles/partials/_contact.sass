@@ -1,16 +1,18 @@
+@use "variables"
+
 // Contact section styles
 section.contact
-    background-color: $secondary-orange
-    color: $primary-dark-blue
-    text-shadow: $shadow
-    box-shadow: inset $shadow
+    background-color: variables.$secondary-orange
+    color: variables.$primary-dark-blue
+    text-shadow: variables.$shadow
+    box-shadow: inset variables.$shadow
     > article
-        margin: $margin
+        margin: variables.$margin
     hr
-        border: 1px solid $primary-dark-blue
+        border: 1px solid variables.$primary-dark-blue
     
     form
-        margin-top: $margin
+        margin-top: variables.$margin
         
         fieldset
             border: none
@@ -22,26 +24,26 @@ section.contact
             
             textarea, input
                 flex: 1.7
-                font-family: $secondary-font
-                padding: $margin
-                width: calc( 100% - $margin-double )
-                border-radius: $radius
+                font-family: variables.$secondary-font
+                padding: variables.$margin
+                width: calc( 100% - variables.$margin-double )
+                border-radius: variables.$radius
                 border: none
-                box-shadow: $shadow
+                box-shadow: variables.$shadow
         
         label
-            font-family: $secondary-font
+            font-family: variables.$secondary-font
             font-size: 18px
             font-weight: 600
-            margin: $margin-half 0
+            margin: variables.$margin-half 0
         
         fieldset section p
             flex: 1
-            color: $highlight-red
+            color: variables.$highlight-red
             font-size: 16px
             height: 16px
-            margin: 0 0 0 $margin-half
+            margin: 0 0 0 variables.$margin-half
             text-align: start
         
         button[type='submit']
-            margin-top: calc( $margin / 2 )
+            margin-top: calc( variables.$margin / 2 )

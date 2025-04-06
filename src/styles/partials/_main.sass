@@ -1,62 +1,58 @@
+@use "variables"
+
 // Main content sections
 main.Main
     grid-area: main
     display: grid
     grid-template-areas: "eresume" "blog" "about" "contact"
     grind-template-rows: 1fr 1fr 1fr 1fr
-
 // eResume section
 section.eresume
-    background-color: $primary-dark-blue
-    box-shadow: $shadow
+    background-color: variables.$primary-dark-blue
+    box-shadow: variables.$shadow
     z-index: 1
-    
     > article
-        width: calc(100% - ($margin-double))
+        width: calc(100% - (variables.$margin-double))
         display: flex
         flex-flow: row wrap
         justify-content: space-between
-        color: $highlight-offwhite
-        text-shadow: $shadow
-        margin: $margin
+        color: variables.$highlight-offwhite
+        text-shadow: variables.$shadow
+        margin: variables.$margin
         padding: 0
-    
     aside
-        margin-top: $margin
-    
+        margin-top: variables.$margin
     hr
-        border: 1px solid $secondary-orange
-
+        border: 1px solid variables.$secondary-orange
 // Card components
 section.card
-    background-color: $primary-light-blue
-    padding: $margin
-    border-radius: $radius
-    box-shadow: $shadow
-    width: calc( 100vw - 4rem)
-    
+    background-color: variables.$primary-light-blue
+    padding: variables.$margin
+    border-radius: variables.$radius
+    box-shadow: variables.$shadow
+    width: calc( 100vw - variables.$margin-quadruple )
+    max-width: calc( variables.$width - variables.$margin-double)
     &:first-child
-        margin-bottom: $margin
-    
+        margin-bottom: variables.$margin
     ul
         display: flex
         flex-flow: column nowrap
         overflow: scroll
         height: 100px
-        background-color: $primary-dark-blue
-        border: 1px solid $secondary-orange
-        border-radius: $radius
-        margin: $margin-half 0 0 0
-        padding: $margin-half $margin
-        box-shadow: inset $shadow
+        background-color: variables.$primary-dark-blue
+        border: 1px solid variables.$secondary-orange
+        border-radius: variables.$radius
+        margin: variables.$margin-half 0 0 0
+        padding: variables.$margin-half variables.$margin
+        box-shadow: inset variables.$shadow
 
 // About section
 section.about
-    background-color: $primary-dark-blue
-    color: $highlight-offwhite
-    text-shadow: $shadow
+    background-color: variables.$primary-dark-blue
+    color: variables.$highlight-offwhite
+    text-shadow: variables.$shadow
     height: 500px
     overflow-y: scroll
-    box-shadow: $shadow
+    box-shadow: variables.$shadow
     > article
-        margin: $margin
+        margin: variables.$margin

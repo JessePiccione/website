@@ -1,3 +1,5 @@
+@use "variables"
+
 // Modal and popup styles
 // Full Resume Modal
 section#fullResume
@@ -10,29 +12,29 @@ section#fullResume
     height: 100vh
     top: 0
     background-color: #00000044
-    color: $primary-dark-blue
-    text-shadow: $shadow
+    color: variables.$primary-dark-blue
+    text-shadow: variables.$shadow
     
     > article
         position: relative
         display: flex
         flex-flow: column nowrap
         overflow-y: scroll
-        background-color: $highlight-offwhite
-        box-shadow: $shadow
-        padding: $margin
+        background-color: variables.$highlight-offwhite
+        box-shadow: variables.$shadow
+        padding: variables.$margin
         h1, hr
-            margin-bottom: $margin-half
+            margin-bottom: variables.$margin-half
     
     p
         margin: 0
         max-width: 100%
     
     li
-        font-family: $secondary-font
+        font-family: variables.$secondary-font
         font-size: 18px
         font-weight: 500
-        margin: $margin-half
+        margin: variables.$margin-half
 
 // Modal states
 section#fullResume
@@ -61,8 +63,8 @@ button.CloseButton
     height: min-content
     line-height: 0
     background-color: none
-    right: $margin
-    top: $margin
+    right: variables.$margin
+    top: variables.$margin
 
 // Animations
 @keyframes slide-in-up
