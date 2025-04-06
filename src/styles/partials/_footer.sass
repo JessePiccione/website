@@ -1,0 +1,28 @@
+@use "variables"
+
+// Footer styles
+footer.Footer
+    grid-area: foot
+    background-color: variables.$primary-dark-blue
+    color: variables.$highlight-offwhite
+    font-family: variables.$secondary-font
+    
+    nav
+        margin: 0
+        display: flex
+        flex-flow: column wrap
+        justify-content: space-around
+    
+    iframe#locationIframe
+        margin-top: variables.$margin-half
+        padding: 0
+        width: calc(320px - variables.$margin-triple)
+        margin-left: 0
+        margin-right: 0
+        display: block
+    
+    h3 + ul
+        padding: variables.$margin-half
+    
+    section
+        padding: 0 0 0 variables.$margin

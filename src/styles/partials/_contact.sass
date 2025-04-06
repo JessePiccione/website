@@ -1,0 +1,49 @@
+@use "variables"
+
+// Contact section styles
+section.contact
+    background-color: variables.$secondary-orange
+    color: variables.$primary-dark-blue
+    text-shadow: variables.$shadow
+    box-shadow: inset variables.$shadow
+    > article
+        margin: variables.$margin
+    hr
+        border: 1px solid variables.$primary-dark-blue
+    
+    form
+        margin-top: variables.$margin
+        
+        fieldset
+            border: none
+            
+            section
+                display: flex
+                flex-flow: column nowrap
+                justify-content: space-between
+            
+            textarea, input
+                flex: 1.7
+                font-family: variables.$secondary-font
+                padding: variables.$margin
+                width: calc( 100% - variables.$margin-double )
+                border-radius: variables.$radius
+                border: none
+                box-shadow: variables.$shadow
+        
+        label
+            font-family: variables.$secondary-font
+            font-size: 18px
+            font-weight: 600
+            margin: variables.$margin-half 0
+        
+        fieldset section p
+            flex: 1
+            color: variables.$highlight-red
+            font-size: 16px
+            height: 16px
+            margin: 0 0 0 variables.$margin-half
+            text-align: start
+        
+        button[type='submit']
+            margin-top: calc( variables.$margin / 2 )

@@ -1,0 +1,74 @@
+@use "variables"
+
+// Modal and popup styles
+// Full Resume Modal
+section#fullResume
+    display: none
+    position: fixed
+    flex-flow: column
+    align-items: center
+    z-index: 3
+    width: 100vw
+    height: 100vh
+    top: 0
+    background-color: #00000044
+    color: variables.$primary-dark-blue
+    text-shadow: variables.$shadow
+    
+    > article
+        position: relative
+        display: flex
+        flex-flow: column nowrap
+        overflow-y: scroll
+        background-color: variables.$highlight-offwhite
+        box-shadow: variables.$shadow
+        padding: variables.$margin
+        h1, hr
+            margin-bottom: variables.$margin-half
+    
+    p
+        margin: 0
+        max-width: 100%
+    
+    li
+        font-family: variables.$secondary-font
+        font-size: 18px
+        font-weight: 500
+        margin: variables.$margin-half
+
+// Modal states
+section#fullResume
+    &.open
+        display: flex
+        animation: slide-in-up 0.25s ease
+        animation-fill-mode: backwards
+        animation-delay: 0.45s
+    
+    &.opened
+        display: flex
+        animation: none
+    
+    &.close
+        display: flex
+        animation: slide-in-up 0.25s ease reverse
+        animation-fill-mode: forwards
+    
+    &.closed
+        display: none
+        animation: none
+
+// Close button
+button.CloseButton
+    position: absolute
+    height: min-content
+    line-height: 0
+    background-color: none
+    right: variables.$margin
+    top: variables.$margin
+
+// Animations
+@keyframes slide-in-up
+    0%
+        transform: translateY(100vh)
+    100%
+        transform: translateY(0)
