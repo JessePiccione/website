@@ -19,6 +19,9 @@ export default function navlist(props){
             <li>
                 <a href='https://portal.piccione.dev/admin/'>Portal</a>
             </li>
+            <li>
+                <a href='https://www.paypal.com/donate/?hosted_button_id=8QNED3VCSZHYG'>Donate</a>
+            </li>
         </ul>
     )
 }
