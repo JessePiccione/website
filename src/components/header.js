@@ -23,7 +23,7 @@ export default function Header(){
                     <button type='button' onClick={handleButtonClick}>Connect2Me</button>
                 </section>
                 <aside>
-                    <Image src={picture} alt='Jesse Piccione'/>
+                    <Image src={picture} alt='Jesse Piccione' loading='eager'/>
                 </aside>
             </section>
         </header>
