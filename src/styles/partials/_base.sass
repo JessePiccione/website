@@ -57,7 +57,9 @@ a, a:link
     font-size: 18px
     text-decoration: none
     text-shadow: variables.$shadow
-
+    &:hover, &:active
+        color: variables.$primary-light-blue
+        transition: all 0.05s ease-in-out
 button
     background-color: variables.$primary-light-blue
     padding: variables.$margin
@@ -68,7 +70,13 @@ button
     border: none
     box-shadow: variables.$shadow
     color: variables.$highlight-offwhite
-
+    &:hover
+        color: white
+        background-color: variables.$primary-opaque-blue
+        transition: all 0.05s ease-in-out
+    &:active
+        background-color: variables.$primary-opaque-blue
+        color: white
 img
     border-radius: variables.$radius
     width: calc(320px - variables.$margin-double)

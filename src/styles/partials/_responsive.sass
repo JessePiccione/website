@@ -52,8 +52,11 @@ img
             flex-flow: row nowrap
             animation: none
             align-self: center
-            justify-self: center
+            justify-self: flex-start
             background-color: #00000000
+        li
+            margin: 0
+            padding: variables.$margin variables.$margin-half
     header.Header > section
         width: variables.$large-width
     section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header
@@ -98,6 +101,9 @@ img
     nav.Nav
         > section
             width: variables.$xl-width
+        li
+            margin: 0
+            padding: variables.$margin
     header.Header > section
         width: variables.$xl-width
     section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header
