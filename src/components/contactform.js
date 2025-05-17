@@ -15,12 +15,12 @@ export default function ContactForm(){
     }
     //phone state
     const [phone, setPhone] = useState('')
-    const onPhoneChange = (e) => setPhone(e.target.value)
+    const onPhoneChange = (e) => setPhone(e.target.value.replace(/\D/g, ''))
     const checkPhone = () => {
         if (!isTouched) return null
-        if(!phone.length) return '*Required'
-        if(!phone.match(/[0-9]{3}[0-9]{3}[0-9]{4}/)){
-            return "*Required Format 123-456-7890"
+        if (!phone.length) return '*Required'
+        if (phone.length !== 10) {
+            return '*Required Format 123-456-7890'
         }
         return ''
     }
