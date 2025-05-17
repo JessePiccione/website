@@ -22,7 +22,7 @@ export default function SocialMediaList(){
                 </a>
             </li>
             <li key='instagram'>
-                <a href='https://wwww.instagram.com/jessepiccione'>
+                <a href='https://www.instagram.com/jessepiccione'>
                     <FontAwesomeIcon icon={faInstagram}/>
                     &nbsp;Instagram
                 </a>
