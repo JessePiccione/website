@@ -25,9 +25,8 @@ export default function FullResume(){
     }
     useEffect(()=>{getResumeData()},[])
     return (
-        <section id='fullResume' className={display}
-        onAnimationEnd={toggleDisplay}>
-            <article>
+        <section id='fullResume' className={display}>
+            <article onAnimationEnd={toggleDisplay}>
                 <button
                 className='CloseButton'
                 onClick={toggleDisplay}>
