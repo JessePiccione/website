@@ -1,7 +1,13 @@
 import Post from '@/components/postsmall'
 import OpenPostBrowserButton from '@/components/postbrowser/openpostbrowserbutton'
 export default async function Blog(){
-    let posts =  await fetch('https://portal.piccione.dev/api/home/').then(res=>res.json())
+    let posts = []
+    try {
+        const res = await fetch('https://portal.piccione.dev/api/home/')
+        posts = await res.json()
+    } catch (err) {
+        console.error('Blog: failed to fetch posts', err)
+    }
     const postsAreArray = Array.isArray(posts)
     if(!postsAreArray){
         console.error('Blog: posts is not an array', posts)
