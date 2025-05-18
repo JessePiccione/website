@@ -3,33 +3,37 @@
 // Modal and popup styles
 // Full Resume Modal
 section#fullResume
-    display: none
     position: fixed
-    flex-flow: column
-    align-items: center
-    z-index: 3
     width: 100vw
-    height: calc(100vh - variables.$margin-double)
-    top: 0
-    background-color: #00000044
+    height: 100vh
+    background-color: #00000040
     color: variables.$primary-dark-blue
     text-shadow: variables.$shadow
-    
+    display: none
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+    z-index: 3
+    animation: none
+
     > article
         position: relative
         display: flex
-        flex-flow: column nowrap
+        height: 100vh
         overflow-y: scroll
+        flex-flow: column nowrap
         background-color: variables.$highlight-offwhite
-        box-shadow: variables.$shadow
+        width: calc(100% - variables.$margin-double)
         padding: variables.$margin
+        box-shadow: variables.$shadow
+        animation: none
         h1, hr
             margin-bottom: variables.$margin-half
-    
+
     p
         margin: 0
         max-width: 100%
-    
+
     li
         font-family: variables.$secondary-font
         font-size: 18px
@@ -40,22 +44,29 @@ section#fullResume
 section#fullResume
     &.open
         display: flex
-        animation: slide-in-up 0.25s ease
-        animation-fill-mode: backwards
-        animation-delay: 0.45s
-    
+        > article
+            animation: slide-in-up 0.25s ease
+            animation-fill-mode: forwards
+
     &.opened
         display: flex
         animation: none
-    
+        > article
+            animation: none
+
     &.close
         display: flex
-        animation: slide-in-up 0.25s ease reverse
+        animation: slide-in-up 0s 0.25s reverse
         animation-fill-mode: forwards
-    
+        > article
+            animation: slide-in-up 0.25s 0s ease reverse
+            animation-fill-mode: forwards
+
     &.closed
         display: none
         animation: none
+        > article
+            animation: none
 
 // Close button
 button.CloseButton
