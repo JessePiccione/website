@@ -2,6 +2,10 @@ import Post from '@/components/postsmall'
 import OpenPostBrowserButton from '@/components/postbrowser/openpostbrowserbutton'
 export default async function Blog(){
     let posts =  await fetch('https://portal.piccione.dev/api/home/').then(res=>res.json())
+    const postsAreArray = Array.isArray(posts)
+    if(!postsAreArray){
+        console.error('Blog: posts is not an array', posts)
+    }
     return (
         <section id='blog' className='blog'>
             <article>
@@ -9,7 +13,7 @@ export default async function Blog(){
                 <h2>Featured Posts</h2>
                 <hr/>
                 <ul>
-                    {posts.map(post=><Post key={post.title+post.id} {...post}/>)}
+                    {postsAreArray ? posts.map(post => <Post key={post.title+post.id} {...post}/>) : <li>No posts available</li>}
                 </ul>
                 <OpenPostBrowserButton/>
             </article>

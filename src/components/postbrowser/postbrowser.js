@@ -25,6 +25,10 @@ export default function PostBrowser(){
         }
     }
     useEffect(()=>{retrieveDataFromServer()},[])
+    const postsAreArray = Array.isArray(blogPosts)
+    if(!postsAreArray){
+        console.error('PostBrowser: blogPosts is not an array', blogPosts)
+    }
     return (
         <section id='BlogPostBrowser' className={display}>
             <article onAnimationEnd={toggleDisplay}>
@@ -34,7 +38,7 @@ export default function PostBrowser(){
                 <h1>Jesse's Blog</h1>
                 <hr/>
                 <ul>
-                    {blogPosts.map((post)=><PostSmall key={post.title+post.id} {...post}/>)}
+                    {postsAreArray ? blogPosts.map(post => <PostSmall key={post.title+post.id} {...post}/>) : <li>No posts available</li>}
                 </ul>
             </article>
         </section>
