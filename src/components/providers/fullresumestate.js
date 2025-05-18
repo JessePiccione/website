@@ -1,8 +1,9 @@
 "use client"
-import {useContext, createContext, useReducer} from 'react'
+import {useContext, createContext} from 'react'
+import useToggleCycle from './useToggleCycle'
 const FullResumeStateContext = createContext()
 export default function FullResumeState({children}){
-    const [display, toggleDisplay] = useReducer(toggleDrawer,'closed')
+    const [display, toggleDisplay] = useToggleCycle('closed')
     
     return (
         <FullResumeStateContext.Provider value={{display, toggleDisplay}}>
@@ -10,6 +11,7 @@ export default function FullResumeState({children}){
         </FullResumeStateContext.Provider>
     )
 }
+
 function toggleDrawer(previousState){
     switch (previousState) {
         case 'open':
