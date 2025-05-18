@@ -10,7 +10,7 @@ export default function FullResumeState({children}){
         </FullResumeStateContext.Provider>
     )
 }
-function toggleDrawer(previousState, {command}){
+function toggleDrawer(previousState){
     switch (previousState) {
         case 'open':
             return 'opened'
