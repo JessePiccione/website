@@ -1,3 +1,5 @@
+import ThemeToggle from './themeToggle'
+
 export default function navlist(props){
     return (
         <ul {...props}>
@@ -21,6 +23,9 @@ export default function navlist(props){
             </li>
             <li>
                 <a href='https://www.paypal.com/donate/?hosted_button_id=8QNED3VCSZHYG'>Donate</a>
+            </li>
+            <li>
+                <ThemeToggle/>
             </li>
         </ul>
     )
