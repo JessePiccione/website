@@ -50,7 +50,7 @@ export default function ContactForm(){
         return (!isTouched)?null:(message.length <= 0) ? '*Required' : ''
     }
     const isValid = (callable) => (callable) ? callable() === '' : false
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
         e.preventDefault()
         if (
             isValid(checkName) &&
@@ -59,7 +59,13 @@ export default function ContactForm(){
             isValid(checkSubject) &&
             isValid(checkMessage)
         ) {
-            formMessage({name, email, message, subject, phone})
+            try {
+                await formMessage({name, email, message, subject, phone})
+            } catch (error) {
+                console.error(error)
+                alert('Failed to send your message. Please try again later.')
+                return
+            }
             setIsTouched(false)
             setName('')
             setPhone('')
