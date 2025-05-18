@@ -5,11 +5,24 @@ import PostSmall from '@/components/postsmall'
 import { PostBrowserDisplayContext } from '@/components/providers/postbrowserstate'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+const fallbackPosts = [
+    {
+        title: 'Error Loading Posts',
+        description: 'Unable to retrieve blog posts at this time.',
+        URL: '#',
+        id: 'error'
+    }
+]
 export default function PostBrowser(){
     const {display, toggleDisplay} = PostBrowserDisplayContext()
     const [blogPosts, setBlogPosts] = useState([])
     const retrieveDataFromServer = async () => {
-        setBlogPosts(await getData('api/home/'))
+        try {
+            setBlogPosts(await getData('api/home/'))
+        } catch (error) {
+            console.error(error)
+            setBlogPosts(fallbackPosts)
+        }
     }
     useEffect(()=>{retrieveDataFromServer()},[])
     return (
