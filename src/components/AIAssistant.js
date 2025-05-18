@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
+import getAssistantResponse from '@/components/api/getAssistantResponse';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot, faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,19 +34,22 @@ const AIAssistant = () => {
   };
 
   // Handle sending a message
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputValue.trim() === '') return;
 
     // Add user message
-    const newMessages = [...messages, { text: inputValue, sender: 'user' }];
+    const userText = inputValue;
+    const newMessages = [...messages, { text: userText, sender: 'user' }];
     setMessages(newMessages);
     setInputValue('');
 
-    // Simulate AI response after a short delay
-    setTimeout(() => {
-      const aiResponse = generateResponse(inputValue);
+    try {
+      const aiResponse = await getAssistantResponse(userText);
       setMessages([...newMessages, { text: aiResponse, sender: 'assistant' }]);
-    }, 1000);
+    } catch (err) {
+      const fallback = generateResponse(userText);
+      setMessages([...newMessages, { text: fallback, sender: 'assistant' }]);
+    }
   };
 
   // Handle pressing Enter key in input
