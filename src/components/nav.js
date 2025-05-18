@@ -1,6 +1,7 @@
 'use client'
 import Logo from '@/images/logo'
 import NavList from './navlist'
+import ThemeToggle from './themeToggle'
 import Chevron from '@/images/chevron.svg'
 import Image from 'next/image'
 import {useState} from 'react'
@@ -19,6 +20,9 @@ export default function Nav(){
     }
     return (
         <nav className='Nav'>
+            <section className='nav-theme-toggle'>
+                <ThemeToggle/>
+            </section>
             <section>
                 <section className='menu-logo-container'>
                     <Logo/>
