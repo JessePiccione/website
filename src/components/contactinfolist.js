@@ -4,7 +4,7 @@ export default function ContactInfoList(){
     return (
         <ul>
             <li key="phoneNumber">
-                <a href='Tel:7329080037'>
+                <a href='tel:7329080037'>
                     <FontAwesomeIcon icon={faPhone}/>
                     &nbsp;+1(732)-908-0037
                 </a>
