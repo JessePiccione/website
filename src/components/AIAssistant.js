@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
-import getAssistantResponse from '@/components/api/getAssistantResponse';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot, faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,7 +43,13 @@ const AIAssistant = () => {
     setInputValue('');
 
     try {
-      const aiResponse = await getAssistantResponse(userText);
+      const res = await fetch('/api/assistant', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userText })
+      });
+      const data = await res.json();
+      const aiResponse = data.reply || data.response || data.message || '...';
       setMessages([...newMessages, { text: aiResponse, sender: 'assistant' }]);
     } catch (err) {
       const fallback = generateResponse(userText);
