@@ -12,25 +12,25 @@ main.Main
             padding: variables.$section-padding-tablet 0
 // eResume section
 section.eresume
-    background: variables.$gradient-primary
-    box-shadow: variables.$shadow
+    background: variables.$surface
+    box-shadow: none
     z-index: 1
     > article
         width: calc(100% - (variables.$margin-double))
         display: flex
         flex-flow: row wrap
         justify-content: space-between
-        color: variables.$highlight-offwhite
-        text-shadow: variables.$shadow
+        color: variables.$text
+        text-shadow: none
         margin: variables.$margin
         padding: 0
     aside
         margin-top: variables.$margin
     hr
-        border: 1px solid variables.$secondary-orange
+        border: 1px solid variables.$border
 // Card components
 section.card
-    background: variables.$neutral-dark
+    background: variables.$surface
     padding: 24px
     border-radius: 16px
     box-shadow: variables.$shadow
@@ -47,20 +47,20 @@ section.card
         flex-flow: column nowrap
         overflow: scroll
         height: 100px
-        background: variables.$gradient-primary
-        border: 1px solid variables.$secondary-orange
+        background: variables.$primary-tint
+        border: 1px solid variables.$border
         border-radius: variables.$radius
         margin: variables.$margin-half 0 0 0
         padding: variables.$margin-half variables.$margin
-        box-shadow: inset variables.$shadow
+        box-shadow: none
 
 // About section
 section.about
-    background: variables.$gradient-primary
-    color: variables.$highlight-offwhite
-    text-shadow: variables.$shadow
+    background: variables.$bg
+    color: variables.$text
+    text-shadow: none
     height: 500px
     overflow-y: scroll
-    box-shadow: variables.$shadow
+    box-shadow: none
     > article
         margin: variables.$margin

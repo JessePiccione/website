@@ -7,12 +7,12 @@ section.blog
     position: static
     flex-flow: row wrap
     justify-content: center
-    background: variables.$gradient-secondary
-    color: variables.$primary-dark-blue
-    text-shadow: variables.$shadow
-    border-color: variables.$primary-dark-blue
+    background: variables.$bg
+    color: variables.$text
+    text-shadow: none
+    border-color: variables.$text
     z-index: 2
-    box-shadow: inset 0 -4px 4px variables.$shadow-color
+    box-shadow: none
     
     > article
         width: 100%
@@ -37,8 +37,8 @@ section.blog-post
         width: calc(100vw - variables.$margin-double)
         margin: variables.$margin variables.$margin variables.$margin 0
         padding-bottom: variables.$margin
-        background: variables.$gradient-primary
-        color: variables.$highlight-offwhite
+        background: variables.$surface
+        color: variables.$text
         box-shadow: variables.$shadow
         border-radius: variables.$radius
     
@@ -59,24 +59,24 @@ section.blog-post
         overflow: hidden
         font-size: 18px
         font-weight: 400
-        color: variables.$primary-dark-blue
+        color: variables.$text
         
         &:last-child
             font-weight: 500
     
     svg
-        color: variables.$primary-light-blue
+        color: variables.$primary
     
     section
         display: flex
         flex-flow: column nowrap
-        border-right: variables.$light-blue-border
-        border-left: variables.$light-blue-border
-        border-bottom: variables.$light-blue-border
+        border-right: 1px solid variables.$border
+        border-left: 1px solid variables.$border
+        border-bottom: 1px solid variables.$border
         margin: -3px variables.$margin 0 variables.$margin
         padding: variables.$margin-half
-        background: variables.$gradient-secondary
-        color: variables.$primary-dark-blue
+        background: variables.$primary-tint
+        color: variables.$text
         border-bottom-right-radius: variables.$radius
         border-bottom-left-radius: variables.$radius
 
@@ -88,7 +88,7 @@ section.blog-post.big
     position: fixed
     align-items: center
     justify-content: center
-    background: variables.$gradient-primary
+    background: rgba(0,0,0,0.8)
     z-index: 2
     top: 0
     left: 0
@@ -109,9 +109,9 @@ section.blog-post.big
     position: fixed
     width: 100vw
     height: 100vh
-    background: variables.$gradient-primary
-    color: variables.$primary-dark-blue
-    text-shadow: variables.$shadow
+    background: rgba(0,0,0,0.8)
+    color: variables.$text
+    text-shadow: none
     display: none
     flex-flow: column nowrap
     justify-content: center
@@ -125,7 +125,7 @@ section.blog-post.big
         height: 100vh
         overflow-y: hidden
         flex-flow: column nowrap
-        background: variables.$gradient-secondary
+        background: variables.$surface
         width: calc(100% - variables.$margin-double)
         padding: variables.$margin
         animation: none

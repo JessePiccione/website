@@ -15,12 +15,15 @@ body
     grid-template-areas: "nav" "head" "main" "foot"
     grid-template-rows: auto auto auto 1fr
     grid-template-columns: auto
+    color: variables.$text
+    background: variables.$bg
 
 // Base typography
-h1, h2
+h1, h2, h3
     text-decoration: none
     font-family: variables.$primary-font
-    color: variables.$highlight-offwhite
+    color: variables.$text
+    text-shadow: none
 
 h1
     font-size: 36px
@@ -34,8 +37,8 @@ h2
     margin: 0 0 calc(variables.$margin / 2.5) 0
 
 hr
-    border: 1px solid variables.$secondary-orange
-    box-shadow: variables.$shadow
+    border: 1px solid variables.$border
+    box-shadow: none
 
 p, h3, strong
     font-family: variables.$primary-font
@@ -44,6 +47,7 @@ p, h3, strong
     letter-spacing: 0
     font-weight: 500
     margin: variables.$margin 0
+    color: variables.$text
 
 strong
     font-weight: 600
@@ -52,17 +56,18 @@ h3
     font-size: 20px
     font-weight: 600
     margin: 0
-    color: variables.$highlight-offwhite
+    color: variables.$text
 
 a, a:link
-    color: variables.$highlight-offwhite
+    color: variables.$primary
     font-family: variables.$primary-font
     font-size: 16px
     text-decoration: none
-    text-shadow: variables.$shadow
+    text-shadow: none
+    transition: color 0.15s ease-in
     &:hover, &:active
-        color: variables.$primary-light-blue
-        transition: all 0.05s ease-in-out
+        color: variables.$primary
+        text-decoration: underline
 .btn
     padding: 16px 32px
     font-family: variables.$primary-font
@@ -79,16 +84,16 @@ a, a:link
         transform: scale(1.05)
 
 .btn-primary
-    background: variables.$accent
-    color: variables.$neutral-light
+    background: variables.$primary
+    color: variables.$surface
 
 .btn-outline
     background: transparent
-    border: 1px solid variables.$accent
-    color: variables.$accent
+    border: 1px solid variables.$primary
+    color: variables.$primary
     &:hover
-        background: variables.$accent
-        color: variables.$neutral-light
+        background: variables.$primary
+        color: variables.$surface
 img
     border-radius: variables.$radius
     width: calc(320px - variables.$margin-double)
@@ -106,11 +111,6 @@ li
     font-size: 18px
     font-weight: 400
 
-.page-theme-toggle
-    position: fixed
-    bottom: variables.$margin
-    left: variables.$margin
-    z-index: 3
 
 .theme-toggle
     background: none
@@ -121,11 +121,8 @@ li
         transform: rotate(360deg)
 
 .gradient-text
-    background: variables.$gradient-secondary
-    -webkit-background-clip: text
-    background-clip: text
-    -webkit-text-fill-color: transparent
-    color: transparent
+    background: none
+    color: variables.$primary
 
 .reveal
     opacity: 0

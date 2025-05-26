@@ -4,6 +4,7 @@ import NavList from './navlist'
 import Chevron from '@/images/chevron.svg'
 import Image from 'next/image'
 import {useState} from 'react'
+import ThemeToggle from '@/components/themeToggle'
 
 export default function Nav(){
     const [animation, setAnimation] = useState('')
@@ -32,6 +33,7 @@ export default function Nav(){
                         onClick={toggleMenu}
                         onAnimationEnd={handleEndOfAnimation}
                     />
+                    <ThemeToggle />
                 </section>
                 <NavList className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
             </section>
