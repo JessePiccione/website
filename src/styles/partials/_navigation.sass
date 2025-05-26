@@ -39,17 +39,6 @@ nav.Nav
         list-style-type: none
         margin: variables.$margin
 
-    img
-        &.opened
-            transform: rotateZ(270deg)
-
-        &.open
-            animation: menu-chevron-move 0.25s ease
-            animation-fill-mode: forwards
-
-        &.close
-            animation: menu-chevron-move 0.25s ease reverse
-            animation-fill-mode: backwards
 
 section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
@@ -66,34 +55,19 @@ section.menu-logo-container
     justify-content: flex-start
     align-content: center
 
-img.menu-chevron
-    width: 20px
-    height: 40px
-    object-fit: fill
-    margin: variables.$margin-double
-    box-shadow: none
-    filter: none
-    justify-self: end
-    align-self: center
-    transform: rotateZ(90deg)
-
-nav.Nav .theme-toggle
-    background: var(--clr-accent)
-    color: var(--clr-dark)
+button.MenuToggle
+    background: none
     border: none
-    border-radius: 999px
-    padding: 0.5rem 0.6rem
-    margin: 0 0.5rem
+    padding: variables.$margin-double
     cursor: pointer
     display: flex
     align-items: center
     justify-content: center
+    width: 40px
+    height: 40px
+
 
 // Navigation animations
-@keyframes menu-chevron-move
-    100%
-        transform: rotateZ(270deg)
-
 @keyframes navigation-menu
     0%
         transform: translateY(-100%) scale3d(0,0,0)

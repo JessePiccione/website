@@ -6,6 +6,7 @@ import FullResume from '@/components/fullresume/fullresume'
 import FullResumeState from '@/components/providers/fullresumestate'
 import PostBrowserProvider from '@/components/providers/postbrowserstate'
 import PostBrowser from '@/components/postbrowser/postbrowser'
+import ThemeToggle from '@/components/themeToggle'
 import '@/styles/style.sass'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -23,6 +24,7 @@ export default function Page(){
                 </FullResumeState>
             </PostBrowserProvider>
             <Footer/>
+            <ThemeToggle className='floating-theme-toggle'/>
         </>
     )
 }
