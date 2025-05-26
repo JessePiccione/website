@@ -29,7 +29,7 @@
     cursor: pointer
     background: variables.$accent
     border: none
-    color: variables.$surface
+    color: var(--clr-dark)
     font-size: 24px
   &-content
     display: none
@@ -68,13 +68,13 @@
       
       &.user
         background: variables.$primary-tint
-        color: variables.$text
+        color: var(--clr-dark)
         align-self: flex-end
         margin-left: auto
-        
+
       &.assistant
         background: variables.$primary
-        color: variables.$surface
+        color: var(--clr-light)
         align-self: flex-start
         margin-right: auto
         
@@ -98,5 +98,5 @@
       border-radius: 0 variables.$radius variables.$radius 0
       border: none
       background: variables.$accent
-      color: variables.$surface
+      color: var(--clr-dark)
       cursor: pointer
