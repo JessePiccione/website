@@ -9,9 +9,9 @@ nav.Nav
     z-index: 2
     > section
         display: grid
-        grid-template-areas: "logo menu" "list list"
+        grid-template-areas: "logo theme menu" "list list list"
         grid-template-rows: auto min-content
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr auto auto
 
     ul
         grid-area: list
@@ -39,19 +39,8 @@ nav.Nav
         list-style-type: none
         margin: variables.$margin
 
-    img
-        &.opened
-            transform: rotateZ(270deg)
 
-        &.open
-            animation: menu-chevron-move 0.25s ease
-            animation-fill-mode: forwards
-
-        &.close
-            animation: menu-chevron-move 0.25s ease reverse
-            animation-fill-mode: backwards
-
-section.menu-chevron-container, section.menu-logo-container
+section.menu-button-container, section.menu-logo-container
     grid-area: menu
     background: inherit
     width: 100%
@@ -66,18 +55,22 @@ section.menu-logo-container
     justify-content: flex-start
     align-content: center
 
-img.menu-chevron
-    width: 20px
-    height: 40px
-    object-fit: fill
+button.MenuToggle
+    background: none
+    border: none
+    cursor: pointer
     margin: variables.$margin-double
-    box-shadow: none
-    filter: none
-    justify-self: end
-    align-self: center
-    transform: rotateZ(90deg)
+    display: flex
+    align-items: center
+    justify-content: center
+
+.menu-hamburger
+    width: 20px
+    height: 20px
+
 
 nav.Nav .theme-toggle
+    grid-area: theme
     background: var(--clr-accent)
     color: var(--clr-dark)
     border: none
@@ -90,10 +83,6 @@ nav.Nav .theme-toggle
     justify-content: center
 
 // Navigation animations
-@keyframes menu-chevron-move
-    100%
-        transform: rotateZ(270deg)
-
 @keyframes navigation-menu
     0%
         transform: translateY(-100%) scale3d(0,0,0)

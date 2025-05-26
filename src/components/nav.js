@@ -1,20 +1,18 @@
 'use client'
 import Logo from '@/images/logo'
 import NavList from './navlist'
-import Chevron from '@/images/chevron.svg'
-import Image from 'next/image'
 import {useState, useRef} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import ThemeToggle from '@/components/themeToggle'
 
 export default function Nav(){
     const [animation, setAnimation] = useState('')
     const menuRef = useRef(null)
-    const chevronRef = useRef(null)
     const toggleMenu = () => {
-        if(chevronRef.current) chevronRef.current.classList.remove('opened')
         if(menuRef.current) menuRef.current.classList.remove('opened')
         if(animation === 'close' || animation === '') setAnimation('open')
-        else if (animation === 'open' ) setAnimation('close')
+        else if (animation === 'open') setAnimation('close')
     }
     const handleEndOfAnimation = (e) => {
         e.target.classList.remove(animation)
@@ -27,7 +25,8 @@ export default function Nav(){
                 <section className='menu-logo-container'>
                     <Logo/>
                 </section>
-                <section className='menu-chevron-container'>
+                <ThemeToggle />
+                <section className='menu-button-container'>
                     <button
                         className='MenuToggle'
                         aria-label='Open navigation menu'
@@ -35,17 +34,11 @@ export default function Nav(){
                         aria-expanded={(animation === 'open' || animation === 'opened') ? 'true' : 'false'}
                         onClick={toggleMenu}
                     >
-                        <Image
-                            loading='eager'
-                            src={Chevron}
-                            alt=''
-                            aria-hidden='true'
-                            className={`menu-chevron ${animation}`}
-                            onAnimationEnd={handleEndOfAnimation}
-                            ref={chevronRef}
+                        <FontAwesomeIcon
+                            icon={(animation === 'open' || animation === 'opened') ? faXmark : faBars}
+                            className='menu-hamburger icon-lg'
                         />
                     </button>
-                    <ThemeToggle />
                 </section>
                 <NavList id='nav-list' ref={menuRef} className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
             </section>

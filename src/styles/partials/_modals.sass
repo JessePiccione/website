@@ -71,12 +71,21 @@ section#fullResume
 // Close button
 button.CloseButton
     position: absolute
-    height: min-content
-    line-height: 0
-    // Override global button gradient for the close button
-    background: none
     right: variables.$margin
     top: variables.$margin
+    width: 32px
+    height: 32px
+    border: none
+    border-radius: 999px
+    background: variables.$accent
+    color: var(--clr-dark)
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: variables.$shadow
+    transition: transform 150ms ease-in-out, background-color 150ms ease-in-out
+    &:hover
+        transform: scale(1.05)
 
 // Animations
 @keyframes slide-in-up

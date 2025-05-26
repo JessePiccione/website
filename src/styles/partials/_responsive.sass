@@ -42,9 +42,9 @@ img
         > section
             justify-self: center
             width: variables.$large-width
-            grid-template-areas: 'logo list'
+            grid-template-areas: 'logo list theme'
             grid-template-rows: auto
-            grid-template-columns: min-content max-content
+            grid-template-columns: min-content max-content auto
         ul, ul.open, ul.close, ul.opened
             display: flex
             transform: none
@@ -68,7 +68,7 @@ img
         width: calc(variables.$large-width - variables.$margin-double)
     section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
         width: variables.$large-width
-    img.menu-chevron, section.menu-chevron-container
+    section.menu-button-container
         display: none
     footer.Footer
         nav
