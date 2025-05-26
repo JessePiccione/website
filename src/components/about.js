@@ -3,8 +3,8 @@ export default function About(){
     return (
         <Reveal as='section' id='about' className='about'>
             <article>
-                <h1 className='gradient-text'>About Me</h1>
-                <h2 className='gradient-text'>Origins of an Engineer</h2>
+                <h1>About Me</h1>
+                <h2>Origins of an Engineer</h2>
                 <hr/>
                 <p>
                     I never expected to dive deeply into software engineering, in-fact, before high school

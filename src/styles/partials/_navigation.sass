@@ -4,8 +4,8 @@
 nav.Nav
     grid-area: nav
     position: relative
-    background: variables.$gradient-primary
-    box-shadow: variables.$shadow
+    background: var(--clr-surface)
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1)
     z-index: 2
     > section
         display: grid
@@ -19,7 +19,7 @@ nav.Nav
         position: absolute
         flex-flow: column nowrap
         justify-content: flex-start
-        background: variables.$gradient-secondary
+        background: var(--clr-bg)
         transform: translateY(-100%) scale3d(0,0,0)
 
         &.close
@@ -53,12 +53,12 @@ nav.Nav
 
 section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
-    background: variables.$gradient-primary
+    background: inherit
     width: 100%
     height: 100%
     display: flex
     justify-content: flex-end
-    align-content: flex-end
+    align-items: center
     z-index: 1
 
 section.menu-logo-container
@@ -72,10 +72,22 @@ img.menu-chevron
     object-fit: fill
     margin: variables.$margin-double
     box-shadow: none
-    filter: drop-shadow(variables.$shadow)
+    filter: none
     justify-self: end
-    align-self: end
+    align-self: center
     transform: rotateZ(90deg)
+
+nav.Nav .theme-toggle
+    background: var(--clr-accent)
+    color: var(--clr-surface)
+    border: none
+    border-radius: 999px
+    padding: 0.5rem 0.6rem
+    margin: 0 0.5rem
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
 
 // Navigation animations
 @keyframes menu-chevron-move

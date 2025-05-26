@@ -131,11 +131,7 @@ img
             height: variables.$post-iframe-height-xl
 
 // Disable all shadows in dark mode for readability
-[data-theme='dark'], [data-theme='dark'] *
+[class~='dark'], .dark *
     text-shadow: none
     filter: none
 
-@media (prefers-color-scheme: dark)
-    *
-        text-shadow: none
-        filter: none

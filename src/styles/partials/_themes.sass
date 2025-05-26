@@ -1,77 +1,16 @@
 :root
-  // Light theme palette
-  --primary-dark-blue: #2c3e50
-  --primary-light-blue: #2980B9
-  --primary-opaque-blue: #2773a5
-  --secondary-orange: #f39C12
-  --secondary-green: #6B7A8F
-  --highlight-red: #e74c3c
-  --highlight-offwhite: #ecf0f1
-  --shadow-color: #00000044
-  --gradient-primary: linear-gradient(135deg, #0ea5e9, #a855f7)
-  --gradient-secondary: linear-gradient(135deg, #ec4899, #f97316)
-  --primary: #1f2937
-  --accent: #3b82f6
-  --neutral-light: #f8f8f8
-  --neutral-dark: #1f1f1f
+  --clr-primary: #2563EB
+  --clr-primary-tint: #DBEAFE
+  --clr-accent: #F59E0B
+  --clr-bg: #F9FAFB
+  --clr-surface: #FFFFFF
+  --clr-text: #1F2937
+  --clr-text-secondary: #4B5563
+  --clr-border: #E5E7EB
 
-@media (prefers-color-scheme: dark)
-  :root
-    // Dark theme palette keeps the same variety of colors but shifts to deep blues
-    --primary-dark-blue: #0d1b2a
-    --primary-light-blue: #1b3b6f
-    --primary-opaque-blue: #415a77
-    --secondary-orange: #e67e22
-    --secondary-green: #6B7A8F
-    --highlight-red: #e74c3c
-    --highlight-offwhite: #dce3e8
-    --shadow-color: #ffffff44
-
-[data-theme='dark']
-  // Mirror the deep blue palette when the user manually selects dark mode
-  --primary-dark-blue: #0d1b2a
-  --primary-light-blue: #1b3b6f
-  --primary-opaque-blue: #415a77
-  --secondary-orange: #e67e22
-  --secondary-green: #6B7A8F
-  --highlight-red: #e74c3c
-  --highlight-offwhite: #dce3e8
-  --shadow-color: #ffffff44
-  --gradient-primary: linear-gradient(135deg, #0ea5e9, #a855f7)
-  --gradient-secondary: linear-gradient(135deg, #ec4899, #f97316)
-  --primary: #1f2937
-  --accent: #3b82f6
-  --neutral-light: #f8f8f8
-  --neutral-dark: #1f1f1f
-
-[data-theme='light']
-  --primary-dark-blue: #2c3e50
-  --primary-light-blue: #2980B9
-  --primary-opaque-blue: #2773a5
-  --secondary-orange: #f39C12
-  --secondary-green: #6B7A8F
-  --highlight-red: #e74c3c
-  --highlight-offwhite: #ecf0f1
-  --shadow-color: #00000044
-  --gradient-primary: linear-gradient(135deg, #0ea5e9, #a855f7)
-  --gradient-secondary: linear-gradient(135deg, #ec4899, #f97316)
-  section#fullResume > article
-    color: var(--primary-dark-blue)
-
-@media (prefers-color-scheme: dark)
-  header.Header,
-  section.blog,
-  section.blog-post > section,
-  section.contact,
-  section#fullResume > article
-    background-color: var(--primary-dark-blue)
-    color: var(--highlight-offwhite)
-
-[data-theme='dark']
-  header.Header,
-  section.blog,
-  section.blog-post > section,
-  section.contact,
-  section#fullResume > article
-    background-color: var(--primary-dark-blue)
-    color: var(--highlight-offwhite)
+.dark
+  --clr-bg: #111827
+  --clr-surface: #1F2937
+  --clr-text: #F9FAFB
+  --clr-text-secondary: #D1D5DB
+  --clr-border: #374151

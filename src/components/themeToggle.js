@@ -10,13 +10,13 @@ export default function ThemeToggle(){
         const prefersDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
         const initial = saved || (prefersDark ? 'dark' : 'light')
         setTheme(initial)
-        if (typeof document !== 'undefined') document.documentElement.setAttribute('data-theme', initial)
+        if (typeof document !== 'undefined') document.documentElement.classList.toggle('dark', initial === 'dark')
     }, [])
 
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark'
         setTheme(newTheme)
-        if (typeof document !== 'undefined') document.documentElement.setAttribute('data-theme', newTheme)
+        if (typeof document !== 'undefined') document.documentElement.classList.toggle('dark', newTheme === 'dark')
         if (typeof window !== 'undefined') localStorage.setItem('theme', newTheme)
     }
 

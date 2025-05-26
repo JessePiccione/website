@@ -5,8 +5,8 @@
   position: fixed
   bottom: variables.$margin
   right: variables.$margin
-  background: variables.$gradient-primary
-  color: variables.$highlight-offwhite
+  background: variables.$surface
+  color: variables.$text
   border-radius: variables.$radius
   box-shadow: variables.$shadow
   z-index: 10
@@ -27,9 +27,9 @@
     justify-content: center
     align-items: center
     cursor: pointer
-    background: variables.$gradient-secondary
+    background: variables.$accent
     border: none
-    color: variables.$primary-dark-blue
+    color: variables.$surface
     font-size: 24px
   &-content
     display: none
@@ -45,7 +45,7 @@
     justify-content: space-between
     align-items: center
     padding: variables.$margin-half
-    background: variables.$gradient-primary
+    background: variables.$primary
     border-radius: variables.$radius variables.$radius 0 0
     margin-bottom: variables.$margin-half
     
@@ -56,7 +56,7 @@
     flex: 1
     overflow-y: auto
     margin-bottom: variables.$margin
-    background-color: rgba(variables.$highlight-offwhite, 0.05)
+    background-color: rgba(0,0,0,0.05)
     border-radius: variables.$radius
     padding: variables.$margin-half
     
@@ -67,14 +67,14 @@
       max-width: 80%
       
       &.user
-        background: variables.$gradient-secondary
-        color: variables.$primary-dark-blue
+        background: variables.$primary-tint
+        color: variables.$text
         align-self: flex-end
         margin-left: auto
         
       &.assistant
-        background: variables.$gradient-primary
-        color: variables.$highlight-offwhite
+        background: variables.$primary
+        color: variables.$surface
         align-self: flex-start
         margin-right: auto
         
@@ -86,17 +86,17 @@
       padding: variables.$margin-half
       border-radius: variables.$radius 0 0 variables.$radius
       border: none
-      background-color: rgba(variables.$highlight-offwhite, 0.2)
-      color: variables.$highlight-offwhite
+      background-color: rgba(0,0,0,0.2)
+      color: variables.$text
       font-family: variables.$secondary-font
       
       &::placeholder
-        color: rgba(variables.$highlight-offwhite, 0.7)
+        color: rgba(0,0,0,0.5)
         
     button
       padding: variables.$margin-half
       border-radius: 0 variables.$radius variables.$radius 0
       border: none
-      background: variables.$gradient-secondary
-      color: variables.$primary-dark-blue
+      background: variables.$accent
+      color: variables.$surface
       cursor: pointer
