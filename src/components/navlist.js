@@ -1,10 +1,10 @@
-
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faFileLines, faBlog, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-export default function navlist(props){
+const NavList = React.forwardRef(function NavList(props, ref){
     return (
-        <ul {...props}>
+        <ul ref={ref} {...props}>
             <li>
                 <a href='#home'>
                     <FontAwesomeIcon icon={faHouse} className='icon-md' />
@@ -43,4 +43,6 @@ export default function navlist(props){
             </li>
         </ul>
     )
-}
+})
+
+export default NavList

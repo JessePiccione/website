@@ -25,15 +25,16 @@ export default function FullResume(){
     }
     useEffect(()=>{getResumeData()},[])
     return (
-        <section id='fullResume' className={display}>
+        <section id='fullResume' className={display} role='dialog' aria-modal='true' aria-labelledby='resumeTitle'>
             <article onAnimationEnd={toggleDisplay}>
                 <button
                 className='CloseButton'
-                onClick={toggleDisplay}>
-                    <FontAwesomeIcon icon={faXmark}/>
+                onClick={toggleDisplay}
+                aria-label='Close resume'>
+                    <FontAwesomeIcon icon={faXmark} aria-hidden='true'/>
                 </button>
                 <section>
-                    <h1 className='gradient-text'>Jesse Piccione</h1>
+                    <h1 id='resumeTitle' className='gradient-text'>Jesse Piccione</h1>
                     <hr/>
                 </section>
                 <section>

@@ -1,6 +1,8 @@
 :root
   --clr-primary: #2563EB
+  --clr-primary-dark: #3B82F6
   --clr-primary-tint: #DBEAFE
+  --clr-primary-tint-dark: #374151
   --clr-accent: #F59E0B
   --clr-light: #F9FAFB
   --clr-dark: #1F2937
@@ -16,3 +18,15 @@
   --clr-text: #F9FAFB
   --clr-text-secondary: #D1D5DB
   --clr-border: #374151
+  --clr-primary: var(--clr-primary-dark)
+  --clr-primary-tint: var(--clr-primary-tint-dark)
+
+  .btn-primary
+    color: var(--clr-light)
+
+  .btn-outline
+    color: var(--clr-light)
+    border-color: var(--clr-light)
+    &:hover
+      background: var(--clr-light)
+      color: var(--clr-dark)
