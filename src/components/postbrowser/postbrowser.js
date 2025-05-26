@@ -30,12 +30,12 @@ export default function PostBrowser(){
         console.error('PostBrowser: blogPosts is not an array', blogPosts)
     }
     return (
-        <section id='BlogPostBrowser' className={display}>
+        <section id='BlogPostBrowser' className={display} role='dialog' aria-modal='true' aria-labelledby='blogBrowserTitle'>
             <article onAnimationEnd={toggleDisplay}>
-                <button className='CloseButton' onClick={toggleDisplay}>
-                    <FontAwesomeIcon icon={faXmark}/>
+                <button className='CloseButton' onClick={toggleDisplay} aria-label='Close blog posts'>
+                    <FontAwesomeIcon icon={faXmark} aria-hidden='true'/>
                 </button>
-                <h1 className='gradient-text'>Jesse's Blog</h1>
+                <h1 id='blogBrowserTitle' className='gradient-text'>Jesse's Blog</h1>
                 <hr/>
                 <ul>
                     {postsAreArray ? blogPosts.map(post => <PostSmall key={post.title+post.id} {...post}/>) : <li>No posts available</li>}
