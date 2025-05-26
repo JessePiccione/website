@@ -1,15 +1,9 @@
-import { Poppins, Inter } from 'next/font/google'
+import { Work_Sans } from 'next/font/google'
 
-const poppins = Poppins({
-    weight: ['400', '500', '600'],
+const workSans = Work_Sans({
+    weight: ['400', '600', '800'],
     subsets: ['latin'],
-    variable: '--font-poppins'
-})
-
-const inter = Inter({
-    weight: ['400', '500', '600'],
-    subsets: ['latin'],
-    variable: '--font-inter'
+    variable: '--font-sans'
 })
 
 export const metadata = {
@@ -45,7 +39,7 @@ export const metadata = {
 }
 export default function RootLayout(props){
     return (
-        <html lang='en' className={`${poppins.variable} ${inter.variable}`}> 
+        <html lang='en' className={workSans.variable}>
             <body>
                 {props.children}
             </body>

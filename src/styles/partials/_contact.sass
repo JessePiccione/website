@@ -24,12 +24,18 @@ section.contact
             
             textarea, input
                 flex: 1.7
-                font-family: variables.$secondary-font
+                font-family: variables.$primary-font
                 padding: variables.$margin
                 width: calc( 100% - variables.$margin-double )
-                border-radius: variables.$radius
                 border: none
-                box-shadow: variables.$shadow
+                border-bottom: 1px solid #555
+                background: transparent
+                border-radius: 0
+                box-shadow: none
+                transition: border-color 150ms
+                &:focus
+                    outline: none
+                    border-bottom: 2px solid variables.$accent
         
         label
             font-family: variables.$secondary-font
@@ -47,3 +53,9 @@ section.contact
         
         button[type='submit']
             margin-top: calc( variables.$margin / 2 )
+
+        input.error, textarea.error
+            border-bottom-color: red
+
+        input.success, textarea.success
+            border-bottom-color: green

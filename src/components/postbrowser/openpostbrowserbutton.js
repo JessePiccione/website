@@ -3,7 +3,7 @@ import { PostBrowserDisplayContext } from '@/components/providers/postbrowsersta
 export default function OpenPostBrowserButton(){
     const {toggleDisplay} = PostBrowserDisplayContext()
     return (
-        <button onClick={toggleDisplay}>
+        <button onClick={toggleDisplay} className='btn btn-primary'>
             Browse Posts
         </button>
     )

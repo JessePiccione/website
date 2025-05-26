@@ -23,13 +23,13 @@ h1, h2
     color: variables.$highlight-offwhite
 
 h1
-    font-size: 48px
-    line-height: 48px
+    font-size: 36px
+    line-height: 1.4
     font-weight: 500
 
 h2
-    line-height: 36px
-    font-size: 36px
+    line-height: 1.5
+    font-size: 24px
     font-weight: 400
     margin: 0 0 calc(variables.$margin / 2.5) 0
 
@@ -38,8 +38,9 @@ hr
     box-shadow: variables.$shadow
 
 p, h3, strong
-    font-family: variables.$secondary-font
-    font-size: 18px
+    font-family: variables.$primary-font
+    font-size: 16px
+    line-height: 1.6
     letter-spacing: 0
     font-weight: 500
     margin: variables.$margin 0
@@ -55,40 +56,49 @@ h3
 
 a, a:link
     color: variables.$highlight-offwhite
-    font-family: variables.$secondary-font
-    font-size: 18px
+    font-family: variables.$primary-font
+    font-size: 16px
     text-decoration: none
     text-shadow: variables.$shadow
     &:hover, &:active
         color: variables.$primary-light-blue
         transition: all 0.05s ease-in-out
-button
-    // Fluid gradient background for all buttons
-    background-color: variables.$primary-light-blue
-    background-image: linear-gradient(45deg, variables.$primary-light-blue, variables.$secondary-green)
-    background-size: 200% 100%
-    background-position: left center
-    padding: variables.$margin
-    font-family: variables.$secondary-font
-    font-size: 18px
-    width: fit-content
-    border-radius: variables.$radius
+.btn
+    padding: 16px 32px
+    font-family: variables.$primary-font
+    font-size: 16px
+    border-radius: 8px
     border: none
-    box-shadow: variables.$shadow
-    color: variables.$highlight-offwhite
-    transition: background-position 0.3s ease, color 0.05s ease-in-out
+    cursor: pointer
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+    transition: transform 150ms ease-in-out, background-color 150ms ease-in-out
+    display: inline-flex
+    align-items: center
+    justify-content: center
     &:hover
-        color: white
-        background-position: right center
-    &:active
-        background-position: right center
-        color: white
+        transform: scale(1.05)
+
+.btn-primary
+    background: variables.$accent
+    color: variables.$neutral-light
+
+.btn-outline
+    background: transparent
+    border: 1px solid variables.$accent
+    color: variables.$accent
+    &:hover
+        background: variables.$accent
+        color: variables.$neutral-light
 img
     border-radius: variables.$radius
     width: calc(320px - variables.$margin-double)
     height: 400px
     object-fit: cover
     box-shadow: variables.$shadow
+
+.profile-img
+    border-radius: 50%
+    outline: 2px solid variables.$accent
 
 li
     list-style-type: none
@@ -102,9 +112,26 @@ li
     left: variables.$margin
     z-index: 3
 
+.theme-toggle
+    background: none
+    border: none
+    cursor: pointer
+    transition: transform 0.25s ease
+    &:active
+        transform: rotate(360deg)
+
 .gradient-text
     background: variables.$gradient-secondary
     -webkit-background-clip: text
     background-clip: text
     -webkit-text-fill-color: transparent
     color: transparent
+
+.reveal
+    opacity: 0
+    transform: translateY(20px)
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out
+
+.reveal-visible
+    opacity: 1
+    transform: none

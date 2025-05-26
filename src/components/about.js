@@ -1,6 +1,7 @@
+import Reveal from '@/components/reveal'
 export default function About(){
     return (
-        <section id='about' className='about'>
+        <Reveal as='section' id='about' className='about'>
             <article>
                 <h1 className='gradient-text'>About Me</h1>
                 <h2 className='gradient-text'>Origins of an Engineer</h2>
@@ -47,6 +48,6 @@ export default function About(){
                     constant innovation, collaboration, and learning keep me excited every single day.
                 </p>
             </article>
-        </section>
+        </Reveal>
     )
 }
