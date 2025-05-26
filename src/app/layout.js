@@ -1,5 +1,17 @@
-import '@fontsource-variable/roboto-serif';
-import '@fontsource-variable/work-sans';
+import { Poppins, Inter } from 'next/font/google'
+
+const poppins = Poppins({
+    weight: ['400', '500', '600'],
+    subsets: ['latin'],
+    variable: '--font-poppins'
+})
+
+const inter = Inter({
+    weight: ['400', '500', '600'],
+    subsets: ['latin'],
+    variable: '--font-inter'
+})
+
 export const metadata = {
     title: 'Piccione Software Development',
     description: 'Jesse Piccione Development (piccione.dev) is the professional portfolio of Jesse Piccione, a skilled software engineer specializing in full-stack web development. This site showcases expertise in modern technologies such as Python, Django, JavaScript, and cloud platforms like Google Cloud. Featuring a dynamic e-resume, project highlights, and technical insights, piccione.dev demonstrates Jesse’s ability to craft innovative, user-focused solutions. Explore a blend of creativity and technical proficiency designed to connect with clients, employers, and fellow developers.',
@@ -33,7 +45,7 @@ export const metadata = {
 }
 export default function RootLayout(props){
     return (
-        <html lang='en'>
+        <html lang='en' className={`${poppins.variable} ${inter.variable}`}> 
             <body>
                 {props.children}
             </body>
