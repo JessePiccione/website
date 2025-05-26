@@ -61,7 +61,11 @@ a, a:link
         color: variables.$primary-light-blue
         transition: all 0.05s ease-in-out
 button
+    // Fluid gradient background for all buttons
     background-color: variables.$primary-light-blue
+    background-image: linear-gradient(45deg, variables.$primary-light-blue, variables.$secondary-green)
+    background-size: 200% 100%
+    background-position: left center
     padding: variables.$margin
     font-family: variables.$secondary-font
     font-size: 18px
@@ -70,12 +74,12 @@ button
     border: none
     box-shadow: variables.$shadow
     color: variables.$highlight-offwhite
+    transition: background-position 0.3s ease, color 0.05s ease-in-out
     &:hover
         color: white
-        background-color: variables.$primary-opaque-blue
-        transition: all 0.05s ease-in-out
+        background-position: right center
     &:active
-        background-color: variables.$primary-opaque-blue
+        background-position: right center
         color: white
 img
     border-radius: variables.$radius

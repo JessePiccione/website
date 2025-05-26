@@ -1,4 +1,5 @@
 :root
+  // Light theme palette
   --primary-dark-blue: #2c3e50
   --primary-light-blue: #2980B9
   --primary-opaque-blue: #2773a5
@@ -10,23 +11,25 @@
 
 @media (prefers-color-scheme: dark)
   :root
-    --primary-dark-blue: #1a1a1a
-    --primary-light-blue: #3498db
-    --primary-opaque-blue: #2c3e50
+    // Dark theme palette keeps the same variety of colors but shifts to deep blues
+    --primary-dark-blue: #0d1b2a
+    --primary-light-blue: #1b3b6f
+    --primary-opaque-blue: #415a77
     --secondary-orange: #e67e22
     --secondary-green: #2ecc71
     --highlight-red: #e74c3c
-    --highlight-offwhite: #f1f1f1
+    --highlight-offwhite: #dce3e8
     --shadow-color: #ffffff44
 
 [data-theme='dark']
-  --primary-dark-blue: #1a1a1a
-  --primary-light-blue: #3498db
-  --primary-opaque-blue: #2c3e50
+  // Mirror the deep blue palette when the user manually selects dark mode
+  --primary-dark-blue: #0d1b2a
+  --primary-light-blue: #1b3b6f
+  --primary-opaque-blue: #415a77
   --secondary-orange: #e67e22
   --secondary-green: #2ecc71
   --highlight-red: #e74c3c
-  --highlight-offwhite: #f1f1f1
+  --highlight-offwhite: #dce3e8
   --shadow-color: #ffffff44
 
 [data-theme='light']
