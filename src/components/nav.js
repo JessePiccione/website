@@ -4,7 +4,6 @@ import NavList from './navlist'
 import {useState, useRef} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
-import ThemeToggle from '@/components/themeToggle'
 
 export default function Nav(){
     const [animation, setAnimation] = useState('')
@@ -40,7 +39,6 @@ export default function Nav(){
                             aria-hidden='true'
                         />
                     </button>
-                    <ThemeToggle className='nav-theme-toggle'/>
                 </section>
                 <NavList id='nav-list' ref={menuRef} className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
             </section>
