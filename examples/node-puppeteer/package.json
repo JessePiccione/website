@@ -1,0 +1,8 @@
+{
+  "name": "browser-ai-node",
+  "version": "1.0.0",
+  "dependencies": {
+    "openai": "^4.0.0",
+    "puppeteer": "^22.0.0"
+  }
+}
