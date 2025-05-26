@@ -88,35 +88,40 @@ export default function ContactForm(){
                         <FontAwesomeIcon icon={faUser} className='icon-md' /> Name
                     </label>
                     <input onClick={touch} id='name' name='name' type='text'
-                        placeholder="Name" value={name} onChange={onNameChange}/>
+                        placeholder="Name" value={name} onChange={onNameChange}
+                        className={checkName() ? 'error' : (name && isTouched ? 'success' : '')}/>
                     <p>{checkName()}</p>
                 </section>
                 <section>
                     <label htmlFor='phone'>Phone</label>
-                    <input onClick={touch} id='phone' type='tel' placeholder='123-456-7890' maxLength='12' value={formatPhone(phone)} onChange={onPhoneChange}/>
+                    <input onClick={touch} id='phone' type='tel' placeholder='123-456-7890' maxLength='12' value={formatPhone(phone)} onChange={onPhoneChange}
+                        className={checkPhone() ? 'error' : (phone && isTouched ? 'success' : '')}/>
                     <p>{checkPhone()}</p>
                 </section>
                 <section>
                     <label htmlFor='email'>
                         <FontAwesomeIcon icon={faEnvelope} className='icon-md' /> Email
                     </label>
-                    <input onClick={touch} id='email' type='email' placeholder='example@piccione.dev' value={email} onChange={onEmailChange}/>
+                    <input onClick={touch} id='email' type='email' placeholder='example@piccione.dev' value={email} onChange={onEmailChange}
+                        className={checkEmail() ? 'error' : (email && isTouched ? 'success' : '')}/>
                     <p>{checkEmail()}</p>
                 </section>
                 <section>
                     <label htmlFor='subject'>Subject</label>
-                    <input onClick={touch} id='subject' type='text' placeholder='Subject' value={subject} onChange={onSubjectChange}/>
+                    <input onClick={touch} id='subject' type='text' placeholder='Subject' value={subject} onChange={onSubjectChange}
+                        className={checkSubject() ? 'error' : (subject && isTouched ? 'success' : '')}/>
                     <p>{checkSubject()}</p>
                 </section>
                 <section>
                     <label htmlFor='message'>
                         <FontAwesomeIcon icon={faCommentDots} className='icon-md' /> Message
                     </label>
-                    <textarea onClick={touch} id='message' placeholder='Message' value={message} onChange={onMessageChange}></textarea>
+                    <textarea onClick={touch} id='message' placeholder='Message' value={message} onChange={onMessageChange}
+                        className={checkMessage() ? 'error' : (message && isTouched ? 'success' : '')}></textarea>
                     <p>{checkMessage()}</p>
                 </section>
                 <section>
-                    <button onClick={touch} type='submit'>Contact Me</button>
+                    <button onClick={touch} type='submit' className='btn btn-primary'>Contact Me</button>
                 </section>
             </fieldset>
         </form>

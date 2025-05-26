@@ -5,6 +5,11 @@ main.Main
     grid-area: main
     display: grid
     grid-template-areas: "eresume" "blog" "about" "contact"
+    gap: variables.$gap
+    > section
+        padding: variables.$section-padding-desktop 0
+        @media screen and (max-width: variables.$large-width)
+            padding: variables.$section-padding-tablet 0
 // eResume section
 section.eresume
     background: variables.$gradient-primary
@@ -25,12 +30,16 @@ section.eresume
         border: 1px solid variables.$secondary-orange
 // Card components
 section.card
-    background: variables.$gradient-secondary
-    padding: variables.$margin
-    border-radius: variables.$radius
+    background: variables.$neutral-dark
+    padding: 24px
+    border-radius: 16px
     box-shadow: variables.$shadow
     width: calc( 100vw - variables.$margin-quadruple )
     max-width: calc( variables.$width - variables.$margin-double)
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+    &:hover
+        transform: translateY(-4px)
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15)
     &:first-child
         margin-bottom: variables.$margin
     ul

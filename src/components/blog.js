@@ -1,5 +1,6 @@
 import Post from '@/components/postsmall'
 import OpenPostBrowserButton from '@/components/postbrowser/openpostbrowserbutton'
+import Reveal from '@/components/reveal'
 export default async function Blog(){
     let posts = []
     try {
@@ -13,7 +14,7 @@ export default async function Blog(){
         console.error('Blog: posts is not an array', posts)
     }
     return (
-        <section id='blog' className='blog'>
+        <Reveal as='section' id='blog' className='blog'>
             <article>
                 <h1 className='gradient-text'>Blog Posts</h1>
                 <h2 className='gradient-text'>Featured Posts</h2>
@@ -23,6 +24,6 @@ export default async function Blog(){
                 </ul>
                 <OpenPostBrowserButton/>
             </article>
-        </section>
+        </Reveal>
     )
 }

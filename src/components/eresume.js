@@ -1,10 +1,11 @@
 import ProjectCard from "@/components/projectcard";
 import SkillCard from "@/components/skillcard"
 import OpenResumeButton from '@/components/fullresume/openresumebutton'
+import Reveal from '@/components/reveal'
 export default function eresume(){
     return (
         <>
-            <section id='eresume' className='eresume'>
+            <Reveal as='section' id='eresume' className='eresume'>
                 <article>
                     <section>
                         <h1 className='gradient-text'>Jesse&apos;s eResume</h1>
@@ -24,7 +25,7 @@ export default function eresume(){
                         <ProjectCard/>
                     </aside>
                 </article>
-            </section>
+            </Reveal>
         </>
     )
 }
