@@ -1,6 +1,8 @@
 "use client"
 import formMessage from '@/components/api/formMessage'
 import {useState} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faEnvelope, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 export default function ContactForm(){
     const [isTouched, setIsTouched] = useState(false)
     const touch = () => {
@@ -82,7 +84,9 @@ export default function ContactForm(){
         <form onSubmit={handleOnSubmit}>
             <fieldset>
                 <section>
-                    <label htmlFor='name'>Name</label>
+                    <label htmlFor='name'>
+                        <FontAwesomeIcon icon={faUser} className='icon-md' /> Name
+                    </label>
                     <input onClick={touch} id='name' name='name' type='text'
                         placeholder="Name" value={name} onChange={onNameChange}/>
                     <p>{checkName()}</p>
@@ -93,7 +97,9 @@ export default function ContactForm(){
                     <p>{checkPhone()}</p>
                 </section>
                 <section>
-                    <label htmlFor='email'>Email</label>
+                    <label htmlFor='email'>
+                        <FontAwesomeIcon icon={faEnvelope} className='icon-md' /> Email
+                    </label>
                     <input onClick={touch} id='email' type='email' placeholder='example@piccione.dev' value={email} onChange={onEmailChange}/>
                     <p>{checkEmail()}</p>
                 </section>
@@ -103,7 +109,9 @@ export default function ContactForm(){
                     <p>{checkSubject()}</p>
                 </section>
                 <section>
-                    <label htmlFor='message'>Message</label>
+                    <label htmlFor='message'>
+                        <FontAwesomeIcon icon={faCommentDots} className='icon-md' /> Message
+                    </label>
                     <textarea onClick={touch} id='message' placeholder='Message' value={message} onChange={onMessageChange}></textarea>
                     <p>{checkMessage()}</p>
                 </section>

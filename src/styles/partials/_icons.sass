@@ -1,0 +1,9 @@
+@mixin icon($size: 1rem, $color: currentColor)
+  font-size: $size
+  color: $color
+  vertical-align: middle
+
+.icon-md
+  @include icon(1rem)
+.icon-lg
+  @include icon(1.25rem)
