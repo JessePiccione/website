@@ -31,7 +31,7 @@ export default function FullResume(){
                 className='CloseButton'
                 onClick={toggleDisplay}
                 aria-label='Close resume'>
-                    <FontAwesomeIcon icon={faXmark} aria-hidden='true'/>
+                    <FontAwesomeIcon icon={faXmark} aria-hidden='true' className='icon-lg'/>
                 </button>
                 <section>
                     <h1 id='resumeTitle' className='gradient-text'>Jesse Piccione</h1>
