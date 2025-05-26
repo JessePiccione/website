@@ -1,21 +1,39 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faFileLines, faBlog, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 export default function navlist(props){
     return (
         <ul {...props}>
             <li>
-                <a href='#home'>Home</a>
+                <a href='#home'>
+                    <FontAwesomeIcon icon={faHouse} className='icon-md' />
+                    <span>Home</span>
+                </a>
             </li>
             <li>
-                <a href='#eresume'>eResume</a>
+                <a href='#eresume'>
+                    <FontAwesomeIcon icon={faFileLines} className='icon-md' />
+                    <span>eResume</span>
+                </a>
             </li>
             <li>
-                <a href='#blog'>Blog</a>
+                <a href='#blog'>
+                    <FontAwesomeIcon icon={faBlog} className='icon-md' />
+                    <span>Blog</span>
+                </a>
             </li>
             <li>
-                <a href='#about'>About</a>
+                <a href='#about'>
+                    <FontAwesomeIcon icon={faUser} className='icon-md' />
+                    <span>About</span>
+                </a>
             </li>
             <li>
-                <a href='#contact'>Contact</a>
+                <a href='#contact'>
+                    <FontAwesomeIcon icon={faEnvelope} className='icon-md' />
+                    <span>Contact</span>
+                </a>
             </li>
             <li>
                 <a href='https://portal.piccione.dev/admin/'>Portal</a>

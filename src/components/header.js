@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image'
 import picture from '@/images/profile_linkedin.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 export default function Header(){
     const handleButtonClick = (e) => {
         e.preventDefault()
@@ -20,7 +22,9 @@ export default function Header(){
                         professionally, and also looking to take on projects for small businesses--including website management,
                         cloud services, and IT support.
                     </p>
-                    <button type='button' onClick={handleButtonClick}>Connect2Me</button>
+                    <button type='button' onClick={handleButtonClick}>
+                        <FontAwesomeIcon icon={faPaperPlane} className='icon-md' /> Connect&nbsp;2&nbsp;Me
+                    </button>
                 </section>
                 <aside>
                     <Image src={picture} alt='Jesse Piccione' loading='eager'/>
