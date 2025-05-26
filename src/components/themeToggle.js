@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons'
 
-export default function ThemeToggle(){
+export default function ThemeToggle({className = ''}){
     const [theme, setTheme] = useState('light')
     useEffect(() => {
         const saved = typeof window !== 'undefined' ? localStorage.getItem('theme') : null
@@ -21,7 +21,7 @@ export default function ThemeToggle(){
     }
 
     return (
-        <button className='theme-toggle' onClick={toggleTheme} aria-label='Toggle theme'>
+        <button className={`theme-toggle ${className}`} onClick={toggleTheme} aria-label='Toggle theme'>
             {theme === 'dark' ? (
                 <FontAwesomeIcon icon={faSun} className='icon-md' />
             ) : (

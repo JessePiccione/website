@@ -1,17 +1,14 @@
 'use client'
 import Logo from '@/images/logo'
 import NavList from './navlist'
-import Chevron from '@/images/chevron.svg'
-import Image from 'next/image'
 import {useState, useRef} from 'react'
-import ThemeToggle from '@/components/themeToggle'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function Nav(){
     const [animation, setAnimation] = useState('')
     const menuRef = useRef(null)
-    const chevronRef = useRef(null)
     const toggleMenu = () => {
-        if(chevronRef.current) chevronRef.current.classList.remove('opened')
         if(menuRef.current) menuRef.current.classList.remove('opened')
         if(animation === 'close' || animation === '') setAnimation('open')
         else if (animation === 'open' ) setAnimation('close')
@@ -34,18 +31,14 @@ export default function Nav(){
                         aria-controls='nav-list'
                         aria-expanded={(animation === 'open' || animation === 'opened') ? 'true' : 'false'}
                         onClick={toggleMenu}
+                        onAnimationEnd={handleEndOfAnimation}
                     >
-                        <Image
-                            loading='eager'
-                            src={Chevron}
-                            alt=''
+                        <FontAwesomeIcon
+                            icon={(animation === 'open' || animation === 'opened') ? faXmark : faBars}
+                            className='menu-icon icon-lg'
                             aria-hidden='true'
-                            className={`menu-chevron ${animation}`}
-                            onAnimationEnd={handleEndOfAnimation}
-                            ref={chevronRef}
                         />
                     </button>
-                    <ThemeToggle />
                 </section>
                 <NavList id='nav-list' ref={menuRef} className={`nav-list ${animation}`} onAnimationEnd={handleEndOfAnimation}/>
             </section>
