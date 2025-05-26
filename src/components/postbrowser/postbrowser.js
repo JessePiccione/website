@@ -33,7 +33,7 @@ export default function PostBrowser(){
         <section id='BlogPostBrowser' className={display} role='dialog' aria-modal='true' aria-labelledby='blogBrowserTitle'>
             <article onAnimationEnd={toggleDisplay}>
                 <button className='CloseButton' onClick={toggleDisplay} aria-label='Close blog posts'>
-                    <FontAwesomeIcon icon={faXmark} aria-hidden='true'/>
+                    <FontAwesomeIcon icon={faXmark} aria-hidden='true' className='icon-lg'/>
                 </button>
                 <h1 id='blogBrowserTitle' className='gradient-text'>Jesse's Blog</h1>
                 <hr/>

@@ -40,7 +40,7 @@ nav.Nav
         margin: variables.$margin
 
 
-section.menu-chevron-container, section.menu-logo-container
+section.menu-hamburger-container, section.menu-logo-container
     grid-area: menu
     background: inherit
     width: 100%
@@ -65,6 +65,18 @@ button.MenuToggle
     justify-content: center
     width: 40px
     height: 40px
+
+.nav-theme-toggle
+    background: var(--clr-accent)
+    color: var(--clr-dark)
+    border: none
+    border-radius: 999px
+    box-shadow: variables.$shadow
+    padding: 0.5rem 0.6rem
+    margin-left: variables.$margin-half
+    display: flex
+    align-items: center
+    justify-content: center
 
 
 // Navigation animations
