@@ -7,7 +7,7 @@ main.Main
     grid-template-areas: "eresume" "blog" "about" "contact"
 // eResume section
 section.eresume
-    background-color: variables.$primary-dark-blue
+    background: variables.$gradient-primary
     box-shadow: variables.$shadow
     z-index: 1
     > article
@@ -25,7 +25,7 @@ section.eresume
         border: 1px solid variables.$secondary-orange
 // Card components
 section.card
-    background-color: variables.$primary-light-blue
+    background: variables.$gradient-secondary
     padding: variables.$margin
     border-radius: variables.$radius
     box-shadow: variables.$shadow
@@ -38,7 +38,7 @@ section.card
         flex-flow: column nowrap
         overflow: scroll
         height: 100px
-        background-color: variables.$primary-dark-blue
+        background: variables.$gradient-primary
         border: 1px solid variables.$secondary-orange
         border-radius: variables.$radius
         margin: variables.$margin-half 0 0 0
@@ -47,7 +47,7 @@ section.card
 
 // About section
 section.about
-    background-color: variables.$primary-dark-blue
+    background: variables.$gradient-primary
     color: variables.$highlight-offwhite
     text-shadow: variables.$shadow
     height: 500px

@@ -15,8 +15,8 @@ export default async function Blog(){
     return (
         <section id='blog' className='blog'>
             <article>
-                <h1>Blog Posts</h1>
-                <h2>Featured Posts</h2>
+                <h1 className='gradient-text'>Blog Posts</h1>
+                <h2 className='gradient-text'>Featured Posts</h2>
                 <hr/>
                 <ul>
                     {postsAreArray ? posts.map(post => <Post key={post.title+post.id} {...post}/>) : <li>No posts available</li>}

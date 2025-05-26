@@ -10,8 +10,8 @@ export default function Header(){
         <header id='home' className='Header'>
             <section>
                 <section>
-                    <h1>Jesse Piccione</h1>
-                    <h2>Software Engineer</h2>
+                    <h1 className='gradient-text'>Jesse Piccione</h1>
+                    <h2 className='gradient-text'>Software Engineer</h2>
                     <hr/>
                     <p>
                         Motivated and detail-oriented Software Engineer with hands-on experience in Full-Stack technologies,
