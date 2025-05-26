@@ -7,7 +7,7 @@ section.blog
     position: static
     flex-flow: row wrap
     justify-content: center
-    background-color: variables.$highlight-offwhite
+    background: variables.$gradient-secondary
     color: variables.$primary-dark-blue
     text-shadow: variables.$shadow
     border-color: variables.$primary-dark-blue
@@ -37,7 +37,7 @@ section.blog-post
         width: calc(100vw - variables.$margin-double)
         margin: variables.$margin variables.$margin variables.$margin 0
         padding-bottom: variables.$margin
-        background-color: variables.$primary-dark-blue
+        background: variables.$gradient-primary
         color: variables.$highlight-offwhite
         box-shadow: variables.$shadow
         border-radius: variables.$radius
@@ -75,7 +75,7 @@ section.blog-post
         border-bottom: variables.$light-blue-border
         margin: -3px variables.$margin 0 variables.$margin
         padding: variables.$margin-half
-        background-color: variables.$highlight-offwhite
+        background: variables.$gradient-secondary
         color: variables.$primary-dark-blue
         border-bottom-right-radius: variables.$radius
         border-bottom-left-radius: variables.$radius
@@ -88,7 +88,7 @@ section.blog-post.big
     position: fixed
     align-items: center
     justify-content: center
-    background-color: variables.$shadow-color
+    background: variables.$gradient-primary
     z-index: 2
     top: 0
     left: 0
@@ -109,7 +109,7 @@ section.blog-post.big
     position: fixed
     width: 100vw
     height: 100vh
-    background-color: #00000040
+    background: variables.$gradient-primary
     color: variables.$primary-dark-blue
     text-shadow: variables.$shadow
     display: none
@@ -125,7 +125,7 @@ section.blog-post.big
         height: 100vh
         overflow-y: hidden
         flex-flow: column nowrap
-        background-color: variables.$highlight-offwhite
+        background: variables.$gradient-secondary
         width: calc(100% - variables.$margin-double)
         padding: variables.$margin
         animation: none

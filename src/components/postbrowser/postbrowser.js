@@ -35,7 +35,7 @@ export default function PostBrowser(){
                 <button className='CloseButton' onClick={toggleDisplay}>
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>
-                <h1>Jesse's Blog</h1>
+                <h1 className='gradient-text'>Jesse's Blog</h1>
                 <hr/>
                 <ul>
                     {postsAreArray ? blogPosts.map(post => <PostSmall key={post.title+post.id} {...post}/>) : <li>No posts available</li>}

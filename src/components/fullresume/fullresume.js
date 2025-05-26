@@ -33,7 +33,7 @@ export default function FullResume(){
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>
                 <section>
-                    <h1>Jesse Piccione</h1>
+                    <h1 className='gradient-text'>Jesse Piccione</h1>
                     <hr/>
                 </section>
                 <section>

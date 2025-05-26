@@ -4,7 +4,7 @@
 nav.Nav
     grid-area: nav
     position: relative
-    background-color: variables.$primary-dark-blue
+    background: variables.$gradient-primary
     box-shadow: variables.$shadow
     z-index: 2
     > section
@@ -19,7 +19,7 @@ nav.Nav
         position: absolute
         flex-flow: column nowrap
         justify-content: flex-start
-        background-color: variables.$primary-light-blue
+        background: variables.$gradient-secondary
         transform: translateY(-100%) scale3d(0,0,0)
 
         &.close
@@ -53,7 +53,7 @@ nav.Nav
 
 section.menu-chevron-container, section.menu-logo-container
     grid-area: menu
-    background-color: variables.$primary-dark-blue
+    background: variables.$gradient-primary
     width: 100%
     height: 100%
     display: flex

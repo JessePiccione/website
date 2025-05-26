@@ -7,8 +7,8 @@ export default function eresume(){
             <section id='eresume' className='eresume'>
                 <article>
                     <section>
-                        <h1>Jesse&apos;s eResume</h1>
-                        <h2>Online CV Application</h2>
+                        <h1 className='gradient-text'>Jesse&apos;s eResume</h1>
+                        <h2 className='gradient-text'>Online CV Application</h2>
                         <hr/>
                         <p>
                             An enhanced resume application built using cutting edge tools
