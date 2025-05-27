@@ -8,6 +8,9 @@
 ::-webkit-scrollbar
     display: none
 
+html
+    scroll-behavior: smooth
+
 body
     overflow-x: hidden
     width: 100%
@@ -138,11 +141,12 @@ li
     background: none
     color: variables.$primary
 
+
 .reveal
     opacity: 0
-    transform: translateY(20px)
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out
+    transform: translateY(20px) scale(0.95)
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out
 
 .reveal-visible
     opacity: 1
-    transform: none
+    transform: translateY(0) scale(1)

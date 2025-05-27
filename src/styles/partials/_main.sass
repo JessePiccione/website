@@ -53,6 +53,11 @@ section.card
         margin: variables.$margin-half 0 0 0
         padding: variables.$margin-half variables.$margin
         box-shadow: none
+    li
+        transition: color 0.2s ease, transform 0.2s ease
+        &:hover
+            transform: translateX(4px)
+            color: variables.$accent
 
 // About section
 section.about

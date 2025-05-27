@@ -2,6 +2,7 @@
 import getData from '@/components/api/getData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
+import Reveal from '@/components/reveal'
 export default async function ProjectCard(){
     let projects = await getData('api/project/')
     if(!Array.isArray(projects)){
@@ -9,7 +10,7 @@ export default async function ProjectCard(){
         projects = []
     }
     return (
-        <section className='card'>
+        <Reveal as='section' className='card'>
             <h3>Project Contributions</h3>
             <ul>
                 {projects.reverse().map(({name}) => (
@@ -18,6 +19,6 @@ export default async function ProjectCard(){
                     </li>
                 ))}
             </ul>
-        </section>
+        </Reveal>
     )
 }

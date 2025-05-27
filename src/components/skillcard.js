@@ -2,10 +2,11 @@
 import getData from '@/components/api/getData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
+import Reveal from '@/components/reveal'
 export default async function SkillCard(){
     const skills = await getData('api/skill/category/')
     return (
-        <section className='card'>
+        <Reveal as='section' className='card'>
             <h3>Relevant Skills</h3>
             <ul>
                 {skills.map(({category_name})=> (
@@ -14,6 +15,6 @@ export default async function SkillCard(){
                     </li>
                 ))}
             </ul>
-        </section>
+        </Reveal>
     )
 }

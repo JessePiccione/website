@@ -23,6 +23,19 @@ footer.Footer
     
     h3 + ul
         padding: variables.$margin-half
-    
+
     section
         padding: 0 0 0 variables.$margin
+    li
+        margin: variables.$margin-half 0
+        transition: color 0.2s ease, transform 0.2s ease
+        display: flex
+        align-items: center
+        gap: variables.$margin-half
+        svg
+            transition: transform 0.2s ease
+        &:hover
+            transform: translateX(4px)
+            color: variables.$accent
+            svg
+                transform: scale(1.1)
