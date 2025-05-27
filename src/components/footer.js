@@ -2,11 +2,10 @@ import Logo from '@/images/logo'
 import NavList from './navlist'
 import SocialMediaList from '@/components/socialmedialist'
 import ContactInfoList from '@/components/contactinfolist'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import Reveal from '@/components/reveal'
 export default function Footer(){
     return (
-        <footer id='Footer' className='Footer'>
+        <Reveal as='footer' id='Footer' className='Footer'>
             <nav>
                 <Logo/>
                 <section>
@@ -22,6 +21,6 @@ export default function Footer(){
                     <ContactInfoList/>
                 </section>
             </nav>
-        </footer>
+        </Reveal>
     )
 }
