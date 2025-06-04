@@ -41,6 +41,10 @@ section.blog-post
         color: variables.$text
         box-shadow: variables.$shadow
         border-radius: variables.$radius
+        transition: transform 0.2s ease, box-shadow 0.2s ease
+        &:hover
+            transform: translateY(-4px)
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15)
     
     &:last-child > article
         margin: variables.$margin 0

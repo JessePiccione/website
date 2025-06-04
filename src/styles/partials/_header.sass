@@ -19,6 +19,10 @@ header.Header
         padding: variables.$margin
     aside
         margin-top: variables.$margin
+        .profile-img
+            transition: transform 0.3s ease
+            &:hover
+                transform: rotate(5deg) scale(1.05)
     > section > section, aside
         display: flex
         flex-flow: column wrap
