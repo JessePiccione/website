@@ -40,8 +40,11 @@ h2
     margin: 0 0 calc(variables.$margin / 2.5) 0
 
 hr
-    border: 1px solid variables.$border
+    border: 1px solid var(--clr-dark)
     box-shadow: none
+
+.dark hr
+    border-color: var(--clr-light)
 
 p, h3, strong
     font-family: variables.$primary-font
