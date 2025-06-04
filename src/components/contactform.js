@@ -2,7 +2,7 @@
 import formMessage from '@/components/api/formMessage'
 import {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faEnvelope, faCommentDots } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faEnvelope, faCommentDots, faPhone, faTag } from '@fortawesome/free-solid-svg-icons'
 export default function ContactForm(){
     const [isTouched, setIsTouched] = useState(false)
     const touch = () => {
@@ -93,7 +93,9 @@ export default function ContactForm(){
                     <p>{checkName()}</p>
                 </section>
                 <section>
-                    <label htmlFor='phone'>Phone</label>
+                    <label htmlFor='phone'>
+                        <FontAwesomeIcon icon={faPhone} className='icon-md' /> Phone
+                    </label>
                     <input onClick={touch} id='phone' type='tel' placeholder='123-456-7890' maxLength='12' value={formatPhone(phone)} onChange={onPhoneChange}
                         className={checkPhone() ? 'error' : (phone && isTouched ? 'success' : '')}/>
                     <p>{checkPhone()}</p>
@@ -107,7 +109,9 @@ export default function ContactForm(){
                     <p>{checkEmail()}</p>
                 </section>
                 <section>
-                    <label htmlFor='subject'>Subject</label>
+                    <label htmlFor='subject'>
+                        <FontAwesomeIcon icon={faTag} className='icon-md' /> Subject
+                    </label>
                     <input onClick={touch} id='subject' type='text' placeholder='Subject' value={subject} onChange={onSubjectChange}
                         className={checkSubject() ? 'error' : (subject && isTouched ? 'success' : '')}/>
                     <p>{checkSubject()}</p>
