@@ -41,6 +41,14 @@ nav.Nav
         transition: transform 0.2s ease
         &:hover
             transform: translateY(-2px)
+        a
+            display: flex
+            align-items: center
+            gap: variables.$margin-half
+            transition: color 0.2s ease, transform 0.2s ease
+            &:hover
+                color: variables.$accent
+                transform: scale(1.05)
 
 
 section.menu-hamburger-container, section.menu-logo-container
