@@ -125,7 +125,13 @@ li
     transition: transform 0.25s ease
     &:hover
         transform: scale(1.1)
-    &:active
+.theme-toggle-spinning
+    animation: rotate-theme 0.5s linear
+
+@keyframes rotate-theme
+    from
+        transform: rotate(0deg)
+    to
         transform: rotate(360deg)
 
 .floating-theme-toggle
