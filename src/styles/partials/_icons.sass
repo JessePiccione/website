@@ -1,7 +1,10 @@
+@use "variables"
+
 @mixin icon($size: 1rem, $color: currentColor)
   font-size: $size
   color: $color
   vertical-align: middle
+  margin-inline: calc(variables.$margin-half / 2)
 
 .icon-md
   @include icon(1rem)
