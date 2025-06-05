@@ -89,9 +89,9 @@ const AIAssistant = () => {
     <div className={`ai-assistant ${isExpanded ? 'expanded' : ''}`}>
       <button className="ai-assistant-toggle" onClick={toggleExpanded}>
         {isExpanded ? (
-          <FontAwesomeIcon icon={faTimes} />
+          <FontAwesomeIcon icon={faTimes} className='icon-md' />
         ) : (
-          <FontAwesomeIcon icon={faRobot} />
+          <FontAwesomeIcon icon={faRobot} className='icon-md' />
         )}
       </button>
       
@@ -118,7 +118,7 @@ const AIAssistant = () => {
             onKeyPress={handleKeyPress}
           />
           <button onClick={handleSendMessage}>
-            <FontAwesomeIcon icon={faPaperPlane} />
+            <FontAwesomeIcon icon={faPaperPlane} className='icon-md' />
           </button>
         </div>
       </div>
