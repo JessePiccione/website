@@ -17,7 +17,9 @@
   transition: all 0.3s ease
   overflow: hidden
   &.expanded
+    // Allow the panel to shrink on very small screens
     width: calc(variables.$small-width - variables.$margin-double)
+    max-width: 90vw
     height: 450px
   &-toggle
     width: 60px
