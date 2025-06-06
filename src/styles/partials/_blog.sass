@@ -2,7 +2,7 @@
 
 // Blog section styles
 section.blog
-    width: 100%
+    width: 100vw
     display: flex
     position: static
     flex-flow: row wrap
@@ -20,7 +20,7 @@ section.blog
         flex-flow: column nowrap
         margin: variables.$margin
     ul
-        max-width: calc(100% - variables.$margin-double)
+        max-width: calc(100vw - variables.$margin-double)
         display: flex
         overflow-x: scroll
         overflow-y: visible
@@ -34,7 +34,7 @@ section.blog-post
         padding: 0
     
     > article
-        width: calc(100% - variables.$margin-double)
+        width: calc(100vw - variables.$margin-double)
         margin: variables.$margin variables.$margin variables.$margin 0
         padding-bottom: variables.$margin
         background: variables.$surface
@@ -102,7 +102,7 @@ section.blog-post.big
         z-index: 2
         margin: 0
         max-height: calc(100vh - variables.$margin-triple)
-        width: calc(100% - variables.$margin-double)
+        width: calc(100vw - variables.$margin-double)
         overflow: scroll
     
     p
@@ -111,7 +111,7 @@ section.blog-post.big
 // Blog post browser
 #BlogPostBrowser
     position: fixed
-    width: 100%
+    width: 100vw
     height: 100vh
     background: rgba(0,0,0,0.8)
     color: variables.$text
