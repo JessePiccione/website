@@ -38,11 +38,6 @@ export const metadata = {
     appleTouchIconType: 'image/png',
     appleTouchIconRel: 'apple-touch-icon',
 }
-
-export const viewport = {
-    width: 'device-width',
-    initialScale: 1,
-}
 export default function RootLayout(props){
     return (
         <html lang='en' className={workSans.variable}>
