@@ -20,5 +20,5 @@ steps:
     - BACKEND_API_TOKEN
 availableSecrets:
   secretManager:
-    - versionName: 'projects/piccione-dev/secrets/backend-api-token/versions/latest'
+    - versionName: 'projects/piccione-dev/secrets/BACKEND_API_TOKEN/versions/latest'
       env: 'BACKEND_API_TOKEN'
