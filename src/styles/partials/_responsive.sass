@@ -67,7 +67,8 @@ img
     section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
         width: calc(variables.$large-width - variables.$margin-double)
     section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
-        width: variables.$large-width
+        // Account for horizontal margins so sections fit within the viewport
+        width: calc(variables.$large-width - variables.$margin-double)
     button.MenuToggle, section.menu-hamburger-container
         display: none
     footer.Footer
@@ -111,7 +112,8 @@ img
     section#fullResume > article, section.blog-post.big > article, #BlogPostBrowser > article
         width: calc(variables.$xl-width - variables.$margin-double)
     section.eresume > article, section.blog > article, section.about > article, section.contact > article, footer.Footer > nav, #fullResume
-        width: variables.$xl-width
+        // Account for horizontal margins so sections fit within the viewport
+        width: calc(variables.$xl-width - variables.$margin-double)
     img
         width: calc(425px - variables.$margin-double)
         max-width: none
