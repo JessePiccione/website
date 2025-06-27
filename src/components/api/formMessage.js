@@ -9,8 +9,9 @@ export default async function formMessage({name, phone, message, email, subject}
             "subject": subject,
             "message": message
         }
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://portal.piccione.dev'
         await fetch(
-            'https://portal.piccione.dev/api/message/',
+            `${backendUrl}/api/message/`,
             {
                 method:'POST',
                 headers:{
