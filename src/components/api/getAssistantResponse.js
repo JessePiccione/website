@@ -2,7 +2,8 @@
 export default async function getAssistantResponse(message){
     try{
         const token = process.env.BACKEND_API_TOKEN
-        const res = await fetch('https://portal.piccione.dev/api/assistant/', {
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://portal.piccione.dev'
+        const res = await fetch(`${backendUrl}/api/assistant/`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

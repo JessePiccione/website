@@ -2,6 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faFileLines, faBlog, faUser, faEnvelope, faRightToBracket, faCircleDollarToSlot } from '@fortawesome/free-solid-svg-icons'
 
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://portal.piccione.dev'
+
 const NavList = React.forwardRef(function NavList(props, ref){
     return (
         <ul ref={ref} {...props}>
@@ -36,7 +38,7 @@ const NavList = React.forwardRef(function NavList(props, ref){
                 </a>
             </li>
             <li>
-                <a href='https://portal.piccione.dev/admin/'>
+                <a href={`${backendUrl}/admin/`}>
                     <FontAwesomeIcon icon={faRightToBracket} className='icon-md' />
                     <span>Portal</span>
                 </a>

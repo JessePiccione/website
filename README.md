@@ -8,10 +8,15 @@ This repository contains the source code for [piccione.dev](https://piccione.dev
    ```bash
    npm install
    ```
+
 2. Build the project:
    ```bash
    npm run build
    ```
+
+### Environment Variables
+
+Set `NEXT_PUBLIC_BACKEND_URL` to override the default backend API base URL (`https://portal.piccione.dev`).
 
 ## Running Locally
 
