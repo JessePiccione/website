@@ -12,16 +12,4 @@ export default function FullResumeState({children}){
     )
 }
 
-function toggleDrawer(previousState){
-    switch (previousState) {
-        case 'open':
-            return 'opened'
-        case 'opened':
-            return 'close'
-        case 'close':
-            return 'closed'
-        case 'closed':
-            return 'open'
-    }
-}
 export const ResumeState = () => useContext(FullResumeStateContext)
