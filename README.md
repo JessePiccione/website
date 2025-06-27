@@ -8,11 +8,11 @@ This repository contains the source code for [piccione.dev](https://piccione.dev
    ```bash
    npm install
    ```
+
 2. Build the project:
    ```bash
    npm run build
    ```
-
 ## Environment Variables
 
 The application communicates with a backend service and requires a token for authentication. Configure the following variables when running or deploying the site:
@@ -27,6 +27,8 @@ BACKEND_API_TOKEN=<token> BACKEND_BASE_URL=https://portal.piccione.dev npm run d
 ```
 
 When deploying, set `BACKEND_API_TOKEN` as a secret or environment variable and provide `BACKEND_BASE_URL` if a custom backend is used.
+
+Set `NEXT_PUBLIC_BACKEND_URL` to override the default backend API base URL (`https://portal.piccione.dev`).
 
 ## Running Locally
 

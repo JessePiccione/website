@@ -1,10 +1,11 @@
 import Post from '@/components/postsmall'
 import OpenPostBrowserButton from '@/components/postbrowser/openpostbrowserbutton'
 import Reveal from '@/components/reveal'
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://portal.piccione.dev'
 export default async function Blog(){
     let posts = []
     try {
-        const res = await fetch('https://portal.piccione.dev/api/home/')
+        const res = await fetch(`${backendUrl}/api/home/`)
         posts = await res.json()
     } catch (err) {
         console.error('Blog: failed to fetch posts', err)
