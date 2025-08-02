@@ -1,4 +1,5 @@
 import { Work_Sans } from 'next/font/google'
+import Script from 'next/script'
 import ThemeToggle from '@/components/themeToggle'
 
 const workSans = Work_Sans({
@@ -38,6 +39,9 @@ export const metadata = {
     appleTouchIconSizes: '180x180',
     appleTouchIconType: 'image/png',
     appleTouchIconRel: 'apple-touch-icon',
+    other: {
+        'google-adsense-account': 'ca-pub-1851572737165261',
+    },
 }
 export default function RootLayout(props){
     return (
@@ -45,6 +49,11 @@ export default function RootLayout(props){
             <body>
                 {props.children}
                 <ThemeToggle className='floating-theme-toggle'/>
+                <Script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1851572737165261"
+                    crossOrigin="anonymous"
+                />
             </body>
         </html>
     )
