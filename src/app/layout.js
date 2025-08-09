@@ -1,6 +1,7 @@
 import { Work_Sans } from 'next/font/google'
 import Script from 'next/script'
 import ThemeToggle from '@/components/themeToggle'
+import { UserProvider } from '@/components/providers/user'
 
 const workSans = Work_Sans({
     weight: ['400', '600', '800'],
@@ -47,8 +48,10 @@ export default function RootLayout(props){
     return (
         <html lang='en' className={workSans.variable}>
             <body>
-                {props.children}
-                <ThemeToggle className='floating-theme-toggle'/>
+                <UserProvider>
+                    {props.children}
+                    <ThemeToggle className='floating-theme-toggle'/>
+                </UserProvider>
                 <Script
                     async
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1851572737165261"
