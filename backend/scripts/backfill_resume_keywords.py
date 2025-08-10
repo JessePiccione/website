@@ -5,7 +5,7 @@ import re
 from collections import Counter
 from typing import List
 
-from pymongo import MongoClient
+from google.cloud import firestore
 
 # Basic list of stop words to avoid counting common words as keywords.
 STOPWORDS = {
@@ -63,34 +63,37 @@ def extract_sections(text: str) -> List[str]:
     return found
 
 
-def backfill(collection, limit: int | None = None, dry_run: bool = False) -> None:
+def backfill(db: firestore.Client, limit: int | None = None, dry_run: bool = False) -> None:
     """Backfill resume documents missing keywords/sections.
 
     Args:
-        collection: MongoDB collection containing resumes.
+        db: Firestore client.
         limit: If provided, only the first ``limit`` documents are processed.
         dry_run: When ``True`` no database writes are performed and only
             counts are printed.
     """
-    query = {"$or": [{"keywords": {"$exists": False}}, {"keywords": []}]}
-    cursor = collection.find(query)
-    if limit:
-        cursor = cursor.limit(limit)
+    resumes_ref = db.collection("resumes")
 
-    docs = list(cursor)
-    total = len(docs)
+    docs_to_update: list[tuple[str, str]] = []
+    for doc in resumes_ref.stream():
+        data = doc.to_dict()
+        if not data.get("keywords"):
+            docs_to_update.append((doc.id, data.get("content", "")))
+            if limit and len(docs_to_update) >= limit:
+                break
+
+    total = len(docs_to_update)
     logging.info("Found %s resumes without keywords", total)
 
-    for index, doc in enumerate(docs, start=1):
-        text = doc.get("content", "")
+    for index, (doc_id, text) in enumerate(docs_to_update, start=1):
         keywords = extract_keywords(text)
         sections = extract_sections(text)
 
         if not dry_run:
-            collection.update_one(
-                {"_id": doc["_id"]},
-                {"$set": {"keywords": keywords, "sections": sections}},
-            )
+            resumes_ref.document(doc_id).update({
+                "keywords": keywords,
+                "sections": sections,
+            })
         if index % 10 == 0 or index == total:
             logging.info("Processed %s/%s resumes", index, total)
 
@@ -102,7 +105,7 @@ def backfill(collection, limit: int | None = None, dry_run: bool = False) -> Non
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Backfill resume keywords and sections in MongoDB",
+        description="Backfill resume keywords and sections in Firestore",
     )
     parser.add_argument("--dry-run", action="store_true", help="Print counts only")
     parser.add_argument(
@@ -115,14 +118,12 @@ def main() -> None:
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-    uri = os.environ.get("MONGODB_URI")
-    if not uri:
-        raise SystemExit("MONGODB_URI environment variable is required")
-    client = MongoClient(uri)
-    db_name = os.environ.get("MONGODB_DB") or client.get_default_database().name
-    collection = client[db_name]["resumes"]
+    project = os.environ.get("GOOGLE_CLOUD_PROJECT")
+    if not project:
+        raise SystemExit("GOOGLE_CLOUD_PROJECT environment variable is required")
+    client = firestore.Client(project=project)
 
-    backfill(collection, limit=args.limit, dry_run=args.dry_run)
+    backfill(client, limit=args.limit, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
