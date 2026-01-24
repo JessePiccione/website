@@ -1,5 +1,5 @@
 'use server'
-export default async function getData(endpoint){
+export default async function getData(endpoint, props){
     try{
         const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://portal.piccione.dev'
         const req = await fetch(`${backendUrl}/${endpoint}`,{

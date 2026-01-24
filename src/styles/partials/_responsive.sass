@@ -22,6 +22,7 @@ img
             height: calc(((variables.$small-width - variables.$margin-double) / 16) * 9)
 // Medium screens (672px)
 @media screen and (min-width: variables.$medium-width)
+    
     section.eresume aside
         justify-content: flex-start
     section.card
@@ -46,10 +47,11 @@ img
             grid-template-rows: auto
             grid-template-columns: min-content max-content
         ul, ul.open, ul.close, ul.opened
+            max-width: 90%
             display: flex
             transform: none
             position: static
-            flex-flow: row nowrap
+            flex-flow: row wrap
             animation: none
             align-self: center
             justify-self: flex-start
@@ -98,10 +100,13 @@ img
 
 // Extra large screens (1024px)
 @media screen and (min-width: variables.$xl-width)
+
     nav.Nav
         > section
             width: variables.$xl-width
-        li
+            nav.Nav
+        ul, ul.open, ul.close, ul.opened
+            max-width:100%
             margin: 0
             padding: variables.$margin
     header.Header > section
