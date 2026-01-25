@@ -117,21 +117,27 @@ li
     font-size: 18px
     font-weight: 400
 
+@keyframes toggleTheme
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(360deg)
 
 .theme-toggle
     background: none
     border: none
     cursor: pointer
-    transition: transform 0.25s ease
     &:hover
         transform: scale(1.1)
-    &:active
-        transform: rotate(360deg)
+    //todo implement js logic for this animation
+    .toggle-theme-animation
+        animation: toggleTheme 0.25s ease
+        animation-fill-mode: backwards
 
 .floating-theme-toggle
     position: fixed
     bottom: variables.$margin
-    left: variables.$margin
+    right: variables.$margin
     z-index: 10
     background: var(--clr-accent)
     color: var(--clr-dark)
