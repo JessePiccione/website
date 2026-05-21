@@ -45,20 +45,27 @@ img
             width: variables.$large-width
             grid-template-areas: 'logo list'
             grid-template-rows: auto
-            grid-template-columns: min-content max-content
+            grid-template-columns: auto 1fr
         ul, ul.open, ul.close, ul.opened
             max-width: 90%
             display: flex
             transform: none
             position: static
-            flex-flow: row wrap
+            flex-flow: row nowrap
             animation: none
             align-self: center
             justify-self: flex-start
-            background-color: #00000000
+            background-color: transparent
+            overflow: hidden
         li
             margin: 0
-            padding: variables.$margin variables.$margin-half
+            padding: variables.$margin-half variables.$margin-half
+            white-space: nowrap
+        li a
+            font-size: 14px
+            gap: 4px
+        li a .nav-admin-label
+            display: none
     header.Header > section
         width: variables.$large-width
     section.eresume, section.blog, section.about, section.contact, footer.Footer, header.Header
@@ -108,6 +115,13 @@ img
             max-width:100%
             margin: 0
             padding: variables.$margin
+        li
+            padding: variables.$margin-half variables.$margin-half
+        li a
+            font-size: 16px
+            gap: variables.$margin-half
+        li a .nav-admin-label
+            display: inline
     header.Header > section
         width: variables.$xl-width
     section.eresume, section.blog, section.about, section.contact, footer.Footer, section.eresume, header.Header

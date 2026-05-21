@@ -45,7 +45,7 @@ const NavList = React.forwardRef(function NavList(props, ref){
             <li>
                 <a href='https://portal.piccione.dev/admin'>
                     <FontAwesomeIcon icon={faRightToBracket} className='icon-md' />
-                    <span>Admin</span>
+                    <span className='nav-admin-label'>Admin</span>
                 </a>
             </li>
         </ul>

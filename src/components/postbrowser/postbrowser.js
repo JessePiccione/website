@@ -59,7 +59,7 @@ export default function PostBrowser(){
             aria-labelledby='blogBrowserTitle'
             onClick={handleBackdropClick}
         >
-            <article onAnimationEnd={toggleDisplay}>
+            <article onAnimationEnd={(e) => { if (e.target === e.currentTarget) toggleDisplay() }}>
                 <button className='CloseButton' onClick={toggleDisplay} aria-label='Close blog posts'>
                     <FontAwesomeIcon icon={faXmark} aria-hidden='true' className='icon-lg'/>
                 </button>

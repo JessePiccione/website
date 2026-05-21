@@ -54,7 +54,7 @@ export default function FullResume(){
             aria-labelledby='resumeTitle'
             onClick={handleBackdropClick}
         >
-            <article onAnimationEnd={toggleDisplay}>
+            <article onAnimationEnd={(e) => { if (e.target === e.currentTarget) toggleDisplay() }}>
                 <button
                 className='CloseButton'
                 onClick={toggleDisplay}

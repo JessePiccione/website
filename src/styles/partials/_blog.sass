@@ -128,7 +128,7 @@ section.blog-post.big
     > article
         position: relative
         display: flex
-        max-height: 85vh
+        max-height: 90vh
         overflow-y: auto
         flex-flow: column nowrap
         background: var(--clr-surface)
@@ -141,18 +141,21 @@ section.blog-post.big
     
     h1
         margin-bottom: variables.$margin-half
+        flex-shrink: 0
+    
+    hr
+        flex-shrink: 0
     
     ul
-        display: flex
-        overflow-y: auto
-        flex-flow: row wrap
-        justify-content: flex-start
-        align-items: center
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
         gap: variables.$gap
         padding-top: variables.$margin-half
+        overflow-y: visible
     
     section.blog-post > article
         margin: 0
+        height: 100%
 
 // Blog post browser states
 #BlogPostBrowser

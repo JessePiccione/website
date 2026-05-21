@@ -134,21 +134,26 @@ li
     font-weight: 400
 
 @keyframes toggleTheme
-    from
-        transform: rotate(0deg)
-    to
-        transform: rotate(360deg)
+    0%
+        transform: rotate(0deg) scale(1)
+        opacity: 1
+    50%
+        transform: rotate(180deg) scale(0.5)
+        opacity: 0
+    100%
+        transform: rotate(360deg) scale(1)
+        opacity: 1
 
 .theme-toggle
     background: none
     border: none
     cursor: pointer
+    transition: transform 0.2s ease
     &:hover
-        transform: scale(1.1)
-    //todo implement js logic for this animation
-    .toggle-theme-animation
-        animation: toggleTheme 0.25s ease
-        animation-fill-mode: backwards
+        transform: scale(1.15)
+    &.spinning
+        animation: toggleTheme 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+        animation-fill-mode: forwards
 
 .floating-theme-toggle
     position: fixed
