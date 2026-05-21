@@ -15,7 +15,7 @@ export default function eresume(){
                             An enhanced resume application built using cutting edge tools
                             and technologies. The eResume Application holds stateful, live and editable,
                             data without having to update the application or replace any code.
-                            Thanks to the Django Back-End server and MySQL database; employers,
+                            Thanks to the Django Back-End server and database; employers,
                             clients and peers can view live and current resume data 24 / 7.
                         </p>
                         <OpenResumeButton/>

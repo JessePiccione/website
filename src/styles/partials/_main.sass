@@ -12,7 +12,7 @@ main.Main
             padding: variables.$section-padding-tablet 0
 // eResume section
 section.eresume
-    background: variables.$surface
+    background: var(--clr-bg)
     box-shadow: none
     z-index: 1
     > article
@@ -20,14 +20,14 @@ section.eresume
         display: flex
         flex-flow: row wrap
         justify-content: space-between
-        color: variables.$text
+        color: var(--clr-text)
         text-shadow: none
         margin: variables.$margin
         padding: 0
     aside
         margin-top: variables.$margin
     hr
-        border: 1px solid var(--clr-dark)
+        border: 1px solid var(--clr-border)
 // Card components
 section.card
     background: var(--clr-glass-surface)
@@ -76,11 +76,9 @@ section.card
 
 // About section
 section.about
-    background: variables.$bg
-    color: variables.$text
+    background: var(--clr-bg)
+    color: var(--clr-text)
     text-shadow: none
-    height: 500px
-    overflow-y: scroll
     box-shadow: none
     > article
         margin: variables.$margin

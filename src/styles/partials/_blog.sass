@@ -7,10 +7,10 @@ section.blog
     position: static
     flex-flow: row wrap
     justify-content: center
-    background: variables.$bg
-    color: variables.$text
+    background: var(--clr-bg)
+    color: var(--clr-text)
     text-shadow: none
-    border-color: variables.$text
+    border-color: var(--clr-border)
     z-index: 2
     box-shadow: none
     > article
@@ -35,8 +35,8 @@ section.blog-post
         width: calc(100vw - variables.$margin-double)
         margin: variables.$margin variables.$margin variables.$margin 0
         padding-bottom: variables.$margin
-        background: variables.$surface
-        color: variables.$text
+        background: var(--clr-surface)
+        color: var(--clr-text)
         box-shadow: variables.$shadow
         border-radius: variables.$radius
         transition: transform 0.2s ease, box-shadow 0.2s ease
@@ -78,7 +78,7 @@ section.blog-post
         margin: -3px variables.$margin 0 variables.$margin
         padding: variables.$margin-half
         background: variables.$primary-tint
-        color: var(--clr-dark)
+        color: var(--clr-text)
         border-bottom-right-radius: variables.$radius
         border-bottom-left-radius: variables.$radius
 
