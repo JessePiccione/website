@@ -109,27 +109,34 @@ section.blog-post.big
 // Blog post browser
 #BlogPostBrowser
     position: fixed
+    top: 0
+    left: 0
     width: 100vw
     height: 100vh
-    background: rgba(0,0,0,0.8)
-    color: variables.$text
+    background: rgba(15, 23, 42, 0.6)
+    backdrop-filter: blur(8px)
+    -webkit-backdrop-filter: blur(8px)
+    color: var(--clr-text)
     text-shadow: none
     display: none
     flex-flow: column nowrap
     justify-content: center
     align-items: center
-    z-index: 2
+    z-index: 200
     animation: none
     
     > article
         position: relative
         display: flex
-        height: 100vh
-        overflow-y: hidden
+        max-height: 85vh
+        overflow-y: auto
         flex-flow: column nowrap
-        background: variables.$surface
+        background: var(--clr-surface)
+        border: 1px solid var(--clr-border)
+        border-radius: 24px
         width: calc(100% - variables.$margin-double)
-        padding: variables.$margin
+        padding: 2rem
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25)
         animation: none
     
     h1
@@ -137,21 +144,23 @@ section.blog-post.big
     
     ul
         display: flex
-        overflow: scroll
+        overflow-y: auto
         flex-flow: row wrap
         justify-content: flex-start
         align-items: center
+        gap: variables.$gap
+        padding-top: variables.$margin-half
     
     section.blog-post > article
-        margin: variables.$margin 0 0 0
+        margin: 0
 
 // Blog post browser states
 #BlogPostBrowser
     &.open
         display: flex
+        animation: fade-in 0.3s ease forwards
         > article
-            animation: slide-in-up 0.25s ease
-            animation-fill-mode: forwards
+            animation: slide-up-scale 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards
     
     &.opened
         display: flex
@@ -161,14 +170,13 @@ section.blog-post.big
     
     &.close
         display: flex
-        animation: slide-in-up 0s 0.25s reverse
-        animation-fill-mode: forwards
+        animation: fade-in 0.3s ease reverse forwards
         > article
-            animation: slide-in-up 0.25s 0s ease reverse
-            animation-fill-mode: forwards
+            animation: slide-up-scale 0.3s cubic-bezier(0.16, 1, 0.3, 1) reverse forwards
     
     &.closed
         display: none
         animation: none
         > article
             animation: none
+

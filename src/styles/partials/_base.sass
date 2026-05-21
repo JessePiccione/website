@@ -6,7 +6,18 @@
     padding: 0
 
 ::-webkit-scrollbar
-    display: none
+    width: 8px
+    height: 8px
+
+::-webkit-scrollbar-track
+    background: var(--clr-bg)
+
+::-webkit-scrollbar-thumb
+    background: var(--clr-border)
+    border-radius: 999px
+    border: 2px solid var(--clr-bg)
+    &:hover
+        background: var(--clr-primary)
 
 html
     scroll-behavior: smooth
@@ -20,6 +31,11 @@ body
     grid-template-columns: auto
     color: variables.$text
     background: variables.$bg
+    font-family: variables.$primary-font
+
+button, input, textarea, select
+    font-family: variables.$primary-font
+
 
 // Base typography
 h1, h2, h3
@@ -149,8 +165,11 @@ li
     justify-content: center
     aspect-ratio: 1 / 1 
 .gradient-text
-    background: none
-    color: variables.$primary
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent))
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+    color: transparent
 
 
 .reveal

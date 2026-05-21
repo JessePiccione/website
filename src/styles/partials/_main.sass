@@ -30,35 +30,49 @@ section.eresume
         border: 1px solid var(--clr-dark)
 // Card components
 section.card
-    background: variables.$surface
+    background: var(--clr-glass-surface)
+    backdrop-filter: blur(8px)
+    -webkit-backdrop-filter: blur(8px)
+    border: 1px solid var(--clr-glass-border)
     padding: 24px
     border-radius: 16px
-    box-shadow: variables.$shadow
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.04)
     width: calc(100% - variables.$margin-quadruple)
-    transition: transform 0.2s ease, box-shadow 0.2s ease
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease
     &:hover
-        transform: translateY(-4px)
-        box-shadow: 0 8px 16px rgba(0,0,0,0.15)
+        transform: translateY(-6px)
+        box-shadow: 0 12px 24px rgba(31, 38, 135, 0.08)
+        border-color: var(--clr-primary-dark)
     &:first-child
         margin-bottom: variables.$margin
     ul
         display: flex
         flex-flow: column nowrap
-        overflow: scroll
-        height: 100px
-        background: variables.$primary-tint
-        color: var(--clr-dark)
-        border: 1px solid variables.$border
+        overflow-y: auto
+        height: 110px
+        background: var(--clr-primary-tint)
+        color: var(--clr-text)
+        border: 1px solid var(--clr-border)
         border-radius: variables.$radius
         margin: variables.$margin-half 0 0 0
         padding: variables.$margin-half variables.$margin
         box-shadow: none
+        &::-webkit-scrollbar
+            width: 4px
+        &::-webkit-scrollbar-track
+            background: transparent
+        &::-webkit-scrollbar-thumb
+            background: var(--clr-border)
+            border-radius: 2px
     li
         transition: color 0.2s ease, transform 0.2s ease
-        color: variables.$text
+        color: var(--clr-text)
+        font-size: 15px
+        padding: 4px 0
         &:hover
             transform: translateX(4px)
-            color: variables.$accent
+            color: var(--clr-accent)
+
 
 // About section
 section.about

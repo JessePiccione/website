@@ -3,14 +3,14 @@ export default function Logo(){
     return (
         <svg width="161" height="124" viewBox="0 0 161 124" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_80_154)">
-            <path d="M105.858 26.4372L42.2188 90.0768" stroke="white" strokeWidth="4" strokeLinecap="square"/>
+            <path d="M105.858 26.4372L42.2188 90.0768" stroke="var(--clr-logo-white)" strokeWidth="4" strokeLinecap="square"/>
             <g clipPath="url(#clip0_80_154)">
             <path d="M56.4555 90.1715L105.954 40.6752" stroke="#2980B9" strokeWidth="4" strokeLinecap="square"/>
-            <path d="M105.873 72.6479L121.873 56.6479L105.873 40.6478" stroke="white" strokeWidth="4" strokeLinecap="square" strokeLinejoin="round"/>
+            <path d="M105.873 72.6479L121.873 56.6479L105.873 40.6478" stroke="var(--clr-logo-white)" strokeWidth="4" strokeLinecap="square" strokeLinejoin="round"/>
             </g>
             <g clipPath="url(#clip1_80_154)">
             <path d="M42.1241 75.8399L91.6205 26.3413" stroke="#2980B9" strokeWidth="4" strokeLinecap="square"/>
-            <path d="M42.2041 43.8661L26.2041 59.8661L42.2042 75.8661" stroke="white" strokeWidth="4" strokeLinecap="square" strokeLinejoin="round"/>
+            <path d="M42.2041 43.8661L26.2041 59.8661L42.2042 75.8661" stroke="var(--clr-logo-white)" strokeWidth="4" strokeLinecap="square" strokeLinejoin="round"/>
             </g>
             </g>
             <defs>

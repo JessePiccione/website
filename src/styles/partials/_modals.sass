@@ -4,28 +4,34 @@
 // Full Resume Modal
 section#fullResume
     position: fixed
+    top: 0
+    left: 0
     width: 100vw
     height: 100vh
-    background: rgba(0,0,0,0.8)
-    color: variables.$text
+    background: rgba(15, 23, 42, 0.6)
+    backdrop-filter: blur(8px)
+    -webkit-backdrop-filter: blur(8px)
+    color: var(--clr-text)
     text-shadow: none
     display: none
     flex-flow: column nowrap
     justify-content: center
     align-items: center
-    z-index: 3
+    z-index: 200
     animation: none
 
     > article
         position: relative
         display: flex
-        height: 100vh
-        overflow-y: scroll
+        max-height: 85vh
+        overflow-y: auto
         flex-flow: column nowrap
-        background: variables.$surface
+        background: var(--clr-surface)
+        border: 1px solid var(--clr-border)
+        border-radius: 24px
         width: calc(100% - variables.$margin-double)
-        padding: variables.$margin
-        box-shadow: variables.$shadow
+        padding: 2rem
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25)
         animation: none
         h1, hr
             margin-bottom: variables.$margin-half
@@ -44,9 +50,9 @@ section#fullResume
 section#fullResume
     &.open
         display: flex
+        animation: fade-in 0.3s ease forwards
         > article
-            animation: slide-in-up 0.25s ease
-            animation-fill-mode: forwards
+            animation: slide-up-scale 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards
 
     &.opened
         display: flex
@@ -56,11 +62,9 @@ section#fullResume
 
     &.close
         display: flex
-        animation: slide-in-up 0s 0.25s reverse
-        animation-fill-mode: forwards
+        animation: fade-in 0.3s ease reverse forwards
         > article
-            animation: slide-in-up 0.25s 0s ease reverse
-            animation-fill-mode: forwards
+            animation: slide-up-scale 0.3s cubic-bezier(0.16, 1, 0.3, 1) reverse forwards
 
     &.closed
         display: none
@@ -73,26 +77,38 @@ button.CloseButton
     position: absolute
     right: variables.$margin
     top: variables.$margin
-    width: 48px
-    height: 48px
+    width: 40px
+    height: 40px
     line-height: 0
-    background: var(--clr-accent)
-    color: var(--clr-dark)
+    background: var(--clr-primary)
+    color: var(--clr-light)
     border: none
     border-radius: 999px
-    box-shadow: variables.$shadow
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
     cursor: pointer
     display: flex
     align-items: center
     justify-content: center
     font-size: 1.25rem
-    transition: transform 150ms ease-in-out
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease
+    z-index: 10
     &:hover
-        transform: scale(1.05)
+        transform: scale(1.1)
+        background: var(--clr-accent)
+        color: var(--clr-light)
 
 // Animations
-@keyframes slide-in-up
+@keyframes fade-in
     0%
-        transform: translateY(100vh)
+        opacity: 0
     100%
-        transform: translateY(0)
+        opacity: 1
+
+@keyframes slide-up-scale
+    0%
+        transform: translateY(40px) scale(0.96)
+        opacity: 0
+    100%
+        transform: translateY(0) scale(1)
+        opacity: 1
+

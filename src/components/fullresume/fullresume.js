@@ -24,8 +24,36 @@ export default function FullResume(){
         setExperience(await getData('api/work/experience/'))
     }
     useEffect(()=>{getResumeData()},[])
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && display === 'opened') {
+                toggleDisplay()
+            }
+        }
+        if (display === 'opened') {
+            window.addEventListener('keydown', handleKeyDown)
+        }
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [display, toggleDisplay])
+
+    const handleBackdropClick = (e) => {
+        if (e.target === e.currentTarget && display === 'opened') {
+            toggleDisplay()
+        }
+    }
+
     return (
-        <section id='fullResume' className={display} role='dialog' aria-modal='true' aria-labelledby='resumeTitle'>
+        <section 
+            id='fullResume' 
+            className={display} 
+            role='dialog' 
+            aria-modal='true' 
+            aria-labelledby='resumeTitle'
+            onClick={handleBackdropClick}
+        >
             <article onAnimationEnd={toggleDisplay}>
                 <button
                 className='CloseButton'

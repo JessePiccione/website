@@ -25,12 +25,40 @@ export default function PostBrowser(){
         }
     }
     useEffect(()=>{retrieveDataFromServer()},[])
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && display === 'opened') {
+                toggleDisplay()
+            }
+        }
+        if (display === 'opened') {
+            window.addEventListener('keydown', handleKeyDown)
+        }
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [display, toggleDisplay])
+
+    const handleBackdropClick = (e) => {
+        if (e.target === e.currentTarget && display === 'opened') {
+            toggleDisplay()
+        }
+    }
+
     const postsAreArray = Array.isArray(blogPosts)
     if(!postsAreArray){
         console.error('PostBrowser: blogPosts is not an array', blogPosts)
     }
     return (
-        <section id='BlogPostBrowser' className={display} role='dialog' aria-modal='true' aria-labelledby='blogBrowserTitle'>
+        <section 
+            id='BlogPostBrowser' 
+            className={display} 
+            role='dialog' 
+            aria-modal='true' 
+            aria-labelledby='blogBrowserTitle'
+            onClick={handleBackdropClick}
+        >
             <article onAnimationEnd={toggleDisplay}>
                 <button className='CloseButton' onClick={toggleDisplay} aria-label='Close blog posts'>
                     <FontAwesomeIcon icon={faXmark} aria-hidden='true' className='icon-lg'/>
