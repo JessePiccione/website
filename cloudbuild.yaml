@@ -18,6 +18,14 @@ steps:
     - us-east1
   secretEnv:
     - BACKEND_API_TOKEN
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      gcloud container images list-tags gcr.io/piccione-dev/website --format="value(digest)" --filter="NOT tags:$BUILD_ID" | while read digest; do
+        gcloud container images delete "gcr.io/piccione-dev/website@$$digest" --quiet --force-delete-tags || true
+      done || true
 availableSecrets:
   secretManager:
     - versionName: 'projects/piccione-dev/secrets/BACKEND_API_TOKEN/versions/latest'
